@@ -4,18 +4,19 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { colors } from '../assets/information';
 
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 80px;
+  height: 60px;
   position: fixed;
   top: 0;
-  background: yellow;
+  background: ${colors.secondary};
 `;
 
 const NavItem = styled.h2`
-  color: palevioletred;
+  color: ${colors.tertiary};
 `;
 
 function Navbar() {

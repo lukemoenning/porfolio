@@ -16,6 +16,7 @@ const FooterWrapper = styled.div`
   height: 30px;
   position: fixed;
   bottom: 0;
+  background: ${colors.secondary};
 `;
 
 const FooterContent = styled.div`
