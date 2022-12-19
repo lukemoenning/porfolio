@@ -6,6 +6,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SocialLink from './SocialLink';
 import { colors, socials } from '../assets/information';
+import { heights } from '../assets/constants';
 
 
 const FooterWrapper = styled.div`
@@ -13,7 +14,7 @@ const FooterWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 30px;
+  height: ${heights.FOOTER_HEIGHT};
   position: fixed;
   bottom: 0;
   background: ${colors.secondary};
