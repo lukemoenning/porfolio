@@ -16,7 +16,7 @@ export const colors = {
 /**
  * JSON of basic information about me
  */
-export const about = {
+export const me = {
   "name": "Luke Moenning",
   "title": "Software Engineer",
   "introduction": ".................",

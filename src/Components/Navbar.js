@@ -4,10 +4,13 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../assets/information';
+import { Link } from 'react-router-dom';
+import { colors, me } from '../assets/information';
 
-const Wrapper = styled.div`
+const NavWrapper = styled.div`
+  outline: 1px solid orange;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 60px;
   position: fixed;
@@ -15,15 +18,32 @@ const Wrapper = styled.div`
   background: ${colors.secondary};
 `;
 
-const NavItem = styled.h2`
+const LeftNav = styled.div`
+  background: tan;
+`;
+
+const RightNav = styled.div`
+  background: tan;
+`;
+
+const NavLink = styled(Link)`
   color: ${colors.tertiary};
 `;
 
 function Navbar() {
   return (
-    <Wrapper>
-      <NavItem>nav</NavItem>
-    </Wrapper>
+    <NavWrapper>
+      <LeftNav>
+        <NavLink to="/">{me.name}</NavLink>
+      </LeftNav>
+
+      <RightNav>
+        <NavLink to="/experience">Experience</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
+        <NavLink to="/resume">Resume</NavLink>
+        <NavLink to="/contact">Contact Me</NavLink>
+      </RightNav>
+    </NavWrapper>
   );
 }
 
