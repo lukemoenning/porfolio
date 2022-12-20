@@ -4,6 +4,7 @@
 
 import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material';
 
+
 /**
  * JSON of the color theme
  */
@@ -20,7 +21,7 @@ export const me = {
   "name": "Luke Moenning",
   "title": "Software Engineer",
   "introduction": ".................",
-  "picture": "src/assets/profile-pic.png",
+  "profile_picture": 'src/assets/images/profile_picture.png', 
 }
 
 /**
