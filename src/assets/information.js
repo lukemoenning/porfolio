@@ -12,7 +12,7 @@ export const colors = {
   "white": "#FFFFFF",
   "offwhite": "#F9F9F9",
   "black": "#000000",
-  "accent": "#800000",
+  "accent": "#990000",
 }
 
 /**

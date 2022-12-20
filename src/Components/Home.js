@@ -15,7 +15,7 @@ const HomeBioWrapper = styled.div`
   align-items: center;
   width: 100%;
   background: ${colors.offwhite};
-  outline: 1px groove black;
+  outline: 1px groove ${colors.black};
   margin-top: 30px;
 `;
 
