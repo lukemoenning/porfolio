@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import styled from 'styled-components';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -13,19 +14,27 @@ import Resume from './Resume';
 import Contact from './Contact';
 import ErrorPage from './ErrorPage';
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+`;
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/experience' element={<Experience />} />
-        <Route path='/projects' element={<Projects />} />
-        <Route path='/resume' element={<Resume />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/*' element={<ErrorPage />} />
-      </Routes>
-      <Footer />
+      <Wrapper>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/experience' element={<Experience />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/resume' element={<Resume />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/*' element={<ErrorPage />} />
+        </Routes>
+        <Footer />
+      </Wrapper>
     </BrowserRouter>
   );
 }

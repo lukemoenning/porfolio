@@ -17,7 +17,7 @@ const FooterWrapper = styled.div`
   height: ${heights.FOOTER_HEIGHT};
   position: fixed;
   bottom: 0;
-  background: ${colors.secondary};
+  background: ${colors.black};
 `;
 
 const FooterContent = styled.div`
@@ -26,7 +26,7 @@ const FooterContent = styled.div`
   margin: 0 10px 0 10px;
   height: 100%;
   overflow: hidden;
-  color: ${colors.tertiary};
+  color: ${colors.accent};
   font-size: 0.8em;
 `;
 

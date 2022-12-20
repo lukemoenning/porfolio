@@ -10,7 +10,8 @@ import { colors } from '../assets/information';
 function ErrorPage() {
   return (
     <BodyWrapper>
-      <h1>Page Not Found</h1>
+      <h1>404 error</h1>
+      <h2>Page not Found</h2>
     </BodyWrapper>
   );
 }

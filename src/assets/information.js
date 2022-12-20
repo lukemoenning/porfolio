@@ -9,9 +9,10 @@ import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material';
  * JSON of the color theme
  */
 export const colors = {
-  "primary": "#FFFFFF",
-  "secondary": "#000000",
-  "tertiary": "#800000",
+  "white": "#FFFFFF",
+  "offwhite": "#F9F9F9",
+  "black": "#000000",
+  "accent": "#800000",
 }
 
 /**
@@ -20,7 +21,7 @@ export const colors = {
 export const me = {
   "name": "Luke Moenning",
   "title": "Software Engineer",
-  "introduction": ".................",
+  "about": ".................",
   "profile_picture": 'src/assets/images/profile_picture.png', 
 }
 

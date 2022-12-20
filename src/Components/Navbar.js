@@ -21,7 +21,7 @@ const MobileNavWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: ${heights.NAVBAR_HEIGHT};
-  background: ${colors.secondary};
+  background: ${colors.black};
   height: auto;
   width: 100vw;
 
@@ -37,7 +37,7 @@ const DesktopNavWrapper = styled.div`
   height: ${heights.NAVBAR_HEIGHT};
   position: fixed;
   top: 0;
-  background: ${colors.secondary};
+  background: ${colors.black};
 `;
 
 const LeftDesktopNav = styled.div`
@@ -57,13 +57,13 @@ const NavLogo = styled(Link)`
   align-items: center;
   height: inherit;
   padding: 0 20px 0 20px;
-  color: ${colors.tertiary};
+  color: ${colors.accent};
   text-decoration: none;
   transition: 300ms;
 
   &:hover {
-    background: ${colors.tertiary};
-    color: ${colors.secondary};
+    background: ${colors.accent};
+    color: ${colors.black};
   }
 `;
 
@@ -79,7 +79,7 @@ const DesktopNavLink = styled(NavLogo)`
 const MobileNavLink = styled(Link)`
   align-self: center;
   text-decoration: none;
-  color: ${colors.tertiary};
+  color: ${colors.accent};
   margin: 10px;
 
   @media (min-width: 700px) {
@@ -94,7 +94,7 @@ const HamburgerIcon = styled.button`
   background: none;
   border: none;
   font-size: 30px;
-  color: ${colors.tertiary};
+  color: ${colors.accent};
   cursor: pointer;
 
   @media (min-width: 700px) {
