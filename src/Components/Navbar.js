@@ -124,7 +124,6 @@ function Navbar() {
           <DesktopNavLink to="/experience">Experience</DesktopNavLink>
           <DesktopNavLink to="/projects">Projects</DesktopNavLink>
           <DesktopNavLink to="/resume">Resume</DesktopNavLink>
-          <DesktopNavLink to="/contact">Contact Me</DesktopNavLink>
         </RightDesktopNav>
       </DesktopNavWrapper>
 
@@ -133,7 +132,6 @@ function Navbar() {
           <MobileNavLink to="/experience">Experience</MobileNavLink>
           <MobileNavLink to="/projects">Projects</MobileNavLink>
           <MobileNavLink to="/resume">Resume</MobileNavLink>
-          <MobileNavLink to="/contact">Contact Me</MobileNavLink>
         </MobileNavWrapper>
       )}
     </NavWrapper>

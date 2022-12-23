@@ -11,7 +11,6 @@ import Home from './Home';
 import Experience from './Experience';
 import Projects from './Projects';
 import Resume from './Resume';
-import Contact from './Contact';
 import ErrorPage from './ErrorPage';
 
 const Wrapper = styled.div`
@@ -30,7 +29,6 @@ function App() {
           <Route path='/experience' element={<Experience />} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/resume' element={<Resume />} />
-          <Route path='/contact' element={<Contact />} />
           <Route path='/*' element={<ErrorPage />} />
         </Routes>
         <Footer />

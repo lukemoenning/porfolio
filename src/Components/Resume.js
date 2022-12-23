@@ -4,7 +4,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { BodyWrapper } from './styles/Body.styles';
+import { 
+  BodyWrapper,
+  BodyHeaderWrapper,
+  BodyHeaderNarrow,  
+} from './styles/Body.styles';
+import { heights } from '../assets/constants';
 
 const Pdf = styled.iframe`
   margin: 25px;
@@ -13,13 +18,17 @@ const Pdf = styled.iframe`
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 600px;
+  height: calc(100vh - ${heights.FOOTER_HEIGHT} - ${heights.NAVBAR_HEIGHT} - 50px);
 `;
 
 function Resume() {
   return (
     <BodyWrapper>
-      <Pdf src={require('../assets/Moenning_Luke_Resume.pdf')} />
+      <BodyHeaderWrapper>
+        <BodyHeaderNarrow>
+          <Pdf src={require('../assets/Moenning_Luke_Resume.pdf')} />
+        </BodyHeaderNarrow>
+      </BodyHeaderWrapper>
     </BodyWrapper>
   );
 }

@@ -4,20 +4,25 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { BodyWrapper } from './styles/Body.styles';
+import { 
+  BodyWrapper, 
+  BodyHeaderWrapper,
+  BodyHeaderWide, 
+  HeaderTitle, 
+  HeaderDescription, 
+  BodyContentWrapper, 
+  BodyContentNarrow 
+} from './styles/Body.styles';
 import { colors, me, socials } from '../assets/information';
 import SocialLink from './SocialLink';
 
 
-const HomeBioWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background: ${colors.offwhite};
-  outline: 1px groove ${colors.black};
-  margin-top: 30px;
-`;
+// const HomeBioWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100%;
+// `;
 
 const ProfileImage = styled.img`
   height: 150px;
@@ -27,22 +32,14 @@ const ProfileImage = styled.img`
   outline: 2px solid ${colors.accent};
 `;
 
-const Name = styled.h1`
-  color: ${colors.accent};
-`;
+// const HomeContentWrapper = styled.div`
+//   display: flex;
+//   width: 100%;
 
-const Title = styled.h2`
-  color: ${colors.black};
-`;
-
-const HomeContentWrapper = styled.div`
-  display: flex;
-  width: 100%;
-
-  @media (max-width: 750px) {
-    flex-direction: column;
-  }
-`;
+//   @media (max-width: 750px) {
+//     flex-direction: column;
+//   }
+// `;
 
 const HomeContentTitle = styled.h3`
   color: ${colors.accent};
@@ -82,30 +79,34 @@ const HomeSocials = styled.div`
 function Home() {
   return (
     <BodyWrapper>
-      <HomeBioWrapper>
-        <ProfileImage src={require('../assets/images/profile_picture.png')} />
-        <Name>
-          {me.name}
-        </Name>
-        <Title>
-          {me.title}
-        </Title>
-      </HomeBioWrapper>
+      <BodyHeaderWrapper>
+        <BodyHeaderWide>
+          <ProfileImage src={require('../assets/images/profile_picture.png')} />
+          <HeaderTitle>
+            {me.name}
+          </HeaderTitle>
+          <HeaderDescription>
+            {me.title}
+          </HeaderDescription>
+        </BodyHeaderWide>
+      </BodyHeaderWrapper>
 
-      <HomeContentWrapper>
-        <AboutWrapper>
-          <HomeContentTitle>About Me</HomeContentTitle>
-          <About>{me.about}</About>
-        </AboutWrapper>
-        <HomeSocialsWrapper>
-          <HomeContentTitle>My Socials</HomeContentTitle>
-          <HomeSocials>
-            {socials.map(item => (
-              <SocialLink key={item.name} social={item} size="medium" displayName={true} />
-            ))}
-          </HomeSocials>
-        </HomeSocialsWrapper>
-      </HomeContentWrapper>
+      <BodyContentWrapper>
+        <BodyContentNarrow>
+          <AboutWrapper>
+            <HomeContentTitle>About Me</HomeContentTitle>
+            <About>{me.about}</About>
+          </AboutWrapper>
+          <HomeSocialsWrapper>
+            <HomeContentTitle>My Socials</HomeContentTitle>
+            <HomeSocials>
+              {socials.map(item => (
+                <SocialLink key={item.name} social={item} size="medium" displayName={true} />
+              ))}
+            </HomeSocials>
+          </HomeSocialsWrapper>
+        </BodyContentNarrow>
+      </BodyContentWrapper>
     </BodyWrapper>
   );
 }
