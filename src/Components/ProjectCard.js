@@ -18,6 +18,7 @@ const ProjectCardWrapper = styled.div`
 
   &:hover {
     transform: scale(1.03, 1.03);
+    box-shadow: 0 20px 20px 0 ${colors.accent};
     cursor: pointer;
   }
 `;
@@ -48,18 +49,33 @@ const ProjectTechStackItem = styled.p`
 `;
 
 
+// FULL SCREEN FOR ACTIVATED PROJECTCARD
+const ActivatedProjectWrapper = styled.div`
+  width: 100vw;
+  height: 100vw;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 
 function ProjectCard({ project }) {
   return (
-    <ProjectCardWrapper>
-      <ProjectPhoto src={project.photo} />
-      <ProjectName>{project.name}</ProjectName>
-      <ProjectTechStackWrapper>
-        {project.techstack.map(techStackItem => (
-          <ProjectTechStackItem key={techStackItem}>{techStackItem}</ProjectTechStackItem>
-        ))}
-      </ProjectTechStackWrapper>
-    </ProjectCardWrapper>
+    <div>
+      <ProjectCardWrapper>
+        <ProjectPhoto src={project.photo} />
+        <ProjectName>{project.name}</ProjectName>
+        <ProjectTechStackWrapper>
+          {project.techstack.map(techStackItem => (
+            <ProjectTechStackItem key={techStackItem}>{techStackItem}</ProjectTechStackItem>
+          ))}
+        </ProjectTechStackWrapper>
+      </ProjectCardWrapper>
+    </div>
   );
 };
 

@@ -29,7 +29,7 @@ function Projects() {
     <BodyWrapper>
       <BodyHeaderWrapper>
         <BodyHeaderNarrow>
-          <HeaderTitle>Projects</HeaderTitle>
+          <HeaderTitle>Projects.</HeaderTitle>
           <HeaderDescription>Checkout of some of the projects I've worked on!</HeaderDescription>
         </BodyHeaderNarrow>
       </BodyHeaderWrapper>

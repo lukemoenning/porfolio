@@ -18,7 +18,7 @@ function Experience() {
     <BodyWrapper>
       <BodyHeaderWrapper>
         <BodyHeaderNarrow>
-          <HeaderTitle>Experience</HeaderTitle>
+          <HeaderTitle>Experience.</HeaderTitle>
           <HeaderDescription>A little more on how I got to where I am today.</HeaderDescription>
         </BodyHeaderNarrow>
       </BodyHeaderWrapper>

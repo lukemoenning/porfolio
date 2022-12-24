@@ -61,13 +61,17 @@ export const BodyHeaderNarrow = styled(BodyHeaderWide)`
  */
 export const HeaderTitle = styled.h1`
   color: ${colors.accent};
+  font-size: xxx-large;
+  margin: 10px;
 `;
 
 /**
  * Description for the body header
  */
-export const HeaderDescription = styled.h2`
+export const HeaderDescription = styled.p`
   colors: ${colors.black};
+  font-size: x-large;
+  margin: 10px;
 `;
 
 
