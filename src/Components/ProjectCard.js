@@ -103,7 +103,7 @@ const ActivatedProjectName = styled.h4`
 `;
 
 const ActivatedProjectDescription = styled.p`
-  font-size: medium;
+  font-size: large;
   margin-left: 20px;
 `;
 
@@ -111,10 +111,8 @@ const ActivatedProjectBottomInfo = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: auto;
+  height: 60px;
   justify-content: space-between;
-  align-items: center;
-  outline: 2px solid red;
 `;
 
 const ActivatedProjectTechStackWrapper = styled.div`
@@ -123,13 +121,13 @@ const ActivatedProjectTechStackWrapper = styled.div`
   align-items: center;
   width: auto;
   height: 100%;
-  background: tan;
 `;
 
 const ActivatedProjectTechStackItem = styled.p`
-  margin: 0 0 20px 20px;
+  margin: 0 0 0 20px;
   font-size: medium;
   font-style: italic;
+  color: ${colors.accent};
 `;
 
 const ActivatedProjectsURLS = styled.div`
@@ -137,7 +135,6 @@ const ActivatedProjectsURLS = styled.div`
   align-items: center;
   width: auto;
   height: 100%;
-  background: yellow;
 `;
 
 const ActivatedProjectLiveDemo = styled.a`

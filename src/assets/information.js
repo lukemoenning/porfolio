@@ -53,11 +53,13 @@ export const socials = [
 
 /**
  * JSON of projects
+ * 
+ * Project photos should be 1920x1080 pixels
  */
 export const projects = [
   {
     "name": "Trackify",
-    "description": "...",
+    "description": "React Spotify clone that has the added feature of displaying account statistics.",
     "photo": require("./images/trackify.png"),
     "techstack": ["React", "Docker", "JSDoc"],
     "github": "https://github.com/lukemoenning/trackify",
