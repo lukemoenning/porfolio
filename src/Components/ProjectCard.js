@@ -135,6 +135,7 @@ const ActivatedProjectsURLS = styled.div`
   align-items: center;
   width: auto;
   height: 100%;
+  overflow: hidden;
 `;
 
 const ActivatedProjectLiveDemo = styled.a`

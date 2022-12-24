@@ -13,7 +13,7 @@ import {
   BodyContentWrapper, 
   BodyContentNarrow
 } from './styles/Body.styles';
-import { heights } from '../assets/constants';
+import { colors } from '../assets/information';
 
 const Pdf = styled.iframe`
   margin: 25px 0 25px 0;
@@ -23,13 +23,22 @@ const Pdf = styled.iframe`
   min-height: 800px;
 `;
 
+const NewTabPDF = styled.a`
+  text-decoration: none;
+  color: ${colors.accent};
+`;
+
 function Resume() {
   return (
     <BodyWrapper>
       <BodyHeaderWrapper>
         <BodyHeaderNarrow>
           <HeaderTitle>Resume.</HeaderTitle>
-          <HeaderDescription>An official copy of my resume.</HeaderDescription>
+          <HeaderDescription>
+            An official copy of my resume. <NewTabPDF href={require('../assets/Moenning_Luke_Resume.pdf')} target='blank'>
+              Open in a new tab.
+            </NewTabPDF>
+          </HeaderDescription>
         </BodyHeaderNarrow>
       </BodyHeaderWrapper>
 

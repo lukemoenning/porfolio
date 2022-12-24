@@ -52,6 +52,10 @@ export const socials = [
 ];
 
 /**
+ * JSON of
+ */
+
+/**
  * JSON of projects
  * 
  * Project photos should be 1920x1080 pixels

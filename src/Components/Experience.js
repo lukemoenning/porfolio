@@ -10,7 +10,8 @@ import {
   BodyHeaderNarrow, 
   HeaderTitle,
   HeaderDescription,
-  BodyContentWrapper, 
+  BodyContentWrapper,
+  BodyContentNarrow, 
 } from './styles/Body.styles';
 
 function Experience() {
@@ -24,7 +25,9 @@ function Experience() {
       </BodyHeaderWrapper>
 
       <BodyContentWrapper>
-
+        <BodyContentNarrow>
+          
+        </BodyContentNarrow>
       </BodyContentWrapper>
     </BodyWrapper>
   );
