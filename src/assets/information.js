@@ -10,7 +10,7 @@ import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material';
  */
 export const colors = {
   "white": "#FFFFFF",
-  "offwhite": "#F9F9F9",
+  "offwhite": "#D3D3D3",
   "black": "#000000",
   "accent": "#990000",
 };
