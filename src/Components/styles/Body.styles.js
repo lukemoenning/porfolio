@@ -15,7 +15,6 @@ export const BodyWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background: ${colors.white};
-  ${'' /* overflow: scroll; */}
 `;
 
 
@@ -30,7 +29,7 @@ export const BodyHeaderWrapper = styled.div`
   align-items: center;
   height: auto;
   width: 100vw;
-  margin-top: ${heights.NAVBAR_HEIGHT};
+  padding-top: ${heights.NAVBAR_HEIGHT};
   box-shadow: 0px 3px 0px 0px ${colors.offwhite};
   background: ${colors.offwhite};
 `;

@@ -7,18 +7,20 @@ import styled from 'styled-components';
 import { 
   BodyWrapper,
   BodyHeaderWrapper,
-  BodyHeaderNarrow,  
+  HeaderTitle,
+  HeaderDescription,
+  BodyHeaderNarrow, 
+  BodyContentWrapper, 
+  BodyContentNarrow
 } from './styles/Body.styles';
 import { heights } from '../assets/constants';
 
 const Pdf = styled.iframe`
-  margin: 25px;
+  margin: 25px 0 25px 0;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
-  height: calc(100vh - ${heights.FOOTER_HEIGHT} - ${heights.NAVBAR_HEIGHT} - 50px);
+  min-height: 800px;
 `;
 
 function Resume() {
@@ -26,9 +28,16 @@ function Resume() {
     <BodyWrapper>
       <BodyHeaderWrapper>
         <BodyHeaderNarrow>
-          <Pdf src={require('../assets/Moenning_Luke_Resume.pdf')} />
+          <HeaderTitle>Resume.</HeaderTitle>
+          <HeaderDescription>An official copy of my resume.</HeaderDescription>
         </BodyHeaderNarrow>
       </BodyHeaderWrapper>
+
+      <BodyContentWrapper>
+        <BodyContentNarrow>
+          <Pdf src={require('../assets/Moenning_Luke_Resume.pdf')} />
+        </BodyContentNarrow>
+      </BodyContentWrapper>
     </BodyWrapper>
   );
 };
