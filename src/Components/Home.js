@@ -109,6 +109,6 @@ function Home() {
       </BodyContentWrapper>
     </BodyWrapper>
   );
-}
+};
 
 export default Home;

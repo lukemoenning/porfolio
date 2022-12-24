@@ -31,6 +31,6 @@ function Resume() {
       </BodyHeaderWrapper>
     </BodyWrapper>
   );
-}
+};
 
 export default Resume;

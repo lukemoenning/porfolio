@@ -12,7 +12,6 @@ import {
   HeaderDescription,
   BodyContentWrapper, 
 } from './styles/Body.styles';
-import { colors } from '../assets/information';
 
 function Experience() {
   return (
@@ -29,6 +28,6 @@ function Experience() {
       </BodyContentWrapper>
     </BodyWrapper>
   );
-}
+};
 
 export default Experience;

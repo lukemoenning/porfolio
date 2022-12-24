@@ -15,6 +15,7 @@ export const BodyWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background: ${colors.white};
+  ${'' /* overflow: scroll; */}
 `;
 
 
@@ -90,9 +91,9 @@ export const BodyContentWrapper = styled.div`
  */
 export const BodyContentWide = styled.div`
   display: flex;
-  width: 1000px;
+  width: 1200px;
   
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
     width: 100%;
   }
