@@ -60,24 +60,32 @@ export const projects = [
     "description": "...",
     "photo": require("./images/trackify.png"),
     "techstack": ["React", "Docker", "JSDoc"],
+    "github": "https://github.com/lukemoenning/trackify",
+    "live_demo": "https://lukemoenning.github.io/trackify/",
   },
   {
     "name": "Personal Website",
     "description": "...",
     "photo": require("./images/website.png"),
     "techstack": ["React", "Docker"],
+    "github": "https://github.com/lukemoenning/portfolio",
+    "live_demo": null,
   },
   {
     "name": "Snake Game",
     "description": "...",
     "photo": require("./images/snake-game-final.png"),
     "techstack": ["Java", "JavaSwing"],
+    "github": "https://github.com/lukemoenning/snake-game-final",
+    "live_demo": null,
   },
   {
     "name": "Weather App",
     "description": "...",
     "photo": require("./images/weatherapp.png"),
     "techstack": ["Python", "Tkinter"],
+    "github": "https://github.com/lukemoenning/weather-app",
+    "live_demo": null,
   },
 ]
 

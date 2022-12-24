@@ -59,6 +59,7 @@ const NavLogo = styled(Link)`
   padding: 0 20px 0 20px;
   color: ${colors.accent};
   text-decoration: none;
+  font-size: x-large;
   transition: 300ms;
 
   &:hover {
