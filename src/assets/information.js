@@ -126,7 +126,7 @@ export const projects = [
     "photo": require("./images/website.png"),
     "techstack": ["React", "Docker"],
     "github": "https://github.com/lukemoenning/portfolio",
-    "live_demo": null,
+    "live_demo": "https://lukemoenning.github.io/",
   },
   {
     "name": "Weather App",
