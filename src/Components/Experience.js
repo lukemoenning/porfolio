@@ -25,7 +25,6 @@ const ExperienceWrapper = styled.div`
 const ExperienceSectionHeader = styled.h2`
   color: ${colors.accent};
   font-size: xx-large;
-  text-decoration: underline;
   margin-top: 40px;
 `;
 
@@ -50,7 +49,7 @@ const ExperienceInfo = styled.div`
   }
 `;
 
-const ExperienceTitle = styled.h2`
+const ExperienceTitle = styled.p`
   color: ${colors.accent};
   font-size: xx-large;
 `;
