@@ -26,7 +26,7 @@ export const me = {
 };
 
 /**
- * JSON of socials
+ * JSON of socials information
  */
 export const socials = [
   {
@@ -52,11 +52,43 @@ export const socials = [
 ];
 
 /**
- * JSON of
+ * JSON of work information
  */
+export const work = [
+  {
+    "title": "Web Intern",
+    "location": "The University of Iowa - College of Engineering",
+    "date": "September 2022 - Present",
+    "description": "Maintain The University of Iowa - College of Engineering website. Handle ticket requests and communicate results and constraints with the requester. Developed front end software skills.",
+  },
+  {
+    "title": "Lead Instructor",
+    "location": "Mathnasium - The Math Learning Center",
+    "date": "June 2019 - December 2022",
+    "description": "Help students look at math from a differenet perspective in hopes that they can find a better understanding of it. Responsibilities include taking charge when the Center Director is absent, instructing students, and interating with parents.",
+  },
+]
 
 /**
- * JSON of projects
+ * JSON of education information
+ */
+export const education = [
+  {
+    "title": "Bachelors of Science",
+    "location": "The University of Iowa",
+    "date": "August 2021 - May 2025",
+    "description": "Honors student with a computer science major and psychology minor. Awarded Dean's List for Fall 2021 and Spring 2022. Memeber of UIowa Association for Computing Machinary (ACM).",
+  },
+  {
+    "title": "High School Diploma",
+    "location": "West Senior High School",
+    "date": "August 2017 - May 2021",
+    "description": "Graduated with a GPA of 4.32. Member of the National Honors Society in 2020 and 2021. Varisty soccer athlete for two years, team played in the state final both of those years.",
+  },
+]
+
+/**
+ * JSON of projects information
  * 
  * Project photos should be 1920x1080 pixels
  */
