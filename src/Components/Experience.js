@@ -25,7 +25,7 @@ const ExperienceWrapper = styled.div`
 const ExperienceSectionHeader = styled.h2`
   color: ${colors.accent};
   font-size: xx-large;
-  margin-top: 40px;
+  margin: 40px 0 0 5px;
 `;
 
 const ExperienceItemWrapper = styled.div`

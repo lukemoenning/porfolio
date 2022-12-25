@@ -99,11 +99,11 @@ export const projects = [
     "photo": require("./images/trackify.png"),
     "techstack": ["React", "Docker", "JSDoc"],
     "github": "https://github.com/lukemoenning/trackify",
-    "live_demo": "https://lukemoenning.github.io/trackify/",
+    "live_demo": null,
   },
   {
     "name": "Personal Website",
-    "description": "I created this website as a place where you can learn more about me and what I've been a part of. I enjoyed the challenge of making it scalable and maintainable so I can update its information as easily as possible.",
+    "description": "I created this website as a place where you can learn more about me and what I've been part of. I enjoyed the challenge of making it scalable and maintainable so I can update its information as easily as possible.",
     "photo": require("./images/website.png"),
     "techstack": ["React", "Docker"],
     "github": "https://github.com/lukemoenning/portfolio",
@@ -119,7 +119,7 @@ export const projects = [
   },
   {
     "name": "Snake Game",
-    "description": "My very first project. I created this game with hopes to practice using the data structures I was learning in class, such as LinkedLists. I wanted a way to track my score, so I used a CSV file to serve as a database for the accounts and their high scores.",
+    "description": "My very first project. I created this game with hopes to practice using data structures I was learning in class, such as LinkedLists. I wanted a way to track my score, so I used a CSV file to serve as a database for the accounts and their high scores.",
     "photo": require("./images/snake-game-final.png"),
     "techstack": ["Java", "JavaSwing"],
     "github": "https://github.com/lukemoenning/snake-game-final",
