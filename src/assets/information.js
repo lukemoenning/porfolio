@@ -21,8 +21,8 @@ export const colors = {
 export const me = {
   "name": "Luke Moenning",
   "title": "Software Engineer",
-  "about": ".................",
-  "profile_picture": '../assets/images/profile_picture.png', 
+  "about": "I'm a software engineer studying computer science and mathematics at the University of Iowa. In my free time I love playing and watching soccer, and recently I've been working on getting my coaching license. I also enjoy learning new skills through projects - like the fun game I hid somewhere on this website. (Hint: it's hidden where it should never be found.)",
+  "photo": require('../assets/images/profile_picture.png'), 
 };
 
 /**
@@ -95,7 +95,7 @@ export const education = [
 export const projects = [
   {
     "name": "Trackify",
-    "description": "React Spotify clone that has the added feature of displaying account statistics.",
+    "description": "A Spotify statistics tracker so the user can be up to date with all their top songs and artists. My goal in developing Trackify was to become more confident with APIs, react, and containerization with docker. Along the way I practiced preventing tightly coupled code with a data layer and developing documentation using the JSDoc tool.",
     "photo": require("./images/trackify.png"),
     "techstack": ["React", "Docker", "JSDoc"],
     "github": "https://github.com/lukemoenning/trackify",
@@ -103,26 +103,26 @@ export const projects = [
   },
   {
     "name": "Personal Website",
-    "description": "...",
+    "description": "I created this website as a place where you can learn more about me and what I've been a part of. I enjoyed the challenge of making it scalable and maintainable so I can update its information as easily as possible.",
     "photo": require("./images/website.png"),
     "techstack": ["React", "Docker"],
     "github": "https://github.com/lukemoenning/portfolio",
     "live_demo": null,
   },
   {
-    "name": "Snake Game",
-    "description": "...",
-    "photo": require("./images/snake-game-final.png"),
-    "techstack": ["Java", "JavaSwing"],
-    "github": "https://github.com/lukemoenning/snake-game-final",
-    "live_demo": null,
-  },
-  {
     "name": "Weather App",
-    "description": "...",
+    "description": "A simple python weather app retrieving data from the OpenWeatherMap API. This project served as a way for me to step foot into the world of APIs and data manipulation.",
     "photo": require("./images/weatherapp.png"),
     "techstack": ["Python", "Tkinter"],
     "github": "https://github.com/lukemoenning/weather-app",
+    "live_demo": null,
+  },
+  {
+    "name": "Snake Game",
+    "description": "My very first project. I created this game with hopes to practice using the data structures I was learning in class, such as LinkedLists. I wanted a way to track my score, so I used a CSV file to serve as a database for the accounts and their high scores.",
+    "photo": require("./images/snake-game-final.png"),
+    "techstack": ["Java", "JavaSwing"],
+    "github": "https://github.com/lukemoenning/snake-game-final",
     "live_demo": null,
   },
 ]

@@ -104,7 +104,7 @@ const ActivatedProjectName = styled.h4`
 
 const ActivatedProjectDescription = styled.p`
   font-size: large;
-  margin-left: 20px;
+  margin: 0 20px 0 20px;
 `;
 
 const ActivatedProjectBottomInfo = styled.div`

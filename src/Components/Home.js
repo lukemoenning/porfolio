@@ -13,6 +13,7 @@ import {
 } from './styles/Body.styles';
 import { colors, me, socials } from '../assets/information';
 import SocialLink from './SocialLink';
+import { Link } from 'react-router-dom';
 
 const ProfileImage = styled.img`
   height: 200px;
@@ -67,6 +68,14 @@ const AboutWrapper = styled.div`
 
 const About = styled.p`
   margin-left: 10px;
+  font-size: medium;
+`;
+
+const ProjectLink = styled(Link)`
+  font-size: medium;
+  color: ${colors.accent};
+  text-decoration: none;
+  font-weight: bold;
 `;
 
 const HomeSocialsWrapper = styled.div`
@@ -94,7 +103,7 @@ function Home() {
     <BodyWrapper>
       <BodyHeaderWrapper>
         <BodyHeaderWide>
-          <ProfileImage src={require('../assets/images/profile_picture.png')} />
+          <ProfileImage src={me.photo} />
           <ProfileName>
             {me.name}
           </ProfileName>
@@ -110,7 +119,7 @@ function Home() {
 
           <AboutWrapper>
             <HomeContentTitle>About me.</HomeContentTitle>
-            <About>{me.about}</About>
+            <About>{me.about}<ProjectLink to="/projects"> Check out my other projects.</ProjectLink></About>
           </AboutWrapper>
           <HomeSocialsWrapper>
             <HomeContentTitle>My socials.</HomeContentTitle>
