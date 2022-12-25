@@ -122,16 +122,16 @@ function Navbar() {
             {/* Set icon to an X if the mobileNavbar is open or a hamburger icon if it is closed */}
             {mobileNavbarOpen ? <>&#10005;</> : <>&#8801;</>}
           </HamburgerIcon>
-          <DesktopNavLink to="/experience">Experience</DesktopNavLink>
           <DesktopNavLink to="/projects">Projects</DesktopNavLink>
+          <DesktopNavLink to="/experience">Experience</DesktopNavLink>
           <DesktopNavLink to="/resume">Resume</DesktopNavLink>
         </RightDesktopNav>
       </DesktopNavWrapper>
 
       {mobileNavbarOpen && (
         <MobileNavWrapper>
-          <MobileNavLink to="/experience">Experience</MobileNavLink>
           <MobileNavLink to="/projects">Projects</MobileNavLink>
+          <MobileNavLink to="/experience">Experience</MobileNavLink>
           <MobileNavLink to="/resume">Resume</MobileNavLink>
         </MobileNavWrapper>
       )}
