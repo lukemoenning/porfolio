@@ -22,9 +22,11 @@ const SocialLinkWrapper = styled.a`
   }
 `;
 
-const SocialName = styled.h4`
+const SocialName = styled.p`
   margin-left: 5px;
   color: ${colors.black};
+  font-size: large;
+  font-style: italic
 `;
 
 function SocialLink({ social, size, displayName }) {

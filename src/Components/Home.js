@@ -8,50 +8,60 @@ import {
   BodyWrapper, 
   BodyHeaderWrapper,
   BodyHeaderWide, 
-  HeaderTitle, 
-  HeaderDescription, 
   BodyContentWrapper, 
   BodyContentNarrow 
 } from './styles/Body.styles';
 import { colors, me, socials } from '../assets/information';
 import SocialLink from './SocialLink';
 
-
-// const HomeBioWrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   width: 100%;
-// `;
-
 const ProfileImage = styled.img`
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   margin: 20px;
   border-radius: 50%;
   outline: 2px solid ${colors.accent};
 `;
 
-// const HomeContentWrapper = styled.div`
-//   display: flex;
-//   width: 100%;
+const ProfileName = styled.h2`
+  color: ${colors.accent};
+  font-size: xxx-large;
+`;
 
-//   @media (max-width: 750px) {
-//     flex-direction: column;
-//   }
-// `;
+const ProfileTitle = styled.p`
+  color: ${colors.black};
+  font-size: x-large;
+  font-style: italic;
+  margin-bottom: 20px;
+`;
+
+const HomeContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 const HomeContentTitle = styled.h3`
   color: ${colors.accent};
+  font-size: x-large;
+  margin: 20px 0 20px 0;
 `;
 
 const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 67%;
+  width: 50%;
+  margin: 20px;
 
   @media (max-width: 750px) {
-    width: 100%;
+    width: 75%;
+    min-width: 250px;
+    align-items: center;
   }
 `;
 
@@ -62,10 +72,13 @@ const About = styled.p`
 const HomeSocialsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 33%;
+  width: 30%;
+  margin: 20px;
 
   @media (max-width: 750px) {
-    width: 100%;
+    width: 75%;
+    min-width: 250px;
+    align-items: center;
   }
 `;
 
@@ -82,29 +95,33 @@ function Home() {
       <BodyHeaderWrapper>
         <BodyHeaderWide>
           <ProfileImage src={require('../assets/images/profile_picture.png')} />
-          <HeaderTitle>
+          <ProfileName>
             {me.name}
-          </HeaderTitle>
-          <HeaderDescription>
+          </ProfileName>
+          <ProfileTitle>
             {me.title}
-          </HeaderDescription>
+          </ProfileTitle>
         </BodyHeaderWide>
       </BodyHeaderWrapper>
 
       <BodyContentWrapper>
         <BodyContentNarrow>
+          <HomeContent>
+
           <AboutWrapper>
-            <HomeContentTitle>About Me</HomeContentTitle>
+            <HomeContentTitle>About me.</HomeContentTitle>
             <About>{me.about}</About>
           </AboutWrapper>
           <HomeSocialsWrapper>
-            <HomeContentTitle>My Socials</HomeContentTitle>
+            <HomeContentTitle>My socials.</HomeContentTitle>
             <HomeSocials>
               {socials.map(item => (
-                <SocialLink key={item.name} social={item} size="medium" displayName={true} />
+                <SocialLink key={item.name} social={item} size="large" displayName={true} />
               ))}
             </HomeSocials>
           </HomeSocialsWrapper>
+
+          </HomeContent>
         </BodyContentNarrow>
       </BodyContentWrapper>
     </BodyWrapper>
