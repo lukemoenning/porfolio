@@ -33,6 +33,8 @@ const ExperienceItemWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin: 30px;
+  background: ${colors.offwhite};
+  border-radius: 20px;
 
   @media (max-width: 750px) {
     flex-direction: column;
@@ -65,16 +67,21 @@ const ExperienceDate = styled.p`
   font-style: italic;
 `;
 
-const ExperienceDescription = styled.p`
+const ExperienceDescriptionWrapper = styled.div`
   width: 40%;
   margin: 10px;
-  color: ${colors.black};
-  font-size: large;
 
   @media (max-width: 750px) {
     align-self: center;
     width: 90%;
   }
+`;
+
+const ExperienceDescription = styled.p`
+  display: flex;
+  color: ${colors.black};
+  font-size: large;
+  margin: 8px;
 `;
 
 function Experience() {
@@ -92,44 +99,10 @@ function Experience() {
           <ExperienceWrapper>
 
             {/* WORK SECTION */}
-            <ExperienceSectionHeader>Where I've worked.</ExperienceSectionHeader>
-            {work.map(experience => (
-              <ExperienceItemWrapper>
-
-                {/* INFORMATION ABOUT THE EXPERIENCE */}
-                <ExperienceInfo>
-                  <ExperienceTitle>{experience.title}</ExperienceTitle>
-                  <ExperienceLocation>{experience.location}</ExperienceLocation>
-                  <ExperienceDate>{experience.date}</ExperienceDate>
-                </ExperienceInfo>
-
-                {/* DESCRIPTION OF THE EXPERIENCE */}
-                <ExperienceDescription>
-                  {experience.description}
-                </ExperienceDescription>
-
-              </ExperienceItemWrapper>
-            ))}
+            {getExperienceSection(work, "Where I've worked.")}
 
             {/* EDUCATION SECTION */}
-            <ExperienceSectionHeader>My education.</ExperienceSectionHeader>
-            {education.map(experience => (
-              <ExperienceItemWrapper>
-
-                {/* INFORMATION ABOUT THE EXPERIENCE */}
-                <ExperienceInfo>
-                  <ExperienceTitle>{experience.title}</ExperienceTitle>
-                  <ExperienceLocation>{experience.location}</ExperienceLocation>
-                  <ExperienceDate>{experience.date}</ExperienceDate>
-                </ExperienceInfo>
-
-                {/* DESCRIPTION OF THE EXPERIENCE */}
-                <ExperienceDescription>
-                  {experience.description}
-                </ExperienceDescription>
-
-              </ExperienceItemWrapper>
-            ))}
+            {getExperienceSection(education, "My education.")}
 
           </ExperienceWrapper>
         </BodyContentWide>
@@ -137,5 +110,40 @@ function Experience() {
     </BodyWrapper>
   );
 };
+
+/**
+ * Get the content to be displayed for work and education
+ * @param {JSON} category
+ * @param {String} sectionHeader 
+ * @returns 
+ */
+function getExperienceSection(category, sectionHeader) {
+  return (
+    <div>
+      <ExperienceSectionHeader>{sectionHeader}</ExperienceSectionHeader>
+      {category.map(experience => (
+        <ExperienceItemWrapper>
+
+          {/* INFORMATION ABOUT THE EXPERIENCE */}
+          <ExperienceInfo>
+            <ExperienceTitle>{experience.title}</ExperienceTitle>
+            <ExperienceLocation>{experience.location}</ExperienceLocation>
+            <ExperienceDate>{experience.date}</ExperienceDate>
+          </ExperienceInfo>
+
+          {/* DESCRIPTION OF THE EXPERIENCE */}
+          <ExperienceDescriptionWrapper>
+            {experience.descriptions.map(description => (
+              <ExperienceDescription>
+                &#x2022; {description}
+              </ExperienceDescription>
+            ))}
+          </ExperienceDescriptionWrapper>
+
+        </ExperienceItemWrapper>
+      ))}
+    </div>
+  );
+}
 
 export default Experience;
