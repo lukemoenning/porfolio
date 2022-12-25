@@ -1,6 +1,7 @@
 # My Personal Website
 
 ## Deploy to GitHub Pages
+https://github.com/gitname/react-gh-pages
 > $ npm run deploy -- -m "Deploy Portfolio to GitHub Pages" <br />
 
 ## Run with docker-compose 
