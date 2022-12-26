@@ -20,7 +20,6 @@ const ProfileImage = styled.img`
   width: 200px;
   margin: 20px;
   border-radius: 50%;
-  outline: 2px solid ${colors.accent};
 `;
 
 const ProfileName = styled.h2`
