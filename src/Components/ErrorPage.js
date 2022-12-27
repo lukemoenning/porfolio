@@ -17,14 +17,13 @@ const ErrorPageWrapper = styled.div`
   width: 100vw;
   z-index: 1;
   background: ${colors.black};
-  top: 0;
-  left: 0;
-  overflow: hidden;
+  overflow-y: hidden;
 `;
 
 const ErrorPageMessage = styled.h1`
   font-size: large;
   color: ${colors.accent};
+  max-width: 75%;
 `;
 
 const HomeLink = styled(Link)`
@@ -36,6 +35,20 @@ const HomeLink = styled(Link)`
 
   &:hover {
     text-decoration: underline;
+    cursor: pointer;
+  }
+`;
+
+const StartGameLink = styled.span`
+  font-size: large;
+  font-weight: bold;
+  color: ${colors.white};
+  text-decoration: none;
+  transition: 300ms;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 `;
 
@@ -43,9 +56,16 @@ function ErrorPage() {
   return (
     <ErrorPageWrapper>
       <ErrorPageMessage>Oops... looks like the page you're looking for got lost in space.</ErrorPageMessage>
-      <ErrorPageMessage>Try to find it or return <HomeLink to="/">home.</HomeLink></ErrorPageMessage>
+      <ErrorPageMessage>
+        <StartGameLink onClick={() => {startGame()}}>Try to find it </StartGameLink> 
+        or return 
+        <HomeLink to="/"> home.</HomeLink></ErrorPageMessage>
     </ErrorPageWrapper>
   );
+}
+
+function startGame() {
+  console.log("game started")
 }
 
 export default ErrorPage;
