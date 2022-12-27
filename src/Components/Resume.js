@@ -15,6 +15,7 @@ import {
 } from './styles/Body.styles';
 import { colors } from '../assets/information';
 
+
 const Pdf = styled.iframe`
   margin: 25px 0 25px 0;
   top: 0;

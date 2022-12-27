@@ -4,8 +4,9 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { colors, projects } from '../assets/information';
+import { colors} from '../assets/information';
 import { GitHub } from '@mui/icons-material';
+
 
 const ProjectCardWrapper = styled.div`
   display: flex;

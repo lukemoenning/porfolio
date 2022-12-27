@@ -16,6 +16,7 @@ import {
 import { projects } from '../assets/information';
 import ProjectCard from './ProjectCard';
 
+
 const ProjectsWrapper = styled(BodyContentWide)`
   display: flex;
   flex-direction: row;

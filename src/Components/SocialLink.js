@@ -2,9 +2,9 @@
  * Component for a social media icon and link
  */
 
-import { SvgIcon } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
+import { SvgIcon } from '@mui/material';
 import { colors } from '../assets/information';
 
 

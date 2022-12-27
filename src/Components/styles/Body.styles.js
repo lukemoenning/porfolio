@@ -17,9 +17,6 @@ export const BodyWrapper = styled.div`
   background: ${colors.white};
 `;
 
-
-
-
 /**
  * Wrapper for the body header background, to be used for every page as as an overall wrapper for the body header
  */
@@ -73,8 +70,6 @@ export const HeaderDescription = styled.p`
   margin: 10px;
 `;
 
-
-
 /**
  * Wrapper for the body content background, to be used for every page as as an overall wrapper for the body content
  */
@@ -87,7 +82,6 @@ export const BodyContentWrapper = styled.div`
   margin-bottom: ${heights.FOOTER_HEIGHT};
   background: ${colors.white};
 `;
-
 
 /**
  * Wrapper for a wide body content, one of the choices for how to display content in the body content

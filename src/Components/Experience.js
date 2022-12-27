@@ -15,6 +15,7 @@ import {
 } from './styles/Body.styles';
 import { colors, work, education } from '../assets/information';
 
+
 const ExperienceWrapper = styled.div`
   display: flex;
   flex-direction: column;

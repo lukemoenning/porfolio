@@ -13,6 +13,7 @@ import Projects from './Projects';
 import Resume from './Resume';
 import ErrorPage from './ErrorPage';
 
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

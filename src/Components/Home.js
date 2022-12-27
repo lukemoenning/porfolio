@@ -12,8 +12,9 @@ import {
   BodyContentNarrow 
 } from './styles/Body.styles';
 import { colors, me, socials } from '../assets/information';
-import SocialLink from './SocialLink';
 import { Link } from 'react-router-dom';
+import SocialLink from './SocialLink';
+
 
 const ProfileImage = styled.img`
   height: 200px;
