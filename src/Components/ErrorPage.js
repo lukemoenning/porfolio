@@ -6,6 +6,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../assets/information';
 import { Link } from 'react-router-dom';
+import * as superSecretObject from '../scripts/supersecretscripts';
 
 
 const ErrorPageWrapper = styled.div`
@@ -57,15 +58,11 @@ function ErrorPage() {
     <ErrorPageWrapper>
       <ErrorPageMessage>Oops... looks like the page you're looking for got lost in space.</ErrorPageMessage>
       <ErrorPageMessage>
-        <StartGameLink onClick={() => {startGame()}}>Try to find it </StartGameLink> 
-        or return 
-        <HomeLink to="/"> home.</HomeLink></ErrorPageMessage>
+        <StartGameLink onClick={() => {superSecretObject.startGame()}}>Try to find it</StartGameLink> 
+          {' or return '} 
+        <HomeLink to="/">home.</HomeLink></ErrorPageMessage>
     </ErrorPageWrapper>
   );
-}
-
-function startGame() {
-  console.log("game started")
 }
 
 export default ErrorPage;
