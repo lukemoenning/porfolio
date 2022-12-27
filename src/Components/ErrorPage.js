@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 import * as superSecretObject from '../scripts/supersecretscripts';
 
 
+const backgroundImage = require('../assets/images/space.png');
+
 const ErrorPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,9 +18,23 @@ const ErrorPageWrapper = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
+  z-index: 2;
+  position: fixed;
+  background-image: url(${backgroundImage});
+  bacgkround-repeat: no-repeat;
+  background-size: cover;
+`;
+
+
+const ErrorPageCanvas = styled.canvas`
+  height: 100vh;
+  width: 100vw;
   z-index: 1;
-  background: ${colors.black};
-  overflow-y: hidden;
+  position: fixed;
+`;
+
+const ErrorPageMessageWrapper = styled.div`
+
 `;
 
 const ErrorPageMessage = styled.h1`
@@ -61,6 +77,7 @@ function ErrorPage() {
         <StartGameLink onClick={() => {superSecretObject.startGame()}}>Try to find it</StartGameLink> 
           {' or return '} 
         <HomeLink to="/">home.</HomeLink></ErrorPageMessage>
+      <ErrorPageCanvas/>
     </ErrorPageWrapper>
   );
 }

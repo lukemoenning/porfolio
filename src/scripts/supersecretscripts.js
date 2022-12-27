@@ -9,59 +9,59 @@ import * as websiteDictionary from '../assets/information';
  * Starts the game
  */
 export function startGame() {
-  buildMeteors().forEach(meteor => {console.log(meteor)})
+  buildAsteroids().forEach(asteroid => {console.log(asteroid)})
 }
 
 /**
- * Builds the strings to be used as meteors froms all of the words used on the website. Lengths of 1-3 words by random.
+ * Builds the strings to be used as asteroids froms all of the words used on the website. Lengths of 1-3 words by random.
  */
-function buildMeteors() {
-  let meteors = [];
+function buildAsteroids() {
+  let asteroids = [];
   
-  // create meteors from the the words in me
-  splitSentenceIntoMeteors(websiteDictionary.me.name).forEach(meteor => {meteors.push(meteor)});
-  splitSentenceIntoMeteors(websiteDictionary.me.title).forEach(meteor => {meteors.push(meteor)});
-  splitSentenceIntoMeteors(websiteDictionary.me.about).forEach(meteor => {meteors.push(meteor)});
+  // create asteroids from the the words in me
+  splitSentenceIntoAsteroids(websiteDictionary.me.name).forEach(asteroid => {asteroids.push(asteroid)});
+  splitSentenceIntoAsteroids(websiteDictionary.me.title).forEach(asteroid => {asteroids.push(asteroid)});
+  splitSentenceIntoAsteroids(websiteDictionary.me.about).forEach(asteroid => {asteroids.push(asteroid)});
 
-  // create meteors from the the words in work
+  // create asteroids from the the words in work
   websiteDictionary.work.forEach(workExperience => {
-    splitSentenceIntoMeteors(workExperience.title).forEach(meteor => {meteors.push(meteor)});
-    splitSentenceIntoMeteors(workExperience.location).forEach(meteor => {meteors.push(meteor)});
-    splitSentenceIntoMeteors(workExperience.date).forEach(meteor => {meteors.push(meteor)});
+    splitSentenceIntoAsteroids(workExperience.title).forEach(asteroid => {asteroids.push(asteroid)});
+    splitSentenceIntoAsteroids(workExperience.location).forEach(asteroid => {asteroids.push(asteroid)});
+    splitSentenceIntoAsteroids(workExperience.date).forEach(asteroid => {asteroids.push(asteroid)});
     workExperience.descriptions.forEach(description => {
-      splitSentenceIntoMeteors(description).forEach(meteor => {meteors.push(meteor)});
+      splitSentenceIntoAsteroids(description).forEach(asteroid => {asteroids.push(asteroid)});
     })
   })
 
-  // create meteors from the the words in education
+  // create asteroids from the the words in education
   websiteDictionary.education.forEach(educationExperience => {
-    splitSentenceIntoMeteors(educationExperience.title).forEach(meteor => {meteors.push(meteor)});
-    splitSentenceIntoMeteors(educationExperience.location).forEach(meteor => {meteors.push(meteor)});
-    splitSentenceIntoMeteors(educationExperience.date).forEach(meteor => {meteors.push(meteor)});
+    splitSentenceIntoAsteroids(educationExperience.title).forEach(asteroid => {asteroids.push(asteroid)});
+    splitSentenceIntoAsteroids(educationExperience.location).forEach(asteroid => {asteroids.push(asteroid)});
+    splitSentenceIntoAsteroids(educationExperience.date).forEach(asteroid => {asteroids.push(asteroid)});
     educationExperience.descriptions.forEach(description => {
-      splitSentenceIntoMeteors(description).forEach(meteor => {meteors.push(meteor)});
+      splitSentenceIntoAsteroids(description).forEach(asteroid => {asteroids.push(asteroid)});
     })
   })
 
-  //create meteors from the wrods in projects
+  //create asteroids from the wrods in projects
   websiteDictionary.projects.forEach(project => {
-    splitSentenceIntoMeteors(project.name).forEach(meteor => {meteors.push(meteor)});
-    splitSentenceIntoMeteors(project.description).forEach(meteor => {meteors.push(meteor)});
+    splitSentenceIntoAsteroids(project.name).forEach(asteroid => {asteroids.push(asteroid)});
+    splitSentenceIntoAsteroids(project.description).forEach(asteroid => {asteroids.push(asteroid)});
     project.techstack.forEach(technology => {
-      splitSentenceIntoMeteors(technology).forEach(meteor => {meteors.push(meteor)});
+      splitSentenceIntoAsteroids(technology).forEach(asteroid => {asteroids.push(asteroid)});
     })
   })
 
-  return meteors;
+  return asteroids;
 }
 
 /**
  * Splits a string into components of random length 1-3
- * @returns {String[]} meteors 
+ * @returns {String[]} asteroids 
  */
-function splitSentenceIntoMeteors(sentence) {
+function splitSentenceIntoAsteroids(sentence) {
   let sentenceSplit = sentence.split(' ');
-  let newMeteors = []
+  let newAsteroids = []
   let index = 0;
 
   while(index<sentenceSplit.length) {
@@ -74,12 +74,12 @@ function splitSentenceIntoMeteors(sentence) {
         oneThroughThreeWords.splice(j);
       }
     }
-    newMeteors.push(oneThroughThreeWords.join(' '));
+    newAsteroids.push(oneThroughThreeWords.join(' '));
     index+=randomNum;
   }
 
   // removes all empty strings from thea array and returns it
-  return newMeteors.filter(str => str);
+  return newAsteroids.filter(str => str);
 }
 
 /**
