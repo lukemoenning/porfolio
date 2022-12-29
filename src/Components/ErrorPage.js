@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import * as superSecretObject from '../scripts/supersecretscripts';
 
 
-const backgroundImage = require('../assets/images/space.png');
+const backgroundImage = require('../assets/images/game/space.png');
 
 const ErrorPageWrapper = styled.div`
   display: flex;
@@ -18,23 +18,28 @@ const ErrorPageWrapper = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
-  z-index: 2;
-  position: fixed;
-  background-image: url(${backgroundImage});
-  bacgkround-repeat: no-repeat;
-  background-size: cover;
+  position: absolute;
+  
 `;
-
 
 const ErrorPageCanvas = styled.canvas`
   height: 100vh;
   width: 100vw;
+  background-image: url(${backgroundImage});
+  bacgkround-repeat: no-repeat;
+  background-size: cover;
   z-index: 1;
   position: fixed;
 `;
 
 const ErrorPageMessageWrapper = styled.div`
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: fixed;
+  min-width: 700px;
 `;
 
 const ErrorPageMessage = styled.h1`
@@ -72,12 +77,23 @@ const StartGameLink = styled.span`
 function ErrorPage() {
   return (
     <ErrorPageWrapper>
-      <ErrorPageMessage>Oops... looks like the page you're looking for got lost in space.</ErrorPageMessage>
-      <ErrorPageMessage>
-        <StartGameLink onClick={() => {superSecretObject.startGame()}}>Try to find it</StartGameLink> 
+
+      {/* ERROR MESSAGE */}
+      <ErrorPageMessageWrapper>
+        <ErrorPageMessage>Oops... looks like the page you're looking for got lost in space.</ErrorPageMessage>
+        <ErrorPageMessage>
+          <StartGameLink onClick={() => {
+            const game = new superSecretObject.Game(document.getElementById('canvas'));
+            game.startGame();
+          }}>Try to find it</StartGameLink> 
           {' or return '} 
-        <HomeLink to="/">home.</HomeLink></ErrorPageMessage>
-      <ErrorPageCanvas/>
+          <HomeLink to="/">home.</HomeLink>
+        </ErrorPageMessage>
+      </ErrorPageMessageWrapper>
+
+      {/* CANVAS */}
+      <ErrorPageCanvas id='canvas' />
+
     </ErrorPageWrapper>
   );
 }
