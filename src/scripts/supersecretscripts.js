@@ -17,9 +17,11 @@ export class Game {
   constructor(canvas) {
     // declare and setup the canvas and the context
     this.canvas = canvas;
+    this.canvas.width = 3840; // set the canvas resolution to 4k
+    this.canvas.height = 2160; // set the canvas resolution to 4k
     this.context = canvas.getContext('2d');
-    this.context.font = '12px papyrus'
-    this.context.strokeStyle = '#FFFFFF'
+    this.context.font = '40px papyrus'
+    this.context.strokeStyle = '#FFFFFF' // set the context text color to white
 
     // declare the game objects
     this.wordBank = this.buildWordBank();
@@ -151,7 +153,7 @@ class GameObject {
    * Updates the coordinates of the GameObject based of dx and dy
    */
   updateCoordinates() {
-
+    
   }
 
 }
@@ -169,8 +171,8 @@ class Player extends GameObject {
    */
   constructor(x, y) {
     super(x, y, 0, 0);
-    this.width = 9;
-    this.height = 16;
+    this.width = 90;
+    this.height = 160;
     this.image = new Image();
     this.image.src = require('../assets/images/game/player.png');
   }
