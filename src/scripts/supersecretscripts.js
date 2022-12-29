@@ -33,19 +33,22 @@ export class Game {
    * Starts the game
    */
   startGame() {
-    this.player.draw(this.context);
     this.asteroids.push(new Asteroid('test'));
-    this.asteroids.forEach(asteroid => {
-      asteroid.draw(this.context);
-    })
-    setInterval(this.gameLoop, 1000 / 60);
+    
+    setInterval(this.gameLoop.bind(this), 1000 / 60); // starts the game loop at 60fps
   }
 
   /**
    * Game loop to run at 60fps
    */
   gameLoop() {
-    console.log('gaming');
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); // clears all the previous GameObjects so they can be redrawn
+
+    this.player.updateCoordinates(this.context);
+
+    this.asteroids.forEach(asteroid => {
+      asteroid.updateCoordinates(this.context);
+    })
   }
 
 
@@ -152,8 +155,10 @@ class GameObject {
   /**
    * Updates the coordinates of the GameObject based of dx and dy
    */
-  updateCoordinates() {
-    
+  updateCoordinates(context) {
+    this.x = this.x + this.dx;
+    this.y = this.y + this.dy;
+    this.draw(context);
   }
 
 }
@@ -171,10 +176,12 @@ class Player extends GameObject {
    */
   constructor(x, y) {
     super(x, y, 0, 0);
-    this.width = 90;
-    this.height = 160;
+    this.width = 90; // width of the player
+    this.height = 160; // height of the player
+    this.playerSpeed = 10; // default speed of the player
     this.image = new Image();
     this.image.src = require('../assets/images/game/player.png');
+    this.initializeEventListener();
   }
 
   /**
@@ -182,9 +189,23 @@ class Player extends GameObject {
    * @param {*} context 
    */
   draw(context) {
-    this.image.onload = () => {
-      context.drawImage(this.image, this.x, this.y, this.width, this.height)
-    }
+    context.drawImage(this.image, this.x, this.y, this.width, this.height)
+  }
+
+  initializeEventListener() {
+    document.addEventListener('keydown', (e) =>{
+      let keyPressed = e.code;
+
+      // key inputs for movement right
+      if (keyPressed === 'ArrowRight' || keyPressed === 'KeyD') {
+        this.dx = this.playerSpeed; // update dx to the playerSpeed
+      }
+
+      // key inputs for movement left
+      if (keyPressed === 'ArrowLeft' || keyPressed === 'KeyA') {
+        this.dx = -this.playerSpeed; // update dy to the negative playerSpeed
+      }
+    })
   }
 
 }
