@@ -33,7 +33,7 @@ export class Game {
    * Starts the game
    */
   startGame() {
-    setInterval(this.generateAsteroid.bind(this), 1500) // starts generate asteroids and 1 every 1.5 seconds
+    setInterval(this.generateAsteroid.bind(this), 1500) // starts generating asteroids at 1 every 1.5 seconds
     
     setInterval(this.gameLoop.bind(this), 1000 / 60); // starts the game loop at 60fps
   }
@@ -46,10 +46,31 @@ export class Game {
 
     this.player.updateCoordinates(this.context);
 
-    this.asteroids.forEach(asteroid => {
-      // console.log(asteroid)
-      asteroid.updateCoordinates(this.context);
-    })
+    for (let i = 0; i < this.asteroids.length; i++) {
+      this.handleGameObjectUpdates(i, this.asteroids);
+    }
+  }
+
+  /**
+   * Handles all updates and checks for a GameObject for each frame
+   * @param {number} index of the GameObject
+   * @param {*} list containing the GameObject
+   */
+  handleGameObjectUpdates(index, list) {
+    list[index].updateCoordinates(this.context)
+    list[index].checkBoundries(this.canvas);
+    this.removeIfNotAlive(index, list);
+  }
+
+  /**
+   * Removes the gameObject if the alive property has been set to false
+   * @param {number} index of the GameObject
+   * @param {*} list containing the GameObject
+   */
+  removeIfNotAlive(index, list) {
+    if (list[index].alive === false) {
+      list.splice(index, 1); // remove the object from the list
+    }
   }
 
   /**
@@ -62,6 +83,7 @@ export class Game {
         this.canvas.width
       )
     );
+    console.log(this.asteroids)
   }
 
 
@@ -159,6 +181,7 @@ class GameObject {
    * @param {number} dy speed of the y coordinate
    */
   constructor(x, y, dx, dy) {
+    this.alive = true;
     this.x = x;
     this.y = y;
     this.dx = dx;
@@ -172,6 +195,36 @@ class GameObject {
     this.x = this.x + this.dx;
     this.y = this.y + this.dy;
     this.draw(context);
+  }
+
+  /**
+   * Checks if the GameObject still resides in the canvas boundries
+   * @param {*} canvas 
+   */
+  checkBoundries(canvas) {
+    // check x-axis boundries
+    if (this.x < 0 || (this.x) > canvas.width) {
+      this.handleOutOfBounds()
+    }
+
+    // check y-axis boundries
+    if (this.y < 0 || (this.y) > canvas.height) {
+      this.handleOutOfBounds()
+    }
+  }
+
+  /**
+   * Handles what happens when a GameObject goes out of bounds
+   */
+  handleOutOfBounds() {
+    this.destroyObject();
+  }
+
+  /**
+   * Sets alive property to false when the GameObject is to be destroyed
+   */
+  destroyObject() {
+    this.alive = false;
   }
 
 }
@@ -191,7 +244,7 @@ class Player extends GameObject {
     super(x, y, 0, 0);
     this.width = 90; // width of the player
     this.height = 160; // height of the player
-    this.playerSpeed = 10; // default speed of the player
+    this.playerSpeed = 20; // default speed of the player
     this.image = new Image();
     this.image.src = require('../assets/images/game/player.png');
     this.initializeEventListener();
@@ -205,6 +258,9 @@ class Player extends GameObject {
     context.drawImage(this.image, this.x, this.y, this.width, this.height)
   }
 
+  /**
+   * Initilizes the event listener for the player, listens for directional movement and for shooting bullets
+   */
   initializeEventListener() {
     document.addEventListener('keydown', (e) =>{
       let keyPressed = e.code;
@@ -249,10 +305,11 @@ class Asteroid extends GameObject {
   }
 
   /**
+   * 
    * @returns {number} random x coordinate to be used for the asteroid
    */
   generateRandomXCoordinate() {
-    return Math.floor(Math.random() * this.canvasWidth); 
+    return Math.floor(Math.random() * 0.9 * this.canvasWidth); 
   }
 
 }
