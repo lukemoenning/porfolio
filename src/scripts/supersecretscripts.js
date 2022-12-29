@@ -20,7 +20,7 @@ export class Game {
     this.canvas.width = 3840; // set the canvas resolution to 4k
     this.canvas.height = 2160; // set the canvas resolution to 4k
     this.context = canvas.getContext('2d');
-    this.context.font = '40px papyrus'
+    this.context.font = 'bold 50px papyrus'
     this.context.strokeStyle = '#FFFFFF' // set the context text color to white
 
     // declare the game objects
@@ -33,7 +33,7 @@ export class Game {
    * Starts the game
    */
   startGame() {
-    this.asteroids.push(new Asteroid('test'));
+    setInterval(this.generateAsteroid.bind(this), 1500) // starts generate asteroids and 1 every 1.5 seconds
     
     setInterval(this.gameLoop.bind(this), 1000 / 60); // starts the game loop at 60fps
   }
@@ -47,8 +47,21 @@ export class Game {
     this.player.updateCoordinates(this.context);
 
     this.asteroids.forEach(asteroid => {
+      // console.log(asteroid)
       asteroid.updateCoordinates(this.context);
     })
+  }
+
+  /**
+   * Randomly generates asteroids from the word bank, to be set on a loop
+   */
+  generateAsteroid() {
+    this.asteroids.push(
+      new Asteroid(
+        this.wordBank[Math.floor(Math.random() * this.wordBank.length)], // gets a random word from the wordBank
+        this.canvas.width
+      )
+    );
   }
 
 
@@ -217,12 +230,14 @@ class Player extends GameObject {
 class Asteroid extends GameObject {
 
   /**
-   * 
    * @param {String} word 
+   * @param {number} canvasWidth
    */
-  constructor(word) {
-    super(30, 30, 0, 5);
+  constructor(word, canvasWidth) {
+    super(0, 0, 0, 5);
     this.word = word;
+    this.canvasWidth = canvasWidth
+    this.x = this.generateRandomXCoordinate();
   }
 
   /**
@@ -231,6 +246,13 @@ class Asteroid extends GameObject {
    */
   draw(context) {
     context.strokeText(this.word, this.x, this.y);
+  }
+
+  /**
+   * @returns {number} random x coordinate to be used for the asteroid
+   */
+  generateRandomXCoordinate() {
+    return Math.floor(Math.random() * this.canvasWidth); 
   }
 
 }
