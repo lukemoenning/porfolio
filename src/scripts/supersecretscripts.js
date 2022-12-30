@@ -25,7 +25,7 @@ export class Game {
 
     // declare the game objects
     this.wordBank = this.buildWordBank();
-    this.player = new Player(canvas.width * 0.48, canvas.height * 0.8);
+    this.player = [new Player(canvas.width * 0.48, canvas.height * 0.8)];
     this.asteroids = [];
   }
 
@@ -44,7 +44,7 @@ export class Game {
   gameLoop() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); // clears all the previous GameObjects so they can be redrawn
 
-    this.player.updateCoordinates(this.context);
+    this.handleGameObjectUpdates(0, this.player);
 
     for (let i = 0; i < this.asteroids.length; i++) {
       this.handleGameObjectUpdates(i, this.asteroids);
@@ -58,7 +58,7 @@ export class Game {
    */
   handleGameObjectUpdates(index, list) {
     list[index].updateCoordinates(this.context)
-    list[index].checkBoundries(this.canvas);
+    list[index].checkIfInBounds(this.canvas);
     this.removeIfNotAlive(index, list);
   }
 
@@ -80,10 +80,10 @@ export class Game {
     this.asteroids.push(
       new Asteroid(
         this.wordBank[Math.floor(Math.random() * this.wordBank.length)], // gets a random word from the wordBank
-        this.canvas.width
+        this.canvas.width,
+        this.context
       )
     );
-    console.log(this.asteroids)
   }
 
 
@@ -179,13 +179,17 @@ class GameObject {
    * @param {number} y coordinate
    * @param {number} dx speed of the x coordinate
    * @param {number} dy speed of the y coordinate
+   * @param {number} width of the object
+   * @param {number} height of the object
    */
-  constructor(x, y, dx, dy) {
+  constructor(x, y, dx, dy, width, height) {
     this.alive = true;
     this.x = x;
     this.y = y;
     this.dx = dx;
     this.dy = dy;
+    this.width = width;
+    this.height = height;
   }
 
   /**
@@ -200,17 +204,22 @@ class GameObject {
   /**
    * Checks if the GameObject still resides in the canvas boundries
    * @param {*} canvas 
+   * @returns {boolean} 
    */
-  checkBoundries(canvas) {
+  checkIfInBounds(canvas) {
     // check x-axis boundries
-    if (this.x < 0 || (this.x) > canvas.width) {
+    if (this.x < 0 || (this.x + this.width) > canvas.width) {
       this.handleOutOfBounds()
+      return false;
     }
 
     // check y-axis boundries
-    if (this.y < 0 || (this.y) > canvas.height) {
+    if (this.y < 0 || (this.y + this.height) > canvas.height) {
       this.handleOutOfBounds()
+      return false;
     }
+
+    return true;
   }
 
   /**
@@ -241,9 +250,7 @@ class Player extends GameObject {
    * @param {number} y coordinate
    */
   constructor(x, y) {
-    super(x, y, 0, 0);
-    this.width = 90; // width of the player
-    this.height = 160; // height of the player
+    super(x, y, 0, 0, 90, 160);
     this.playerSpeed = 20; // default speed of the player
     this.image = new Image();
     this.image.src = require('../assets/images/game/player.png');
@@ -267,14 +274,22 @@ class Player extends GameObject {
 
       // key inputs for movement right
       if (keyPressed === 'ArrowRight' || keyPressed === 'KeyD') {
-        this.dx = this.playerSpeed; // update dx to the playerSpeed
+        this.dx = this.playerSpeed; // update dx to the playerSpeed if the player is in bounds
       }
 
       // key inputs for movement left
       if (keyPressed === 'ArrowLeft' || keyPressed === 'KeyA') {
-        this.dx = -this.playerSpeed; // update dy to the negative playerSpeed
+        this.dx = -this.playerSpeed; // update dy to the negative playerSpeed if the player is in bounds
       }
     })
+  }
+
+  /**
+   * Stops the player if they move out of bounds
+   */
+  handleOutOfBounds() {
+    this.dx = 0;
+    this.dy = 0;
   }
 
 }
@@ -289,8 +304,8 @@ class Asteroid extends GameObject {
    * @param {String} word 
    * @param {number} canvasWidth
    */
-  constructor(word, canvasWidth) {
-    super(0, 0, 0, 5);
+  constructor(word, canvasWidth, context) {
+    super(0, 0, 0, 5, context.measureText(word).width, 50);
     this.word = word;
     this.canvasWidth = canvasWidth
     this.x = this.generateRandomXCoordinate();
@@ -312,6 +327,17 @@ class Asteroid extends GameObject {
     return Math.floor(Math.random() * 0.9 * this.canvasWidth); 
   }
 
+}
+
+
+/** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** */
+
+
+class Bullet extends GameObject {
+
+  constructor(x, y) {
+    super(x, y, 0, 15, 30, 50);
+  }
 }
 
 
