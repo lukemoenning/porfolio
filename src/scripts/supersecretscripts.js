@@ -22,13 +22,14 @@ export class Game {
     this.context = canvas.getContext('2d');
     this.context.font = 'bold 50px papyrus';
     this.context.strokeStyle = '#FFFFFF'; // set the context text color to white - for the asteroids
-    this.context.fillStyle = '#420D09'; // set the context fillStyle to red - for the bullets
+    this.context.fillStyle = '#FF0000'; // set the context fillStyle to red - for the missiles
 
 
     // declare the game objects
     this.wordBank = this.buildWordBank();
-    this.player = [new Player(canvas.width * 0.48, canvas.height * 0.8)];
     this.asteroids = [];
+    this.missiles = [];
+    this.player = [new Player(canvas.width * 0.48, canvas.height * 0.8, this.missiles)];
   }
 
   /**
@@ -44,12 +45,20 @@ export class Game {
    * Game loop to run at 60fps
    */
   gameLoop() {
+    // CLEAR THE CANVAS
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); // clears all the previous GameObjects so they can be redrawn
 
+    // PLAYER
     this.player[0].handleGameObjectUpdates(0, this.player);
 
+    // ASTEROIDS
     for (let i = 0; i < this.asteroids.length; i++) {
       this.asteroids[i].handleGameObjectUpdates(i, this.asteroids);
+    }
+
+    // MISSILES
+    for (let i = 0; i < this.missiles.length; i++) {
+      this.missiles[i].handleGameObjectUpdates(i, this.missiles);
     }
   }
 
@@ -257,11 +266,14 @@ class Player extends GameObject {
    * @param {number} x coordinate
    * @param {number} y coordinate
    */
-  constructor(x, y) {
+  constructor(x, y, missiles) {
     super(x, y, 0, 0, 90, 160);
     this.playerSpeed = 20; // default speed of the player
+
     this.image = new Image();
     this.image.src = require('../assets/images/game/player.png');
+
+    this.missiles = missiles;
     this.initializeEventListener();
   }
 
@@ -274,7 +286,7 @@ class Player extends GameObject {
   }
 
   /**
-   * Initilizes the event listener for the player, listens for directional movement and for shooting bullets
+   * Initilizes the event listener for the player, listens for directional movement and for shooting missiles
    */
   initializeEventListener() {
     document.addEventListener('keydown', (e) =>{
@@ -288,6 +300,11 @@ class Player extends GameObject {
       // key inputs for movement left
       if (keyPressed === 'ArrowLeft' || keyPressed === 'KeyA') {
         this.dx = -this.playerSpeed; // update dy to the negative playerSpeed if the player is in bounds
+      }
+
+      // key input for shooting a missile
+      if (keyPressed === 'Space') {
+        this.missiles.push(new Missile(this.x + (0.5 * this.width), this.y)); // create a new missile at the tip of the player
       }
     })
   }
@@ -341,10 +358,23 @@ class Asteroid extends GameObject {
 /** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** */
 
 
-class Bullet extends GameObject {
+class Missile extends GameObject {
 
+  /**
+   * 
+   * @param {number} x coordinate 
+   * @param {number} y coordinate
+   */
   constructor(x, y) {
-    super(x, y, 0, 15, 30, 50);
+    super(x, y, 0, -15, 10, 30);
+  }
+
+  /**
+   * Draw the missile onto the canvas
+   * @param {*} context 
+   */
+  draw(context) {
+    context.fillRect(this.x, this.y, this.width, this.height)
   }
 }
 
