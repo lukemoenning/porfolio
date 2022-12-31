@@ -12,33 +12,47 @@ export class Game {
 
   /**
    * Default constructor for the game, creates the context from the canvas and the game objects
-   * @param {*} canvas 
    */
-  constructor(canvas) {
-    // declare and setup the canvas and the context
-    this.canvas = canvas;
+  constructor() {
+    // intialize and setup the canvas and the context
+    this.canvas = document.getElementById('canvas');
     this.canvas.width = 3840; // set the canvas resolution to 4k
     this.canvas.height = 2160; // set the canvas resolution to 4k
-    this.context = canvas.getContext('2d');
+    this.context = this.canvas.getContext('2d');
     this.context.font = 'bold 50px papyrus';
     this.context.strokeStyle = '#FFFFFF'; // set the context text color to white - for the asteroids
     this.context.fillStyle = '#FF0000'; // set the context fillStyle to red - for the missiles
 
 
-    // declare the game objects
+    // intialize the game objects
     this.wordBank = this.buildWordBank();
     this.asteroids = [];
     this.missiles = [];
-    this.player = [new Player(canvas.width * 0.48, canvas.height * 0.8, this.missiles)];
+    this.player = [new Player(this.canvas.width * 0.48, this.canvas.height * 0.8, this.missiles)];
+
+    // intialize the score
+    this.score = 0;
   }
 
   /**
    * Starts the game
    */
   startGame() {
-    setInterval(this.generateAsteroid.bind(this), 1500) // starts generating asteroids at 1 every 1.5 seconds
+    this.generateAsteroidInterval = setInterval(this.generateAsteroid.bind(this), 1500) // starts generating asteroids at 1 every 1.5 seconds
     
-    setInterval(this.gameLoop.bind(this), 1000 / 60); // starts the game loop at 60fps
+    this.gameLoopInterval = setInterval(this.gameLoop.bind(this), 1000 / 60); // starts the game loop at 60fps
+  }
+
+  /** 
+   * Ends the game
+   */
+  endGame() {
+    clearInterval(this.gameLoop); // stop the game loop
+    clearInterval(this.generateAsteroidInterval); // stop generating asteroids
+    this.asteroids = []; // reset asteroids
+    this.missiles = []; // reset missiles
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); // clear the canvas
+    this.context.strokeText('Game Over.', this.canvas.width * 0.48, this.canvas.height * 0.2); // display the game over message
   }
 
   /**
@@ -60,6 +74,35 @@ export class Game {
     for (let i = 0; i < this.missiles.length; i++) {
       this.missiles[i].handleGameObjectUpdates(i, this.missiles);
     }
+
+    this.checkCollisions();
+
+    console.log(this.score);
+  }
+
+  /**
+   * Checks for collisions between player and asteroids and between asteroids and missiles
+   */
+  checkCollisions() {
+
+    // check collisions between player and asteroids
+    for (let i = 0; i < this.asteroids.length; i++) {
+      if (this.player[0].collidesWith(this.asteroids[i])) {
+        this.endGame();
+      }
+    }
+
+    // check collisions between missiles and asteroids
+    for (let i = 0; i < this.missiles.length; i++) {
+      for (let j = 0; j < this.asteroids.length; j++) {
+        if (this.missiles[i].collidesWith(this.asteroids[j])) {
+          this.missiles[i].destroyObject();
+          this.asteroids[j].destroyObject();
+          this.score += this.asteroids[j].score; // update the score
+        }
+      }
+    }
+
   }
 
   /**
@@ -74,7 +117,6 @@ export class Game {
       )
     );
   }
-
 
   /**
    * Builds the strings to be used as words froms all of the words used on the website. Lengths of 1-3 words by random.
@@ -253,6 +295,34 @@ class GameObject {
     this.alive = false;
   }
 
+  /**
+   * Check if this GameObject has a collision with another GameObject
+   * @param {GameObject} gameObject object to check collision with
+   */
+  collidesWith(gameObject) {
+    return (
+      this.checkForAxisCollision(this.x, this.x + this.width, gameObject.x, gameObject.x + gameObject.width) // check for x-axis collision
+      && this.checkForAxisCollision(this.y, this.y + this.height, gameObject.y, gameObject.y + gameObject.height) // check for y-axis collision
+    );
+  }
+
+  /**
+   * 
+   * @param {number} x1 lower bound for range 1
+   * @param {number} x2 upper bound for range 1
+   * @param {number} y1 lower bound for range 2
+   * @param {number} y2 upper bound for range 2
+   * @returns 
+   */
+  checkForAxisCollision(x1, x2, y1, y2) {
+    return (
+      (x1 >= y1 && x1 <= y2) 
+      || (x2 >= y1 && x2 <= y2) 
+      || (y1 >= x1 && y1 <= x2)
+      || (y2 >= x1 && y2 <= x2)
+    );
+  }
+
 }
 
 
@@ -274,7 +344,7 @@ class Player extends GameObject {
     this.image.src = require('../assets/images/game/player.png');
 
     this.missiles = missiles;
-    this.initializeEventListener();
+    this.initializeEventListeners();
   }
 
   /**
@@ -288,8 +358,8 @@ class Player extends GameObject {
   /**
    * Initilizes the event listener for the player, listens for directional movement and for shooting missiles
    */
-  initializeEventListener() {
-    document.addEventListener('keydown', (e) =>{
+  initializeEventListeners() {
+    document.addEventListener('keydown', (e) => {
       let keyPressed = e.code;
 
       // key inputs for movement right
@@ -305,6 +375,20 @@ class Player extends GameObject {
       // key input for shooting a missile
       if (keyPressed === 'Space') {
         this.missiles.push(new Missile(this.x + (0.5 * this.width), this.y)); // create a new missile at the tip of the player
+      }
+    })
+
+    document.addEventListener('keyup', (e) => {
+      let keyReleased = e.code;
+
+      // if the player is moving right and the release a right movement key
+      if ((keyReleased === 'ArrowRight' || keyReleased === 'KeyD') && this.dx === this.playerSpeed) {
+        this.dx = 0; 
+      }
+
+      // if the player is moving left and the release a left movement key
+      if ((keyReleased === 'ArrowLeft' || keyReleased === 'KeyA') && this.dx === -this.playerSpeed) {
+        this.dx = 0; 
       }
     })
   }
@@ -334,6 +418,7 @@ class Asteroid extends GameObject {
     this.word = word;
     this.canvasWidth = canvasWidth
     this.x = this.generateRandomXCoordinate();
+    this.score = this.generateAsteroidScore();
   }
 
   /**
@@ -345,11 +430,28 @@ class Asteroid extends GameObject {
   }
 
   /**
-   * 
    * @returns {number} random x coordinate to be used for the asteroid
    */
   generateRandomXCoordinate() {
     return Math.floor(Math.random() * 0.9 * this.canvasWidth); 
+  }
+
+  /**
+   * @returns {number} a score for the asteroid that has an inverse relationship with its length
+   */
+  generateAsteroidScore() {
+    let length = this.word.split(' ').length;
+
+    switch (length) {
+      case 1: 
+        return 3; // length of 1 has a score of 3
+      case 2: 
+        return 2; // length of 2 has a score of 2
+      case 3: 
+        return 1; // length of 3 has a score of 1
+      default:
+        return 1;
+    }
   }
 
 }

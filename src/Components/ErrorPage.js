@@ -74,6 +74,8 @@ const StartGameLink = styled.span`
   }
 `;
 
+const game = new superSecretObject.Game();
+
 function ErrorPage() {
   return (
     <ErrorPageWrapper>
@@ -83,7 +85,6 @@ function ErrorPage() {
         <ErrorPageMessage>Oops... looks like the page you're looking for got lost in space.</ErrorPageMessage>
         <ErrorPageMessage>
           <StartGameLink onClick={() => {
-            const game = new superSecretObject.Game(document.getElementById('canvas'));
             game.startGame();
           }}>Try to find it</StartGameLink> 
           {' or return '} 
