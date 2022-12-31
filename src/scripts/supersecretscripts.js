@@ -38,7 +38,7 @@ export class Game {
 
     this.player = [new Player(this.canvas.width * 0.48, this.canvas.height * 0.8, this.missiles)];
 
-    this.generateAsteroidInterval = setInterval(this.generateAsteroid.bind(this), 1500) // starts generating asteroids at 1 every 1.5 seconds
+    this.generateAsteroidInterval = setInterval(this.generateAsteroid.bind(this), 800) // starts generating asteroids at 1 every 800 ms
     
     this.gameLoopInterval = setInterval(this.gameLoop.bind(this), 1000 / 60); // starts the game loop at 60fps
   }
