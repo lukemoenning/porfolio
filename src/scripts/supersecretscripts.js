@@ -20,8 +20,10 @@ export class Game {
     this.canvas.width = 3840; // set the canvas resolution to 4k
     this.canvas.height = 2160; // set the canvas resolution to 4k
     this.context = canvas.getContext('2d');
-    this.context.font = 'bold 50px papyrus'
-    this.context.strokeStyle = '#FFFFFF' // set the context text color to white
+    this.context.font = 'bold 50px papyrus';
+    this.context.strokeStyle = '#FFFFFF'; // set the context text color to white - for the asteroids
+    this.context.fillStyle = '#420D09'; // set the context fillStyle to red - for the bullets
+
 
     // declare the game objects
     this.wordBank = this.buildWordBank();
@@ -44,32 +46,10 @@ export class Game {
   gameLoop() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); // clears all the previous GameObjects so they can be redrawn
 
-    this.handleGameObjectUpdates(0, this.player);
+    this.player[0].handleGameObjectUpdates(0, this.player);
 
     for (let i = 0; i < this.asteroids.length; i++) {
-      this.handleGameObjectUpdates(i, this.asteroids);
-    }
-  }
-
-  /**
-   * Handles all updates and checks for a GameObject for each frame
-   * @param {number} index of the GameObject
-   * @param {*} list containing the GameObject
-   */
-  handleGameObjectUpdates(index, list) {
-    list[index].updateCoordinates(this.context)
-    list[index].checkIfInBounds(this.canvas);
-    this.removeIfNotAlive(index, list);
-  }
-
-  /**
-   * Removes the gameObject if the alive property has been set to false
-   * @param {number} index of the GameObject
-   * @param {*} list containing the GameObject
-   */
-  removeIfNotAlive(index, list) {
-    if (list[index].alive === false) {
-      list.splice(index, 1); // remove the object from the list
+      this.asteroids[i].handleGameObjectUpdates(i, this.asteroids);
     }
   }
 
@@ -190,6 +170,34 @@ class GameObject {
     this.dy = dy;
     this.width = width;
     this.height = height;
+
+    this.canvas = document.getElementById('canvas');
+    this.context = this.canvas.getContext('2d');
+  }
+
+  /**
+   * Handles all updates and checks for a GameObject for each frame
+   * @param {number} index of the GameObject
+   * @param {*} list containing the GameObject
+   */
+  handleGameObjectUpdates(index, list) {
+    this.updateCoordinates(this.context);
+    this.checkIfInBounds(this.canvas);
+    this.checkIfAlive(index, list);
+  }
+
+  /**
+   * Removes the gameObject if the alive property has been set to false
+   * @param {number} index of the GameObject
+   * @param {*} list containing the GameObject
+   */
+  checkIfAlive(index, list) {
+    if (list[index].alive === false) {
+      list.splice(index, 1); // remove the object from the list
+      return false;
+    }
+
+    return true;
   }
 
   /**
