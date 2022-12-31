@@ -27,13 +27,13 @@ export class Game {
    * Starts the game
    */
   startGame() {
+    this.isRunning = true; // set the game to running
+
     // intialize and setup the canvas and the context
     this.canvas = document.getElementById('canvas');
     this.canvas.width = 3840; // set the canvas resolution to 4k
     this.canvas.height = 2160; // set the canvas resolution to 4k
     this.context = this.canvas.getContext('2d');
-    this.context.font = 'bold 50px papyrus';
-    this.context.strokeStyle = '#FFFFFF'; // set the context text color to white - for the asteroids
     this.context.fillStyle = '#FF0000'; // set the context fillStyle to red - for the missiles
 
     this.player = [new Player(this.canvas.width * 0.48, this.canvas.height * 0.8, this.missiles)];
@@ -50,14 +50,23 @@ export class Game {
     clearInterval(this.gameLoopInterval); // stop the game loop
     clearInterval(this.generateAsteroidInterval); // stop generating asteroids
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); // clear the canvas
+
+    // display the game over message
     this.context.font = 'bold 100px papyrus';
     this.context.strokeStyle = '#FF0000';
     this.context.textAlign = 'center';
-    this.context.strokeText('Game Over.', this.canvas.width * 0.5, this.canvas.height * 0.1); // display the game over message
+    this.context.strokeText('Game Over.', this.canvas.width * 0.5, this.canvas.height * 0.1); 
+
+
+    // reset the game 
     this.asteroids = [];
     this.missiles = [];
-    this.canvas = null;
+    this.score = 0;
+    this.cavnas = null;
     this.context = null;
+
+    // set the game to not running
+    this.isRunning = false;
   }
 
   /**
@@ -87,9 +96,6 @@ export class Game {
     this.context.strokeStyle = '#FF0000';
     this.context.textAlign = 'center';
     this.context.strokeText('Score: ' + this.score, this.canvas.width * 0.5, this.canvas.height * 0.1);
-    this.context.font = 'bold 50px papyrus';
-    this.context.strokeStyle = '#FFFFFF';
-    this.context.textAlign = 'start';
   }
 
   /**
@@ -438,6 +444,9 @@ class Asteroid extends GameObject {
    * @param {*} context 
    */
   draw(context) {
+    this.context.font = 'bold 50px papyrus';
+    this.context.strokeStyle = '#FFFFFF';
+    this.context.textAlign = 'start';
     context.strokeText(this.word, this.x, this.y);
   }
 

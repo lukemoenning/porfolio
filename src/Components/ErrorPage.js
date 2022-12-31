@@ -85,7 +85,9 @@ function ErrorPage() {
         <ErrorPageMessage>Oops... looks like the page you're looking for got lost in space.</ErrorPageMessage>
         <ErrorPageMessage>
           <StartGameLink onClick={() => {
-            GAME.startGame();
+            if (!GAME.isRunning) {
+              GAME.startGame(); 
+            }
           }}>Try to find it</StartGameLink> 
           {' or return '} 
           <HomeLink to="/">home.</HomeLink>
