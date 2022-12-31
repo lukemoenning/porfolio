@@ -14,21 +14,10 @@ export class Game {
    * Default constructor for the game, creates the context from the canvas and the game objects
    */
   constructor() {
-    // intialize and setup the canvas and the context
-    this.canvas = document.getElementById('canvas');
-    this.canvas.width = 3840; // set the canvas resolution to 4k
-    this.canvas.height = 2160; // set the canvas resolution to 4k
-    this.context = this.canvas.getContext('2d');
-    this.context.font = 'bold 50px papyrus';
-    this.context.strokeStyle = '#FFFFFF'; // set the context text color to white - for the asteroids
-    this.context.fillStyle = '#FF0000'; // set the context fillStyle to red - for the missiles
-
-
     // intialize the game objects
     this.wordBank = this.buildWordBank();
     this.asteroids = [];
     this.missiles = [];
-    this.player = [new Player(this.canvas.width * 0.48, this.canvas.height * 0.8, this.missiles)];
 
     // intialize the score
     this.score = 0;
@@ -38,6 +27,17 @@ export class Game {
    * Starts the game
    */
   startGame() {
+    // intialize and setup the canvas and the context
+    this.canvas = document.getElementById('canvas');
+    this.canvas.width = 3840; // set the canvas resolution to 4k
+    this.canvas.height = 2160; // set the canvas resolution to 4k
+    this.context = this.canvas.getContext('2d');
+    this.context.font = 'bold 50px papyrus';
+    this.context.strokeStyle = '#FFFFFF'; // set the context text color to white - for the asteroids
+    this.context.fillStyle = '#FF0000'; // set the context fillStyle to red - for the missiles
+
+    this.player = [new Player(this.canvas.width * 0.48, this.canvas.height * 0.8, this.missiles)];
+
     this.generateAsteroidInterval = setInterval(this.generateAsteroid.bind(this), 1500) // starts generating asteroids at 1 every 1.5 seconds
     
     this.gameLoopInterval = setInterval(this.gameLoop.bind(this), 1000 / 60); // starts the game loop at 60fps
@@ -47,12 +47,17 @@ export class Game {
    * Ends the game
    */
   endGame() {
-    clearInterval(this.gameLoop); // stop the game loop
+    clearInterval(this.gameLoopInterval); // stop the game loop
     clearInterval(this.generateAsteroidInterval); // stop generating asteroids
-    this.asteroids = []; // reset asteroids
-    this.missiles = []; // reset missiles
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); // clear the canvas
-    this.context.strokeText('Game Over.', this.canvas.width * 0.48, this.canvas.height * 0.2); // display the game over message
+    this.context.font = 'bold 100px papyrus';
+    this.context.strokeStyle = '#FF0000';
+    this.context.textAlign = 'center';
+    this.context.strokeText('Game Over.', this.canvas.width * 0.5, this.canvas.height * 0.1); // display the game over message
+    this.asteroids = [];
+    this.missiles = [];
+    this.canvas = null;
+    this.context = null;
   }
 
   /**
@@ -77,7 +82,14 @@ export class Game {
 
     this.checkCollisions();
 
-    console.log(this.score);
+    // Update the score
+    this.context.font = 'bold 100px papyrus';
+    this.context.strokeStyle = '#FF0000';
+    this.context.textAlign = 'center';
+    this.context.strokeText('Score: ' + this.score, this.canvas.width * 0.5, this.canvas.height * 0.1);
+    this.context.font = 'bold 50px papyrus';
+    this.context.strokeStyle = '#FFFFFF';
+    this.context.textAlign = 'start';
   }
 
   /**
