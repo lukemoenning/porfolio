@@ -72,7 +72,7 @@ export const work = [
     "descriptions": [
       "Lead students to look at math from a different perspective so they gain a better understanding of it",
       "Tutored 50+ students from kindergarten to Calculus",
-      "Demonstrate leadership for the other instructors by taking charge when the Center Director is gone",
+      "Held leadership and instruction training for the instructors",
       "Develop my communication skills by instructing students and interacting with parents",
     ],
   },
@@ -126,7 +126,15 @@ export const projects = [
     "photo": require("./images/website.png"),
     "techstack": ["React", "Docker"],
     "github": "https://github.com/lukemoenning/portfolio",
-    "live_demo": "https://lukemoenning.github.io/",
+    "live_demo": "https://lukemoenning.com",
+  },
+  {
+    "name": "Lost in Space",
+    "description": "A little game I made so I could hide it somewhere on this website. I had a great time practicing concepts of Object-Oriented Programming I learned in my software development class, such as abstraction encapsulation.",
+    "photo": require("./images/lost_in_space.png"),
+    "techstack": ["JavaScript"],
+    "github": "https://github.com/lukemoenning/portfolio",
+    "live_demo": "https://lukemoenning.com/lostinspace",
   },
   {
     "name": "Weather App",
