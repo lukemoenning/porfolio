@@ -56,13 +56,22 @@ export const socials = [
  */
 export const work = [
   {
+    "title": "Research Assistant",
+    "location": "Story Carnival",
+    "date": "January 2023 - Present",
+    "descriptions": [
+      "Conduct research on learning standards for preschool-age children",
+      "Implement a teacher reflection tool to effectively track and document children's developmental progress",
+    ],
+  },
+  {
     "title": "Web Intern",
     "location": "The University of Iowa - College of Engineering",
     "date": "September 2022 - Present",
     "descriptions": [
-      "Maintain The University of Iowa - College of Engineering website",
-      "Handle ticket requests and communicate results and constraints with the requester",
-      "Developed front end software skills",
+      "Learned front-end development skills and how to handle accessibility issues for websites",
+      "Managed and maintained the College of Engineering website",
+      "Handled ticket requests and communicated results and constraints with the requester",
     ],
   },
   {
@@ -70,10 +79,9 @@ export const work = [
     "location": "Mathnasium - The Math Learning Center",
     "date": "June 2019 - December 2022",
     "descriptions": [
-      "Lead students to look at math from a different perspective so they gain a better understanding of it",
-      "Tutored 50+ students from kindergarten to Calculus",
-      "Held leadership and instruction training for the instructors",
-      "Develop my communication skills by instructing students and interacting with parents",
+      "Provided individualized instruction to over 50 students, ranging from kindergarten to Calculus",
+      "Held leadership and instruction training sessions for instructors, enabling them to effectively instruct students",
+      "Sharpened my communication skills by instructing students and interacting with parents",
     ],
   },
 ]
@@ -91,6 +99,14 @@ export const education = [
       "University of Iowa Flagship Scholar",
       "Awarded Dean's List for Fall 2021, Spring 2022, Fall 2022",
       "Memeber of UIowa Association for Computing Machinary (ACM)",
+    ],
+  },
+  {
+    "title": "Coaching Authorization",
+    "location": "Kirkwood Continuing Education",
+    "date": "December 2022 - January 2023",
+    "descriptions": [
+      "Successfully completed a 55-hour coaching authorization course in preparation for coaching the Northwest Junior High Boys Soccer team during the upcoming spring season",
     ],
   },
   {
