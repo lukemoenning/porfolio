@@ -60,6 +60,7 @@ export const work = [
     "location": "Story Carnival",
     "date": "January 2023 - Present",
     "descriptions": [
+      "Develop a web-based activity with the goal of improving executive skills in young children",
       "Conduct research on learning standards for preschool-age children",
       "Implement a teacher reflection tool to effectively track and document children's developmental progress",
     ],
