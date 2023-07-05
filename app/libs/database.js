@@ -132,7 +132,7 @@ export const projects = [
   {
     "name": "Trackify",
     "description": "A Spotify statistics tracker so the user can be up to date with all their top songs and artists. My goal in developing Trackify was to become more confident with APIs, react, and containerization with docker. Along the way I practiced preventing tightly coupled code with a data layer and developing documentation using the JSDoc tool.",
-    // "photo": require("./images/trackify.png"),
+    "photo": "@/public/images/trackify.png",
     "techstack": ["React", "Docker", "JSDoc"],
     "github": "https://github.com/lukemoenning/trackify",
     "live_demo": null,
@@ -140,7 +140,7 @@ export const projects = [
   {
     "name": "Personal Website",
     "description": "I created this website as a place where you can learn more about me and what I've been part of. I enjoyed the challenge of making it scalable and maintainable so I can update its information as easily as possible.",
-    // "photo": require("./images/website.png"),
+    "photo": "@/public/images/website.png",
     "techstack": ["React", "Docker"],
     "github": "https://github.com/lukemoenning/portfolio",
     "live_demo": "https://lukemoenning.com",
@@ -148,7 +148,7 @@ export const projects = [
   {
     "name": "Lost in Space",
     "description": "A little game I made so I could hide it somewhere on this website. I had a great time practicing concepts of Object-Oriented Programming I learned in my software development class, such as abstraction encapsulation.",
-    // "photo": require("./images/lost_in_space.png"),
+    "photo": "@/public/images/lost_in_space.png",
     "techstack": ["JavaScript"],
     "github": "https://github.com/lukemoenning/portfolio",
     "live_demo": "https://lukemoenning.com/lostinspace",
@@ -156,7 +156,7 @@ export const projects = [
   {
     "name": "Weather App",
     "description": "A simple python weather app retrieving data from the OpenWeatherMap API. This project served as a way for me to step foot into the world of APIs and data manipulation.",
-    // "photo": require("./images/weatherapp.png"),
+    "photo": "@/public/images/weatherapp.png",
     "techstack": ["Python", "Tkinter"],
     "github": "https://github.com/lukemoenning/weather-app",
     "live_demo": null,
@@ -164,7 +164,7 @@ export const projects = [
   {
     "name": "Snake Game",
     "description": "My very first project. I created this game with hopes to practice using data structures I was learning in class, such as LinkedLists. I wanted a way to track my score, so I used a CSV file to serve as a database for the accounts and their high scores.",
-    // "photo": require("./images/snake-game-final.png"),
+    "photo": "@/public/images/snake-game-final.png",
     "techstack": ["Java", "JavaSwing"],
     "github": "https://github.com/lukemoenning/snake-game-final",
     "live_demo": null,

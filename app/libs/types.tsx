@@ -21,3 +21,12 @@ export interface experience {
   date: string,
   descriptions: string[],
 }
+
+export interface project {
+  name: string,
+  description: string,
+  photo: string,
+  techstack: string[],
+  github: string,
+  live_demo: string | null,
+}
