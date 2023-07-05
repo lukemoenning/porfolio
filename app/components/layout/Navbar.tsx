@@ -37,13 +37,13 @@ const MobileNavLinks = styled.div`
   left: 0;
   width: 100%;
   height: calc(100vh - ${theme.sizing.navbar.height});
-  background-color: ${theme.colors.offWhite};
+  background-color: ${theme.colors.lightBlue};
   z-index: 1;
 `
 
 const MobileToggle = styled.div`
   display: none;
-  color: ${theme.colors.lightBlue};
+  color: ${theme.colors.black};
   font-size: ${theme.fontSize.xxl};
   margin-left: auto;
   margin-right: 50px;

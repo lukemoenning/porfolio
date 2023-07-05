@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import { theme } from '@/app/libs/theme'
 import { GitHub } from '@mui/icons-material'
 import { project } from '@/app/libs/types'
+import Image from 'next/image'
 
 
 const ProjectCardWrapper = styled.div`
@@ -26,7 +27,7 @@ const ProjectCardWrapper = styled.div`
   }
 `
 
-const ProjectPhoto = styled.img`
+const ProjectPhoto = styled(Image)`
   align-self: center;
   border-radius: 10px;
   height: 186px;
@@ -168,7 +169,12 @@ function ProjectCard({ project }: { project: project }) {
   return (
     <div>
       <ProjectCardWrapper onClick={() => {switchActivated(project.name)}}>
-        <ProjectPhoto src={project.photo} />
+        <ProjectPhoto 
+          src={project.photo}
+          alt={project.name}
+          width={330}
+          height={186}
+        />
         <ProjectName>{project.name}</ProjectName>
         <ProjectTechStackWrapper>
           {project.techstack.map(techStackItem => (

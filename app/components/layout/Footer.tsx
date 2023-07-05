@@ -22,7 +22,7 @@ const FooterContent = styled.div`
   margin: 0 10px 0 10px;
   height: 100%;
   overflow: hidden;
-  color: ${theme.colors.white};
+  color: ${theme.colors.lightBlue};
   font-size: 0.8em;
 `
 

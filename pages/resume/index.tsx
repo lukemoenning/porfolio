@@ -45,7 +45,7 @@ function Resume() {
 
       <BodyContentWrapper>
         <BodyContentNarrow>
-          <Pdf src={'/Moenning_Luke_Resume.pdf'} />
+          <Pdf src={'/Moenning_Luke_Resume.pdf#view=FitH'} />
         </BodyContentNarrow>
       </BodyContentWrapper>
     </BodyWrapper>

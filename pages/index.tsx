@@ -16,13 +16,11 @@ import { theme } from '@/app/libs/theme'
 import Link from 'next/link'
 import SocialLink from '@/app/components/SocialLink'
 import type { social } from '@/app/libs/types'
+import Image from 'next/image'
 
 
-const ProfileImage = styled.div`
-  height: 200px;
-  width: 200px;
+const ProfileImage = styled(Image)`
   margin: 20px;
-  background-color: ${theme.colors.lightBlue};
   border-radius: 50%;
 `
 
@@ -76,7 +74,7 @@ const About = styled.p`
 
 const ProjectLink = styled(Link)`
   font-size: medium;
-  color: ${theme.colors.black};
+  color: ${theme.colors.lightBlue};
   text-decoration: none;
   font-weight: bold;
 `
@@ -106,7 +104,12 @@ function Home() {
     <BodyWrapper>
       <BodyHeaderWrapper>
         <BodyHeaderWide>
-          <ProfileImage />
+          <ProfileImage 
+            src={me.photo}
+            alt="Luke Moenning"
+            width={250}
+            height={300}
+          />
           <ProfileName>
             {me.name}
           </ProfileName>
