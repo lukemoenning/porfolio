@@ -13,7 +13,7 @@ const SocialLinkWrapper = styled.a`
   display: flex;
   align-items: center;
   margin: 3px;
-  color: ${theme.colors.white};
+  color: ${theme.colors.lightBlue};
   text-decoration: none;
   transition: 300ms;
   max-height: 30px;
@@ -25,7 +25,7 @@ const SocialLinkWrapper = styled.a`
 
 const SocialName = styled.p`
   margin-left: 5px;
-  color: ${theme.colors.white};
+  color: ${theme.colors.lightBlue};
   font-size: large;
   font-style: italic
 `

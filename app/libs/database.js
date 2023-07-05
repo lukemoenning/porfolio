@@ -22,7 +22,7 @@ export const me = {
   "name": "Luke Moenning",
   "title": "Software Engineer",
   "about": "I'm a software engineer studying computer science and mathematics at the University of Iowa. In my free time I love playing and watching soccer, and recently I've been working on getting my coaching license. I also enjoy learning new skills through projects - like the fun game I hid somewhere on this website. (Hint: it's hidden where it should never be found.)",
-  // "photo": require('../assets/images/profile_picture.png'), 
+  "photo": require('@/public/images/profile_picture.png'), 
 };
 
 /**
