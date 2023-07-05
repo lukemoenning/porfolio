@@ -14,3 +14,10 @@ export interface socialLinkProps {
   size: string,
   displayName: boolean,
 }
+
+export interface experience { 
+  title: string,
+  location: string,
+  date: string,
+  descriptions: string[],
+}

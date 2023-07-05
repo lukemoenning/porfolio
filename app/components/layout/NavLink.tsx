@@ -11,7 +11,7 @@ const NavLinkWrapper = styled(Link)`
 
 const ActiveName = styled.span`
   position: relative;
-  color: ${theme.colors.lightBlue};
+  color: ${theme.colors.white};
   
   &:after {
     content: '';
@@ -20,7 +20,7 @@ const ActiveName = styled.span`
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: ${theme.colors.lightBlue};
+    background-color: ${theme.colors.white};
   }
 `
 

@@ -25,7 +25,6 @@ export const BodyHeaderWrapper = styled.div`
   align-items: center;
   height: auto;
   width: 100vw;
-  padding-top: ${theme.sizing.navbar.height};
   box-shadow: 0px 3px 0px 0px ${theme.colors.offWhite};
   background: ${theme.colors.offWhite};
 `

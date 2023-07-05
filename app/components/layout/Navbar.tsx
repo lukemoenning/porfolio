@@ -13,7 +13,7 @@ const NavWrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: ${theme.sizing.navbar.height};
-  background-color: ${theme.colors.offWhite};
+  background-color: ${theme.colors.lightBlue};
 `
 
 const DesktopNavLinks = styled.div`
