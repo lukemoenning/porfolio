@@ -153,7 +153,7 @@ export const projects = [
   },
   {
     "name": "Lost in Space",
-    "description": "A little game I made so I could hide it somewhere on this website. I had a great time practicing concepts of Object-Oriented Programming I learned in my software development class, such as abstraction encapsulation.",
+    "description": "A little game I made so I could hide it somewhere on this website. I had a great time practicing concepts of Object-Oriented Programming I learned in my software development class, such as encapsulation.",
     "photo": "/images/projects/lost_in_space.png",
     "techstack": ["JavaScript"],
     "github": "https://github.com/lukemoenning/portfolio",
@@ -169,7 +169,7 @@ export const projects = [
   },
   {
     "name": "Snake Game",
-    "description": "My very first project. I created this game with hopes to practice using data structures I was learning in class, such as LinkedLists. I wanted a way to track my score, so I used a CSV file to serve as a database for the accounts and their high scores.",
+    "description": "My very first project. I created this game with hopes to practice using data structures I was learning in class, such as LinkedLists. I wanted a way to track my score, so I used a CSV file to serve as an introduction to working with data and a way store accounts and their high scores.",
     "photo": "/images/projects/snake-game-final.png",
     "techstack": ["Java", "JavaSwing"],
     "github": "https://github.com/lukemoenning/snake-game-final",
