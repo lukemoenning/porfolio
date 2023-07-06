@@ -6,23 +6,13 @@ import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material';
 
 
 /**
- * JSON of the color theme
- */
-export const colors = {
-  "white": "#FFFFFF",
-  "offwhite": "#e1e4e9",
-  "black": "#000000",
-  "accent": "#63868a",
-};
-
-/**
  * JSON of basic information about me
  */
 export const me = {
   "name": "Luke Moenning",
   "title": "Software Engineer",
   "about": "I'm a software engineer studying computer science and mathematics at the University of Iowa. In my free time I love playing and watching soccer, and recently I've even been involved with coaching. I also enjoy learning new skills through projects - like the fun game I hid somewhere on this website. (Hint: it's hidden where it should never be found.)",
-  "photo": require('@/public/images/profile_picture.png'), 
+  "photo": '/images/profile_picture.png', 
 };
 
 /**
@@ -157,7 +147,7 @@ export const projects = [
     "name": "Personal Website",
     "description": "I created this website as a place where you can learn more about me and what I've been part of. I enjoyed the challenge of making it scalable and maintainable so I can update its information as easily as possible.",
     "photo": "/images/logo_background.png",
-    "techstack": ["Next.js"],
+    "techstack": ["Next.js, TypeScript, Vercel"],
     "github": "https://github.com/lukemoenning/portfolio",
     "live_demo": "https://lukemoenning.com",
   },

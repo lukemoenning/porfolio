@@ -1,7 +1,8 @@
-import { ReactNode } from "react"
+import { ReactNode, isValidElement } from "react"
 import styled from 'styled-components'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import Error404 from '@/pages/404'
 
 type LayoutProps = { 
   children?: ReactNode
@@ -19,13 +20,15 @@ const ContentWrapper = styled.div`
 `;
 
 export default function Layout({ children }: LayoutProps) {
+  const is404Page = isValidElement(children) && children.type === Error404
+
   return (
     <LayoutWrapper>
-      <Navbar />
+      {!is404Page && <Navbar />}
       <ContentWrapper>
         {children}
       </ContentWrapper>
-      <Footer />
+      {!is404Page && <Footer />}
     </LayoutWrapper>
   )
 }
