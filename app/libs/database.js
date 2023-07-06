@@ -21,7 +21,7 @@ export const colors = {
 export const me = {
   "name": "Luke Moenning",
   "title": "Software Engineer",
-  "about": "I'm a software engineer studying computer science and mathematics at the University of Iowa. In my free time I love playing and watching soccer, and recently I've been working on getting my coaching license. I also enjoy learning new skills through projects - like the fun game I hid somewhere on this website. (Hint: it's hidden where it should never be found.)",
+  "about": "I'm a software engineer studying computer science and mathematics at the University of Iowa. In my free time I love playing and watching soccer, and recently I've even been involved with coaching. I also enjoy learning new skills through projects - like the fun game I hid somewhere on this website. (Hint: it's hidden where it should never be found.)",
   "photo": require('@/public/images/profile_picture.png'), 
 };
 
@@ -56,23 +56,39 @@ export const socials = [
  */
 export const work = [
   {
-    "title": "Research Assistant",
-    "location": "Story Carnival",
-    "date": "January 2023 - Present",
+    "title": "Software Developer Intern",
+    "location": "W.R. Berkley Corporation",
+    "date": "May 2023 - Present",
     "descriptions": [
-      "Develop a web-based activity with the goal of improving executive skills in young children",
-      "Conduct research on learning standards for preschool-age children",
-      "Implement a teacher reflection tool to effectively track and document children's developmental progress",
+      "Reduced application build time by refactoring 100\% of tests that throw warnings for React components and GraphQL queries using Jest and Apollo",
+      "Worked directly with an agile team to efficiently handle tickets and meet sprint deadlines while developing a full-stack, internal application using Next.js, GraphQL, Tailwind, Nx, and Jenkins",
     ],
   },
   {
-    "title": "Web Intern",
-    "location": "The University of Iowa - College of Engineering",
-    "date": "September 2022 - Present",
+    "title": "HCI Undergraduate Researcher",
+    "location": "Project: Story Carnival",
+    "date": "January 2023 - Present",
     "descriptions": [
-      "Learned front-end development skills and how to handle accessibility issues for websites",
-      "Managed and maintained the College of Engineering website",
-      "Handled ticket requests and communicated results and constraints with the requester",
+      "Developed a teacher reflection tool to be demoed for 16 preschools that tracks classroom progress using JavaScript, Node.js, AWS Lambda, and DynamoDB",
+      "Validated the efficacy of the tool by researching established tools and commonly followed learning standards",
+    ],
+  },
+  {
+    "title": "Soccer Coach",
+    "location": "Northwest Junior High",
+    "date": "March 2023 – May 2023",
+    "descriptions": [
+      "Mentored and coached 63 7th and 8th grade boys, fostering team development and individual player growth",
+      "Established the program for success during its inaugural year by taking initiative in organizational decisions",
+    ],
+  },
+  {
+    "title": "Web Developer Intern",
+    "location": "The University of Iowa - College of Engineering",
+    "date": "September 2022 – January 2023",
+    "descriptions": [
+      "Collaborated with a team of 3 interns to efficiently port 100\% of the Biomedical Engineering Website to SiteNow v3",
+      "Managed the College of Engineering website by handling ticket requests and communicating results directly to clients",
     ],
   },
   {
@@ -80,9 +96,9 @@ export const work = [
     "location": "Mathnasium - The Math Learning Center",
     "date": "June 2019 - December 2022",
     "descriptions": [
-      "Provided individualized instruction to over 50 students, ranging from kindergarten to Calculus",
-      "Held leadership and instruction training sessions for instructors, enabling them to effectively instruct students",
-      "Sharpened my communication skills by instructing students and interacting with parents",
+      "Led a team of ~10 instructors to successfully help students recover from learning setbacks caused by the COVID-19 pandemic",
+      "Directed instructional training sessions for the other instructors, streamlining teaching provided by the center",
+      "Provided individualized instruction to more than 100 students, ranging from kindergarten to Calculus",
     ],
   },
 ]
@@ -96,10 +112,10 @@ export const education = [
     "location": "The University of Iowa",
     "date": "August 2021 - May 2025",
     "descriptions": [
-      "Honors - Computer Science BS - Mathematics BS - Pyschology Minor - Artificial Intelligence, Modeling, and Simulation Certificate",
-      "University of Iowa Flagship Scholar",
-      "Awarded Dean's List for Fall 2021, Spring 2022, Fall 2022",
-      "Memeber of UIowa Association for Computing Machinary (ACM)",
+      "Computer Science BS - Mathematics BS - Pyschology Minor - Artificial Intelligence, Modeling, and Simulation Certificate - Honors Program",
+      "University of Iowa Flagship Scholar - Edward B. Buchanan, Jr. and Mary Louise Buchanan Scholarship - Undergraduate Electrical Engineering Scholarship",
+      "Awarded Dean's List for Fall 2021, Spring 2022, Fall 2022, Spring 2023",
+      "Memeber of UIowa Association for Computing Machinary (ACM), Intramural Soccer",
     ],
   },
   {
@@ -107,7 +123,7 @@ export const education = [
     "location": "Kirkwood Continuing Education",
     "date": "December 2022 - January 2023",
     "descriptions": [
-      "Successfully completed a 55-hour coaching authorization course in preparation for coaching the Northwest Junior High Boys Soccer team during the upcoming spring season",
+      "Obtained my coaching license through the completion of a comprehensive 55-hour coaching authorization course",
     ],
   },
   {
@@ -115,7 +131,7 @@ export const education = [
     "location": "West Senior High School",
     "date": "August 2017 - May 2021",
     "descriptions": [
-      "Graduated with a GPA of 4.32",
+      "Graduated with a GPA of 4.32 - University of Iowa Dual Enrollment Student",
       "Member of the National Honors Society in 2020 and 2021",
       "Awarded AP Scholar with Distinction",
       "Varisty soccer athlete, state runner-up two years in a row",

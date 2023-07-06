@@ -32,7 +32,7 @@ function Projects() {
       <BodyHeaderWrapper>
         <BodyHeaderNarrow>
           <HeaderTitle>Projects.</HeaderTitle>
-          <HeaderDescription>Checkout of some of the projects I`&apos;`ve worked on!</HeaderDescription>
+          <HeaderDescription>Checkout of some of the projects I've worked on!</HeaderDescription>
         </BodyHeaderNarrow>
       </BodyHeaderWrapper>
 
