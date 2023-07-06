@@ -50,8 +50,8 @@ export const work = [
     "location": "W.R. Berkley Corporation",
     "date": "May 2023 - Present",
     "descriptions": [
-      "Reduced application build time by refactoring 100\% of tests that throw warnings for React components and GraphQL queries using Jest and Apollo",
-      "Worked directly with an agile team to efficiently handle tickets and meet sprint deadlines while developing a full-stack, internal application using Next.js, GraphQL, Tailwind, Nx, and Jenkins",
+      "Reduced application build time by refactoring 52 test files with warnings for React components and GraphQL queries using Jest and Apollo",
+      "Improved an agile team's velocity by 20% by efficiently handling tickets and meeting sprint deadlines while developing a full-stack, internal application",
     ],
   },
   {
