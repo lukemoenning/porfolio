@@ -156,8 +156,8 @@ export const projects = [
   {
     "name": "Personal Website",
     "description": "I created this website as a place where you can learn more about me and what I've been part of. I enjoyed the challenge of making it scalable and maintainable so I can update its information as easily as possible.",
-    "photo": "/images/projects/website.png",
-    "techstack": ["React", "Docker"],
+    "photo": "/images/logo_background.png",
+    "techstack": ["Next.js"],
     "github": "https://github.com/lukemoenning/portfolio",
     "live_demo": "https://lukemoenning.com",
   },
