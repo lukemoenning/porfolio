@@ -89,7 +89,7 @@ const ContactSocialsWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   margin-top: 40px;
 `
 

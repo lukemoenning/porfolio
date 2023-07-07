@@ -31,7 +31,7 @@ export const socials = [
   },
   {
     "name": "Email",
-    "url": "mailto:moennnigluke@gmail.com",
+    "url": "https://www.lukemoenning.com/contact",
     "icon": Email,
   },
   {
