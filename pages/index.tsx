@@ -22,6 +22,8 @@ import Image from 'next/image'
 const ProfileImage = styled(Image)`
   margin: 20px;
   border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);'
 `
 
 const ProfileName = styled.h2`
