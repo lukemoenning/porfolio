@@ -40,7 +40,7 @@ export class Game {
 
     this.generateAsteroidInterval = setInterval(this.generateAsteroid.bind(this), 800) // starts generating asteroids at 1 every 800 ms
     
-    this.gameLoopInterval = setInterval(this.gameLoop.bind(this), 1000 / 60); // starts the game loop at 60fps
+    this.gameLoopInterval = setInterval(() => this.gameLoop(this.context), 1000 / 60); // starts the game loop at 60fps
   }
 
   /** 
@@ -55,7 +55,7 @@ export class Game {
     this.context.font = 'bold 100px papyrus';
     this.context.strokeStyle = '#FF0000';
     this.context.textAlign = 'center';
-    this.context.strokeText('Game Over.', this.canvas.width * 0.5, this.canvas.height * 0.1); 
+    this.context.strokeText('Game Over.', this.canvas.width * 0.5, this.canvas.height * 0.3); 
 
 
     // reset the game 
@@ -72,31 +72,32 @@ export class Game {
   /**
    * Game loop to run at 60fps
    */
-  gameLoop() {
+  gameLoop(context) {
     // CLEAR THE CANVAS
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); // clears all the previous GameObjects so they can be redrawn
-
+    context.clearRect(0, 0, this.canvas.width, this.canvas.height); // clears all the previous GameObjects so they can be redrawn
+  
     // PLAYER
     this.player[0].handleGameObjectUpdates(0, this.player);
-
+  
     // ASTEROIDS
     for (let i = 0; i < this.asteroids.length; i++) {
       this.asteroids[i].handleGameObjectUpdates(i, this.asteroids);
     }
-
+  
     // MISSILES
     for (let i = 0; i < this.missiles.length; i++) {
       this.missiles[i].handleGameObjectUpdates(i, this.missiles);
     }
-
+  
     this.checkCollisions();
-
+  
     // Update the score
-    this.context.font = 'bold 100px papyrus';
-    this.context.strokeStyle = '#FF0000';
-    this.context.textAlign = 'center';
-    this.context.strokeText('Score: ' + this.score, this.canvas.width * 0.5, this.canvas.height * 0.1);
+    context.font = 'bold 100px papyrus';
+    context.strokeStyle = '#FF0000';
+    context.textAlign = 'center';
+    context.strokeText('Score: ' + this.score, this.canvas.width * 0.5, this.canvas.height * 0.1);
   }
+  
 
   /**
    * Checks for collisions between player and asteroids and between asteroids and missiles
@@ -359,7 +360,7 @@ class Player extends GameObject {
     this.playerSpeed = 20; // default speed of the player
 
     this.image = new Image();
-    this.image.src = require('@/public/images/game/player.png');
+    this.image.src = '/images/game/player.png';
 
     this.missiles = missiles;
     this.initializeEventListeners();

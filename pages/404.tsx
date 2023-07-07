@@ -20,7 +20,7 @@ const ErrorPageWrapper = styled.div`
   position: absolute;
 `
 
-const ErrorPageCanvas = styled.div`
+const ErrorPageCanvas = styled.canvas`
   height: 100vh;
   width: 100vw;
   background-size: cover;
