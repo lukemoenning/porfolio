@@ -2,7 +2,7 @@
  * File that contains JSON objects with all of my informatoin to be displayed
  */
 
-import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material';
+import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material'
 
 
 /**

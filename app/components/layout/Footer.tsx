@@ -35,7 +35,7 @@ function Footer() {
 
       <FooterContent>
         {socials.map((social: social) => (
-          <SocialLink key={social.name} social={social} size="small" displayName={false}/>
+          <SocialLink key={'FooterSocials' + social.name} social={social} size="small" displayName={false}/>
         ))}
       </FooterContent>
     </FooterWrapper>

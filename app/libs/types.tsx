@@ -30,3 +30,9 @@ export interface project {
   github: string,
   live_demo: string | null,
 }
+
+export interface formLabelProps {
+  icon: any,
+  text: string,
+  required: boolean,
+}
