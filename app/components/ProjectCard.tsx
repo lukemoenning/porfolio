@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { theme } from '@/app/libs/theme'
 import { GitHub } from '@mui/icons-material'
 import { project } from '@/app/libs/types'
-import Image from 'next/image'
+import CustomImage from './CustomImage'
 
 
 const ProjectCardWrapper = styled.div`
@@ -25,15 +25,6 @@ const ProjectCardWrapper = styled.div`
     box-shadow: 15px 15px 25px ${theme.colors.lightBlue};
     cursor: pointer;
   }
-`
-
-const ProjectPhoto = styled(Image)`
-  align-self: center;
-  border-radius: 10px;
-  height: 186px;
-  width: 330px;
-  margin: 10px;
-  object-fit: cover;
 `
 
 const ProjectName = styled.h4`
@@ -166,14 +157,24 @@ const ActivatedProjectGitHub = styled.a`
 `
 
 function ProjectCard({ project }: { project: project }) {
+  const projectPhotoStyles = {
+    alignSelf: 'center',
+    borderRadius: '10px',
+    height: '186px',
+    width: '330px',
+    margin: '10px',
+    objectFit: 'cover'
+  }
+
   return (
     <div>
       <ProjectCardWrapper onClick={() => {switchActivated(project.name)}}>
-        <ProjectPhoto 
+        <CustomImage 
           src={project.photo}
           alt={project.name}
           width={330}
           height={186}
+          styles={projectPhotoStyles}
         />
         <ProjectName>{project.name}</ProjectName>
         <ProjectTechStackWrapper>

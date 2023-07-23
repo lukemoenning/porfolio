@@ -16,15 +16,8 @@ import { theme } from '@/app/libs/theme'
 import Link from 'next/link'
 import SocialLink from '@/app/components/SocialLink'
 import type { social } from '@/app/libs/types'
-import Image from 'next/image'
+import CustomImage from '@/app/components/CustomImage'
 
-
-const ProfileImage = styled(Image)`
-  margin: 20px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);'
-`
 
 const ProfileName = styled.h2`
   color: ${theme.colors.black};
@@ -102,15 +95,23 @@ const HomeSocials = styled.div`
 `
 
 function Home() {
+  const ProfileImageStyles = {
+    margin: '20px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+    boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.75)'
+  }
+
   return (
     <BodyWrapper>
       <BodyHeaderWrapper>
         <BodyHeaderWide>
-          <ProfileImage 
+          <CustomImage 
             src={me.photo}
             alt="Luke Moenning"
             width={250}
             height={300}
+            styles={ProfileImageStyles}
           />
           <ProfileName>
             {me.name}
