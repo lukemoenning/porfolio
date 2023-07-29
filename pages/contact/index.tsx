@@ -120,7 +120,7 @@ function Contact() {
       <BodyContentWrapper>
         <BodyContentNarrow>
           <ContactForm action="https://api.web3forms.com/submit" method="POST">
-            <FormSetting type="hidden" name="access_key" value={process.env.WEB3FORMS?.toString()} />
+            <FormSetting type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS?.toString()} />
             <FormSetting type="hidden" name="subject" value="New Email on Portfolio" />
             <FormSetting type="hidden" name="from_name" value="lukemoenning.com" />
             <FormSetting type="checkbox" name="botcheck" className="hidden" />
