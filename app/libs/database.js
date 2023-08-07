@@ -50,8 +50,8 @@ export const work = [
     "location": "W.R. Berkley Corporation",
     "date": "May 2023 - Present",
     "descriptions": [
-      "Reduced application build time by refactoring 52 test files with warnings for React components and GraphQL queries using Jest and Apollo",
-      "Improved an agile team's velocity by 20% by efficiently handling tickets and meeting sprint deadlines while developing a full-stack, internal application",
+      "Improved an agile team's velocity by 20\% by efficiently handling tickets and meeting sprint deadlines while developing a full-stack, internal application",
+      "Reduced application build time by refactoring 52 test files using React.js, GraphQL, Jest, and Apollo Client",
     ],
   },
   {
@@ -59,7 +59,7 @@ export const work = [
     "location": "Project: Story Carnival",
     "date": "January 2023 - Present",
     "descriptions": [
-      "Developed a teacher reflection tool to be demoed for 16 preschools that tracks classroom progress using JavaScript, Node.js, AWS Lambda, and DynamoDB",
+      "Developed a teacher reflection tool that will be demoed for 16 preschools that tracks classroom progress",
       "Validated the efficacy of the tool by researching established tools and commonly followed learning standards",
     ],
   },
@@ -103,7 +103,7 @@ export const education = [
     "date": "August 2021 - May 2025",
     "descriptions": [
       "Computer Science BS - Mathematics BS - Pyschology Minor - Artificial Intelligence, Modeling, and Simulation Certificate - Honors Program",
-      "University of Iowa Flagship Scholar - Edward B. Buchanan, Jr. and Mary Louise Buchanan Scholarship - Undergraduate Electrical Engineering Scholarship",
+      "University of Iowa Flagship Scholar - Jason and Leslie Weber Emerging Technologies Scholarship - Edward B. Buchanan, Jr. and Mary Louise Buchanan Scholarship - Undergraduate Electrical Engineering Scholarship",
       "Awarded Dean's List for Fall 2021, Spring 2022, Fall 2022, Spring 2023",
       "Memeber of UIowa Association for Computing Machinary (ACM), Intramural Soccer",
     ],
@@ -136,6 +136,22 @@ export const education = [
  */
 export const projects = [
   {
+    "name": "EduQuest",
+    "description": "The project my team and I created for YouthCodeX 2023 Hackathon. EduQuest is a web-based education platform that uses OpenAI's API to generate questions for young children, and to provide an interactive AI tutor to help with instruction. Our goal was to create a tool that would allow children to learn online in a fun and engaging way.",
+    "photo": "/images/projects/eduquest.png",
+    "techstack": ["React.js", "GraphQL", "AWS", "DynamoDB", "OpenAI API"],
+    "github": "https://github.com/lukemoenning/eduquest",
+    "live_demo": null,
+  },
+  {
+    "name": "TrailTrekkers",
+    "description": "A full-stack social media application with a focus on finding and tracking hikes. This was a great opportunity to develop my GraphQL and AWS skills, as well as a fun way to track hikes that I personally go on.",
+    "photo": "/images/projects/trailtrekkers.png",
+    "techstack": ["React.js", "GraphQL", "AWS", "DynamoDB"],
+    "github": "https://github.com/lukemoenning/trailtrekkers",
+    "live_demo": null,
+  },
+  {
     "name": "Trackify",
     "description": "A Spotify statistics tracker so the user can be up to date with all their top songs and artists. My goal in developing Trackify was to become more confident with APIs, react, and containerization with docker. Along the way I practiced preventing tightly coupled code with a data layer and developing documentation using the JSDoc tool.",
     "photo": "/images/projects/trackify.png",
@@ -153,7 +169,7 @@ export const projects = [
   },
   {
     "name": "Lost in Space",
-    "description": "A little game I made so I could hide it somewhere on this website. I had a great time practicing concepts of Object-Oriented Programming I learned in my software development class, such as encapsulation.",
+    "description": "A little game I made so I could hide it somewhere on this website. I had a great time practicing concepts of Object-Oriented Programming I learned in my software development class.",
     "photo": "/images/projects/lost_in_space.png",
     "techstack": ["JavaScript"],
     "github": "https://github.com/lukemoenning/portfolio",

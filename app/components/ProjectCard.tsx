@@ -35,6 +35,7 @@ const ProjectName = styled.h4`
 
 const ProjectTechStackWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `
 
 const ProjectTechStackItem = styled.p`
@@ -112,9 +113,14 @@ const ActivatedProjectBottomInfo = styled.div`
 const ActivatedProjectTechStackWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   width: auto;
   height: 100%;
+
+  @media (max-width: ${theme.breakpoints.md}) {
+    max-width: 250px;
+  }
 `
 
 const ActivatedProjectTechStackItem = styled.p`
@@ -147,7 +153,7 @@ const ActivatedProjectLiveDemo = styled.a`
 
 const ActivatedProjectGitHub = styled.a`
   color: ${theme.colors.lightBlue};
-  padding: 20px;
+  padding-right: 20px;
   transition: 300ms;
 
   &:hover {
