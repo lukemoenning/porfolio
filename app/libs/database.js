@@ -155,7 +155,7 @@ export const projects = [
     "name": "Trackify",
     "description": "A Spotify statistics tracker so the user can be up to date with all their top songs and artists. My goal in developing Trackify was to become more confident with APIs, react, and containerization with docker. Along the way I practiced preventing tightly coupled code with a data layer and developing documentation using the JSDoc tool.",
     "photo": "/images/projects/trackify.png",
-    "techstack": ["React", "Docker", "JSDoc"],
+    "techstack": ["React.js", "Docker", "JSDoc", "Spotify API"],
     "github": "https://github.com/lukemoenning/trackify",
     "live_demo": null,
   },
