@@ -153,8 +153,8 @@ export class Game {
       this.splitSentenceIntoWords(workExperience.title).forEach(word => {wordBank.push(word)});
       this.splitSentenceIntoWords(workExperience.location).forEach(word => {wordBank.push(word)});
       this.splitSentenceIntoWords(workExperience.date).forEach(word => {wordBank.push(word)});
-      workExperience.descriptions.forEach(description => {
-        this.splitSentenceIntoWords(description).forEach(word => {wordBank.push(word)});
+      workExperience.bulletPoints.forEach(bulletPoints => {
+        this.splitSentenceIntoWords(bulletPoints).forEach(word => {wordBank.push(word)});
       })
     })
 
@@ -163,12 +163,12 @@ export class Game {
       this.splitSentenceIntoWords(educationExperience.title).forEach(word => {wordBank.push(word)});
       this.splitSentenceIntoWords(educationExperience.location).forEach(word => {wordBank.push(word)});
       this.splitSentenceIntoWords(educationExperience.date).forEach(word => {wordBank.push(word)});
-      educationExperience.descriptions.forEach(description => {
-        this.splitSentenceIntoWords(description).forEach(word => {wordBank.push(word)});
+      educationExperience.bulletPoints.forEach(bulletPoints => {
+        this.splitSentenceIntoWords(bulletPoints).forEach(word => {wordBank.push(word)});
       })
     })
 
-    //create words from the wrods in projects
+    //create words from the words in projects
     websiteDictionary.projects.forEach(project => {
       this.splitSentenceIntoWords(project.name).forEach(word => {wordBank.push(word)});
       this.splitSentenceIntoWords(project.description).forEach(word => {wordBank.push(word)});

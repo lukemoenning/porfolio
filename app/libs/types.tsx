@@ -19,7 +19,10 @@ export interface experience {
   title: string,
   location: string,
   date: string,
-  descriptions: string[],
+  paragraph: string,
+  bulletPoints: string[],
+  display: 'paragraph' | 'bulletPoints' | string,
+  skills: string[],
 }
 
 export interface project {
@@ -28,6 +31,7 @@ export interface project {
   photo: string,
   techstack: string[],
   github: string,
+  date: string,
   live_demo: string | null,
 }
 

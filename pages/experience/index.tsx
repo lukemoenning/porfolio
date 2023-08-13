@@ -120,11 +120,11 @@ function Experience() {
  * @param {String} sectionHeader 
  * @returns 
  */
-function getExperienceSection(category: experience[], sectionHeader: string) {
+function getExperienceSection(category: any, sectionHeader: string) {
   return (
     <div>
       <ExperienceSectionHeader>{sectionHeader}</ExperienceSectionHeader>
-      {category.map((experience: experience) => (
+      {category.map((experience: any) => (
         <ExperienceItemWrapper key={experience.title}>
 
           {/* INFORMATION ABOUT THE EXPERIENCE */}
@@ -136,9 +136,9 @@ function getExperienceSection(category: experience[], sectionHeader: string) {
 
           {/* DESCRIPTION OF THE EXPERIENCE */}
           <ExperienceDescriptionWrapper>
-            {experience.descriptions.map((description: string, index: number) => (
+            {experience.bulletPoints.map((bulletPoints: string, index: number) => (
               <ExperienceDescription key={experience.title + index}>
-                &#x2022; {description}
+                &#x2022; {bulletPoints}
               </ExperienceDescription>
             ))}
           </ExperienceDescriptionWrapper>
