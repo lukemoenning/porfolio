@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+
 import { theme } from '@/app/libs/theme'
-import type { navItem } from '@/app/libs/types';
+import type { navItem } from '@/app/libs/types'
 
 const NavLinkWrapper = styled(Link)`
   font-size: ${theme.fontSize.lg};
@@ -12,7 +13,7 @@ const NavLinkWrapper = styled(Link)`
 const ActiveName = styled.span`
   position: relative;
   color: ${theme.colors.white};
-  
+
   &:after {
     content: '';
     position: absolute;
@@ -33,13 +34,19 @@ interface NavLinkProps extends navItem {
   onClick: () => void
 }
 
-export default function NavLink({ name, href, isActive, onClick }: NavLinkProps ) {
+export default function NavLink({
+  name,
+  href,
+  isActive,
+  onClick
+}: NavLinkProps) {
   return (
     <NavLinkWrapper href={href} onClick={onClick}>
-      {isActive 
-        ? <ActiveName>{name}</ActiveName> 
-        : <InactiveName>{name}</InactiveName>
-      }
+      {isActive ? (
+        <ActiveName>{name}</ActiveName>
+      ) : (
+        <InactiveName>{name}</InactiveName>
+      )}
     </NavLinkWrapper>
   )
 }

@@ -1,10 +1,9 @@
-import React from 'react'
 import styled from 'styled-components'
+
 import SocialLink from '@/app/components/SocialLink'
 import { socials } from '@/app/libs/database'
 import { theme } from '@/app/libs/theme'
 import type { social } from '@/app/libs/types'
-
 
 const FooterWrapper = styled.div`
   display: flex;
@@ -35,7 +34,12 @@ function Footer() {
 
       <FooterContent>
         {socials.map((social: social) => (
-          <SocialLink key={'FooterSocials' + social.name} social={social} size="small" displayName={false}/>
+          <SocialLink
+            key={'FooterSocials' + social.name}
+            social={social}
+            size="small"
+            displayName={false}
+          />
         ))}
       </FooterContent>
     </FooterWrapper>

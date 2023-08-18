@@ -1,14 +1,9 @@
-/**
- * ErrorPage component
- */
-
-import React from 'react'
-import styled from 'styled-components'
-import { theme } from '@/app/libs/theme'
-import Link from 'next/link'
 import Image from 'next/image'
-import * as superSecretObject from '@/app/libs/scripts/supersecretscripts'
+import Link from 'next/link'
+import styled from 'styled-components'
 
+import * as superSecretObject from '@/app/libs/scripts/supersecretscripts'
+import { theme } from '@/app/libs/theme'
 
 const ErrorPageWrapper = styled.div`
   display: flex;
@@ -75,30 +70,35 @@ const GAME = new superSecretObject.Game()
 function Error404() {
   return (
     <ErrorPageWrapper>
-      <Image 
-        src="/images/game/space.png" 
+      <Image
+        src="/images/game/space.png"
         alt="space"
-        layout="fill" 
-        objectFit="cover" 
+        layout="fill"
+        objectFit="cover"
       />
 
       {/* ERROR MESSAGE */}
       <ErrorPageMessageWrapper>
-        <ErrorPageMessage>Oops... looks like the page you're looking for got lost in space.</ErrorPageMessage>
         <ErrorPageMessage>
-          <StartGameLink onClick={() => {
-            if (!GAME.isRunning) {
-              GAME.startGame(); 
-            }
-          }}>Try to find it</StartGameLink> 
-          {' or return '} 
+          Oops... looks like the page you're looking for got lost in space.
+        </ErrorPageMessage>
+        <ErrorPageMessage>
+          <StartGameLink
+            onClick={() => {
+              if (!GAME.isRunning) {
+                GAME.startGame()
+              }
+            }}
+          >
+            Try to find it
+          </StartGameLink>
+          {' or return '}
           <HomeLink href="/">home.</HomeLink>
         </ErrorPageMessage>
       </ErrorPageMessageWrapper>
 
       {/* CANVAS */}
-      <ErrorPageCanvas id='canvas' />
-
+      <ErrorPageCanvas id="canvas" />
     </ErrorPageWrapper>
   )
 }

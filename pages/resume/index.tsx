@@ -1,20 +1,15 @@
-/**
- * Resume component
- */
-
-import React from 'react'
 import styled from 'styled-components'
-import { 
-  BodyWrapper,
+
+import {
+  BodyContentNarrow,
+  BodyContentWrapper,
+  BodyHeaderNarrow,
   BodyHeaderWrapper,
-  HeaderTitle,
+  BodyWrapper,
   HeaderDescription,
-  BodyHeaderNarrow, 
-  BodyContentWrapper, 
-  BodyContentNarrow
+  HeaderTitle
 } from '@/app/libs/common-components'
 import { theme } from '@/app/libs/theme'
-
 
 const Pdf = styled.iframe`
   margin: 25px 0 25px 0;
@@ -36,7 +31,8 @@ function Resume() {
         <BodyHeaderNarrow>
           <HeaderTitle>Resume.</HeaderTitle>
           <HeaderDescription>
-            An official copy of my resume. <NewTabPDF href={'/Moenning_Luke_Resume.pdf'} target='blank'>
+            An official copy of my resume.{' '}
+            <NewTabPDF href={'/Moenning_Luke_Resume.pdf'} target="blank">
               Open in a new tab.
             </NewTabPDF>
           </HeaderDescription>

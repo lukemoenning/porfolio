@@ -5,7 +5,7 @@ const nextConfig = {
     styledComponents: true
   },
   env: {
-    NEXT_PUBLIC_WEB3FORMS: process.env.NEXT_PUBLIC_WEB3FORMS,
+    NEXT_PUBLIC_WEB3FORMS: process.env.NEXT_PUBLIC_WEB3FORMS
   }
 }
 

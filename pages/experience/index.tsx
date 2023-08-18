@@ -1,22 +1,16 @@
-/**
- * Experience component
- */
-
-import React from 'react'
 import styled from 'styled-components'
-import { 
-  BodyWrapper, 
-  BodyHeaderWrapper, 
-  BodyHeaderNarrow, 
-  HeaderTitle,
-  HeaderDescription,
-  BodyContentWrapper,
-  BodyContentWide, 
-} from '@/app/libs/common-components'
-import { work, education } from '@/app/libs/database'
-import { theme } from '@/app/libs/theme'
-import { experience } from '@/app/libs/types'
 
+import {
+  BodyContentWide,
+  BodyContentWrapper,
+  BodyHeaderNarrow,
+  BodyHeaderWrapper,
+  BodyWrapper,
+  HeaderDescription,
+  HeaderTitle
+} from '@/app/libs/common-components'
+import { education, work } from '@/app/libs/database'
+import { theme } from '@/app/libs/theme'
 
 const ExperienceWrapper = styled.div`
   display: flex;
@@ -93,20 +87,20 @@ function Experience() {
       <BodyHeaderWrapper>
         <BodyHeaderNarrow>
           <HeaderTitle>Experience.</HeaderTitle>
-          <HeaderDescription>A little more on how I got to where I am today.</HeaderDescription>
+          <HeaderDescription>
+            A little more on how I got to where I am today.
+          </HeaderDescription>
         </BodyHeaderNarrow>
       </BodyHeaderWrapper>
 
       <BodyContentWrapper>
         <BodyContentWide>
           <ExperienceWrapper>
-
             {/* WORK SECTION */}
             {getExperienceSection(work, "Where I've worked.")}
 
             {/* EDUCATION SECTION */}
-            {getExperienceSection(education, "My education.")}
-
+            {getExperienceSection(education, 'My education.')}
           </ExperienceWrapper>
         </BodyContentWide>
       </BodyContentWrapper>
@@ -117,8 +111,8 @@ function Experience() {
 /**
  * Get the content to be displayed for work and education
  * @param {JSON} category
- * @param {String} sectionHeader 
- * @returns 
+ * @param {String} sectionHeader
+ * @returns
  */
 function getExperienceSection(category: any, sectionHeader: string) {
   return (
@@ -126,7 +120,6 @@ function getExperienceSection(category: any, sectionHeader: string) {
       <ExperienceSectionHeader>{sectionHeader}</ExperienceSectionHeader>
       {category.map((experience: any) => (
         <ExperienceItemWrapper key={experience.title}>
-
           {/* INFORMATION ABOUT THE EXPERIENCE */}
           <ExperienceInfo>
             <ExperienceTitle>{experience.title}</ExperienceTitle>
@@ -136,13 +129,14 @@ function getExperienceSection(category: any, sectionHeader: string) {
 
           {/* DESCRIPTION OF THE EXPERIENCE */}
           <ExperienceDescriptionWrapper>
-            {experience.bulletPoints.map((bulletPoints: string, index: number) => (
-              <ExperienceDescription key={experience.title + index}>
-                &#x2022; {bulletPoints}
-              </ExperienceDescription>
-            ))}
+            {experience.bulletPoints.map(
+              (bulletPoints: string, index: number) => (
+                <ExperienceDescription key={experience.title + index}>
+                  &#x2022; {bulletPoints}
+                </ExperienceDescription>
+              )
+            )}
           </ExperienceDescriptionWrapper>
-
         </ExperienceItemWrapper>
       ))}
     </div>

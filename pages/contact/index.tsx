@@ -1,26 +1,28 @@
-import styled from 'styled-components'
 import { useEffect, useState } from 'react'
-import { 
-  BodyWrapper,
-  BodyHeaderWrapper,
-  HeaderTitle,
-  HeaderDescription,
-  BodyHeaderNarrow, 
-  BodyContentWrapper, 
-  BodyContentNarrow
-} from '@/app/libs/common-components'
-import { 
-  PermIdentityOutlined, 
-  EditNoteOutlined, 
-  EmailOutlined, 
-  PhoneOutlined, 
-  ArrowRightAltOutlined
+
+import {
+  ArrowRightAltOutlined,
+  EditNoteOutlined,
+  EmailOutlined,
+  PermIdentityOutlined,
+  PhoneOutlined
 } from '@mui/icons-material'
-import FormLabel from '@/app/components/FormLabel'
-import { theme } from '@/app/libs/theme'
-import { socials } from '@/app/libs/database'
-import SocialLink from '@/app/components/SocialLink'
 import { SvgIcon } from '@mui/material'
+import styled from 'styled-components'
+
+import FormLabel from '@/app/components/FormLabel'
+import SocialLink from '@/app/components/SocialLink'
+import {
+  BodyContentNarrow,
+  BodyContentWrapper,
+  BodyHeaderNarrow,
+  BodyHeaderWrapper,
+  BodyWrapper,
+  HeaderDescription,
+  HeaderTitle
+} from '@/app/libs/common-components'
+import { socials } from '@/app/libs/database'
+import { theme } from '@/app/libs/theme'
 
 const ContactForm = styled.form`
   display: flex;
@@ -48,7 +50,6 @@ const ContactItemWrapper = styled.div`
 const ContactInput = styled.input`
   height: 35px;
 
-
   &:focus {
     outline: none;
     border: 1px solid ${theme.colors.lightBlue};
@@ -58,7 +59,6 @@ const ContactInput = styled.input`
 
 const ContactTextArea = styled.textarea`
   height: 60px;
-
 
   &:focus {
     outline: none;
@@ -120,67 +120,121 @@ function Contact() {
       <BodyContentWrapper>
         <BodyContentNarrow>
           <ContactForm action="https://api.web3forms.com/submit" method="POST">
-            <FormSetting type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS?.toString()} />
-            <FormSetting type="hidden" name="subject" value="New Email on Portfolio" />
-            <FormSetting type="hidden" name="from_name" value="lukemoenning.com" />
+            <FormSetting
+              type="hidden"
+              name="access_key"
+              value={process.env.NEXT_PUBLIC_WEB3FORMS?.toString()}
+            />
+            <FormSetting
+              type="hidden"
+              name="subject"
+              value="New Email on Portfolio"
+            />
+            <FormSetting
+              type="hidden"
+              name="from_name"
+              value="lukemoenning.com"
+            />
             <FormSetting type="checkbox" name="botcheck" className="hidden" />
             <FormSetting type="hidden" name="redirect" value={redirectLink} />
 
             {/* EMAIL INPUT */}
             <ContactItemWrapper>
-              <FormLabel icon={EmailOutlined} text={"Your Email"} required={true} />
-              <ContactInput type="email" name="email" placeholder="Email" tabIndex={1} required autoFocus/>
+              <FormLabel
+                icon={EmailOutlined}
+                text={'Your Email'}
+                required={true}
+              />
+              <ContactInput
+                type="email"
+                name="email"
+                placeholder="Email"
+                tabIndex={1}
+                required
+                autoFocus
+              />
             </ContactItemWrapper>
 
             {/* FIRST NAME INPUT */}
             <ContactItemWrapper>
-            <FormLabel icon={PermIdentityOutlined} text={"Your Name"} required={true} />
-              <ContactInput type="text" name="First Name" placeholder="First Name" tabIndex={2} required />
+              <FormLabel
+                icon={PermIdentityOutlined}
+                text={'Your Name'}
+                required={true}
+              />
+              <ContactInput
+                type="text"
+                name="First Name"
+                placeholder="First Name"
+                tabIndex={2}
+                required
+              />
             </ContactItemWrapper>
 
             {/* PHONE NUMBER INPUT */}
             <ContactItemWrapper>
-              <FormLabel icon={PhoneOutlined} text={"Your Phone Number"} required={false} />
-              <ContactInput type="text" name="Phone Number" placeholder="Phone Number" tabIndex={3} />
+              <FormLabel
+                icon={PhoneOutlined}
+                text={'Your Phone Number'}
+                required={false}
+              />
+              <ContactInput
+                type="text"
+                name="Phone Number"
+                placeholder="Phone Number"
+                tabIndex={3}
+              />
             </ContactItemWrapper>
 
             {/* MESSAGE INPUT */}
             <ContactItemWrapper>
-              <FormLabel icon={EditNoteOutlined} text={"Your Message"} required={true} />
-              <ContactTextArea name="message" placeholder="Enter your message." tabIndex={4} required />
+              <FormLabel
+                icon={EditNoteOutlined}
+                text={'Your Message'}
+                required={true}
+              />
+              <ContactTextArea
+                name="message"
+                placeholder="Enter your message."
+                tabIndex={4}
+                required
+              />
             </ContactItemWrapper>
 
             {/* SUBMIT BUTTON */}
-            <ContactSubmit type="submit" tabIndex={5}>Send Message</ContactSubmit>
+            <ContactSubmit type="submit" tabIndex={5}>
+              Send Message
+            </ContactSubmit>
 
             <ContactSocialsWrapper>
               {/* TODO: Socials */}
               <ContactSocialsText>
                 Connect with Me
-                <SvgIcon 
-                  component={ArrowRightAltOutlined} 
-                  sx={{ fontSize: theme.fontSize.sm, verticalAlign: 'middle', margin: '0 5px 0 5px' }} 
+                <SvgIcon
+                  component={ArrowRightAltOutlined}
+                  sx={{
+                    fontSize: theme.fontSize.sm,
+                    verticalAlign: 'middle',
+                    margin: '0 5px 0 5px'
+                  }}
                 />
               </ContactSocialsText>
 
               {socials.map((social) => {
-                  return (
-                    <SocialLink 
-                      key={'ContactFormSocials' + social.name} 
-                      social={social} 
-                      size={"medium"} 
-                      displayName={false} 
-                    />
-                  )
-                })
-              }
+                return (
+                  <SocialLink
+                    key={'ContactFormSocials' + social.name}
+                    social={social}
+                    size={'medium'}
+                    displayName={false}
+                  />
+                )
+              })}
             </ContactSocialsWrapper>
           </ContactForm>
         </BodyContentNarrow>
       </BodyContentWrapper>
     </BodyWrapper>
-
-    
   )
 }
 

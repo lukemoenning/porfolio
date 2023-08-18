@@ -1,23 +1,18 @@
-/**
- * Home component
- */
-
-import React from 'react'
+import Link from 'next/link'
 import styled from 'styled-components'
-import { 
-  BodyWrapper, 
+
+import CustomImage from '@/app/components/CustomImage'
+import SocialLink from '@/app/components/SocialLink'
+import {
+  BodyContentNarrow,
+  BodyContentWrapper,
+  BodyHeaderWide,
   BodyHeaderWrapper,
-  BodyHeaderWide, 
-  BodyContentWrapper, 
-  BodyContentNarrow 
+  BodyWrapper
 } from '@/app/libs/common-components'
 import { me, socials } from '@/app/libs/database'
 import { theme } from '@/app/libs/theme'
-import Link from 'next/link'
-import SocialLink from '@/app/components/SocialLink'
 import type { social } from '@/app/libs/types'
-import CustomImage from '@/app/components/CustomImage'
-
 
 const ProfileName = styled.h2`
   color: ${theme.colors.black};
@@ -106,39 +101,44 @@ function Home() {
     <BodyWrapper>
       <BodyHeaderWrapper>
         <BodyHeaderWide>
-          <CustomImage 
+          <CustomImage
             src={me.photo}
             alt="Luke Moenning"
             width={250}
             height={300}
             styles={ProfileImageStyles}
           />
-          <ProfileName>
-            {me.name}
-          </ProfileName>
-          <ProfileTitle>
-            {me.title}
-          </ProfileTitle>
+          <ProfileName>{me.name}</ProfileName>
+          <ProfileTitle>{me.title}</ProfileTitle>
         </BodyHeaderWide>
       </BodyHeaderWrapper>
 
       <BodyContentWrapper>
         <BodyContentNarrow>
           <HomeContent>
-
-          <AboutWrapper>
-            <HomeContentTitle>About me.</HomeContentTitle>
-            <About>{me.about}<ProjectLink href="/projects"> Check out my other projects.</ProjectLink></About>
-          </AboutWrapper>
-          <HomeSocialsWrapper>
-            <HomeContentTitle>My socials.</HomeContentTitle>
-            <HomeSocials>
-              {socials.map((social: social) => (
-                <SocialLink key={social.name} social={social} size="large" displayName={true} />
-              ))}
-            </HomeSocials>
-          </HomeSocialsWrapper>
-
+            <AboutWrapper>
+              <HomeContentTitle>About me.</HomeContentTitle>
+              <About>
+                {me.about}
+                <ProjectLink href="/projects">
+                  {' '}
+                  Check out my other projects.
+                </ProjectLink>
+              </About>
+            </AboutWrapper>
+            <HomeSocialsWrapper>
+              <HomeContentTitle>My socials.</HomeContentTitle>
+              <HomeSocials>
+                {socials.map((social: social) => (
+                  <SocialLink
+                    key={social.name}
+                    social={social}
+                    size="large"
+                    displayName={true}
+                  />
+                ))}
+              </HomeSocials>
+            </HomeSocialsWrapper>
           </HomeContent>
         </BodyContentNarrow>
       </BodyContentWrapper>

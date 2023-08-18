@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { theme } from '@/app/libs/theme'
-import NavLink from '@/app/components/layout/NavLink'
-import type { navItem } from '@/app/libs/types';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react'
 
-const NavWrapper = styled.div` 
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import styled from 'styled-components'
+
+import NavLink from '@/app/components/layout/NavLink'
+import { theme } from '@/app/libs/theme'
+import type { navItem } from '@/app/libs/types'
+
+const NavWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +49,7 @@ const MobileToggle = styled.div`
   font-size: ${theme.fontSize.xxl};
   margin-left: auto;
   margin-right: 50px;
-  
+
   &:hover {
     cursor: pointer;
   }
@@ -73,14 +75,14 @@ const MobileHomeLink = styled(Link)`
 `
 
 const NavItems: navItem[] = [
-  {name: 'About', href: '/'},
-  {name: 'Experience', href: '/experience'},
-  {name: 'Projects', href: '/projects'},
-  {name: 'Resume', href: '/resume'},
-  {name: 'Contact', href: '/contact'},
+  { name: 'About', href: '/' },
+  { name: 'Experience', href: '/experience' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Resume', href: '/resume' },
+  { name: 'Contact', href: '/contact' }
 ]
 
-export default function Navbar() { 
+export default function Navbar() {
   const router = useRouter()
   const [activeLink, setActiveLink] = useState<string>('')
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false)
@@ -97,9 +99,9 @@ export default function Navbar() {
   }, [router.pathname])
 
   const toggleBodyScrollLock = () => {
-    const body = document.querySelector('body');
+    const body = document.querySelector('body')
     if (body) {
-      body.style.overflow = isMobileOpen ? 'auto' : 'hidden';
+      body.style.overflow = isMobileOpen ? 'auto' : 'hidden'
     }
   }
 
@@ -109,18 +111,20 @@ export default function Navbar() {
         <Image src="/images/logo.png" alt="logo" width={40} height={40} />
       </MobileHomeLink>
 
-      <MobileToggle onClick={() => {
-        setIsMobileOpen(!isMobileOpen)
-        toggleBodyScrollLock()
-      }}>
+      <MobileToggle
+        onClick={() => {
+          setIsMobileOpen(!isMobileOpen)
+          toggleBodyScrollLock()
+        }}
+      >
         {isMobileOpen ? <>&#10005;</> : <>&#8801;</>}
       </MobileToggle>
 
       {isMobileOpen && (
         <MobileNavLinks>
           {NavItems.map((item) => (
-            <NavLink 
-              {...item} 
+            <NavLink
+              {...item}
               key={item.name}
               isActive={item.name === activeLink}
               onClick={() => {
@@ -135,8 +139,8 @@ export default function Navbar() {
 
       <DesktopNavLinks>
         {NavItems.map((item) => (
-          <NavLink 
-            {...item} 
+          <NavLink
+            {...item}
             key={item.name}
             isActive={item.name === activeLink}
             onClick={() => setActiveLink(item.name)}

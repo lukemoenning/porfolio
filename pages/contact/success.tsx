@@ -1,7 +1,8 @@
-import styled from 'styled-components'
-import { theme } from '@/app/libs/theme'
 import NextLink from 'next/link'
+import styled from 'styled-components'
+
 import { BodyWrapper } from '@/app/libs/common-components'
+import { theme } from '@/app/libs/theme'
 
 const ContactSuccessWrapper = styled.div`
   display: flex;
@@ -25,7 +26,16 @@ function ContactSuccess() {
           Thanks for your message! I'll get back to you as soon as possible.
         </ContactSuccessTitle>
         <ContactSuccessTitle>
-          Return <NextLink style={{color: `${theme.colors.lightBlue}`, textDecoration: 'none'}} href={`/`}>home.</NextLink>
+          Return{' '}
+          <NextLink
+            style={{
+              color: `${theme.colors.lightBlue}`,
+              textDecoration: 'none'
+            }}
+            href={`/`}
+          >
+            home.
+          </NextLink>
         </ContactSuccessTitle>
       </ContactSuccessWrapper>
     </BodyWrapper>

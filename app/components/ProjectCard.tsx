@@ -1,14 +1,10 @@
-/**
- * Project Card component to display information about each individual project
- */
-
-import React from 'react'
-import styled from 'styled-components'
-import { theme } from '@/app/libs/theme'
 import { GitHub } from '@mui/icons-material'
-import { project } from '@/app/libs/types'
+import styled from 'styled-components'
+
 import CustomImage from './CustomImage'
 
+import { theme } from '@/app/libs/theme'
+import { project } from '@/app/libs/types'
 
 const ProjectCardWrapper = styled.div`
   display: flex;
@@ -43,7 +39,6 @@ const ProjectTechStackItem = styled.p`
   font-size: small;
   font-style: italic;
 `
-
 
 // FULL SCREEN FOR ACTIVATED PROJECTCARD
 const ActivatedProjectWrapper = styled.div`
@@ -174,8 +169,12 @@ function ProjectCard({ project }: { project: project }) {
 
   return (
     <div>
-      <ProjectCardWrapper onClick={() => {switchActivated(project.name)}}>
-        <CustomImage 
+      <ProjectCardWrapper
+        onClick={() => {
+          switchActivated(project.name)
+        }}
+      >
+        <CustomImage
           src={project.photo}
           alt={project.name}
           width={330}
@@ -184,23 +183,35 @@ function ProjectCard({ project }: { project: project }) {
         />
         <ProjectName>{project.name}</ProjectName>
         <ProjectTechStackWrapper>
-          {project.techstack.map(techStackItem => (
-            <ProjectTechStackItem key={techStackItem}>{techStackItem}</ProjectTechStackItem>
+          {project.techstack.map((techStackItem) => (
+            <ProjectTechStackItem key={techStackItem}>
+              {techStackItem}
+            </ProjectTechStackItem>
           ))}
         </ProjectTechStackWrapper>
       </ProjectCardWrapper>
 
       <ActivatedProjectWrapper id={project.name}>
-        <CloseActivatedProject onClick={() => {switchActivated(project.name)}}>&#10005;</CloseActivatedProject>
+        <CloseActivatedProject
+          onClick={() => {
+            switchActivated(project.name)
+          }}
+        >
+          &#10005;
+        </CloseActivatedProject>
         <ActivatedProject>
           <ActivatedProjectPhoto src={project.photo} />
           <ActivatedProjectName>{project.name}</ActivatedProjectName>
-          <ActivatedProjectDescription>{project.description}</ActivatedProjectDescription>
+          <ActivatedProjectDescription>
+            {project.description}
+          </ActivatedProjectDescription>
 
           <ActivatedProjectBottomInfo>
             <ActivatedProjectTechStackWrapper>
-              {project.techstack.map(activatedTechStackItem => (
-                <ActivatedProjectTechStackItem key={activatedTechStackItem}>{activatedTechStackItem}</ActivatedProjectTechStackItem>
+              {project.techstack.map((activatedTechStackItem) => (
+                <ActivatedProjectTechStackItem key={activatedTechStackItem}>
+                  {activatedTechStackItem}
+                </ActivatedProjectTechStackItem>
               ))}
             </ActivatedProjectTechStackWrapper>
 
@@ -211,7 +222,7 @@ function ProjectCard({ project }: { project: project }) {
                 </ActivatedProjectLiveDemo>
               )}
               <ActivatedProjectGitHub href={project.github}>
-                <GitHub fontSize='large'/>
+                <GitHub fontSize="large" />
               </ActivatedProjectGitHub>
             </ActivatedProjectsURLS>
           </ActivatedProjectBottomInfo>
@@ -223,7 +234,7 @@ function ProjectCard({ project }: { project: project }) {
 
 /**
  * Switch the display of the activated project
- * 
+ *
  * @param {String} projectName id of the project to switch
  */
 function switchActivated(projectName: string) {
@@ -231,9 +242,9 @@ function switchActivated(projectName: string) {
 
   if (!activatedProjectDiv) return
 
-  activatedProjectDiv.style.display === 'flex' 
-    ? activatedProjectDiv.style.display = 'none'
-    : activatedProjectDiv.style.display = 'flex'
+  activatedProjectDiv.style.display === 'flex'
+    ? (activatedProjectDiv.style.display = 'none')
+    : (activatedProjectDiv.style.display = 'flex')
 }
 
 export default ProjectCard

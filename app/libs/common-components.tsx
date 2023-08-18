@@ -3,8 +3,8 @@
  */
 
 import styled from 'styled-components'
-import { theme } from '@/app/libs/theme'
 
+import { theme } from '@/app/libs/theme'
 
 /**
  * Wrapper for the entire body section, to be used for every page as an overall wrapper for the body
@@ -87,7 +87,7 @@ export const BodyContentWrapper = styled.div`
 export const BodyContentWide = styled.div`
   display: flex;
   width: 1200px;
-  
+
   @media (max-width: 1200px) {
     flex-direction: column;
     width: 100%;
@@ -96,7 +96,7 @@ export const BodyContentWide = styled.div`
 
 export const BodyContentNarrow = styled(BodyContentWide)`
   width: 750px;
-  
+
   @media (max-width: 750px) {
     flex-direction: column;
     width: 100%;

@@ -1,13 +1,8 @@
-/**
- * Component for a social media icon and link
- */
-
-import React from 'react'
-import styled from 'styled-components'
 import { SvgIcon } from '@mui/material'
+import styled from 'styled-components'
+
 import { theme } from '@/app/libs/theme'
 import type { socialLinkProps } from '@/app/libs/types'
-
 
 const SocialLinkWrapper = styled.a`
   display: flex;
@@ -27,18 +22,14 @@ const SocialName = styled.p`
   margin-left: 5px;
   color: ${theme.colors.lightBlue};
   font-size: large;
-  font-style: italic
+  font-style: italic;
 `
 
 function SocialLink({ social, size, displayName }: socialLinkProps) {
   return (
     <SocialLinkWrapper href={social.url}>
       <SvgIcon component={social.icon} size={size} />
-      {
-        displayName && (
-          <SocialName>{social.name}</SocialName>
-        )
-      }
+      {displayName && <SocialName>{social.name}</SocialName>}
     </SocialLinkWrapper>
   )
 }
