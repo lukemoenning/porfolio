@@ -1,78 +1,12 @@
 import { useEffect, useState } from 'react'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-import styled from 'styled-components'
 
-import NavLink from '@/app/components/layout/NavLink'
-import { theme } from '@/app/libs/theme'
+import * as S from './navigation.styles'
+
+import NavLink from '@/app/components/layout/navigation-link/navigation-link'
 import type { navItem } from '@/app/libs/types'
-
-const NavWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: ${theme.sizing.navbar.height};
-  background-color: ${theme.colors.lightBlue};
-`
-
-const DesktopNavLinks = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: ${theme.breakpoints.md}) {
-    display: none;
-  }
-`
-
-const MobileNavLinks = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  position: absolute;
-  top: ${theme.sizing.navbar.height};
-  left: 0;
-  width: 100%;
-  height: calc(100vh - ${theme.sizing.navbar.height});
-  background-color: ${theme.colors.lightBlue};
-  z-index: 1;
-`
-
-const MobileToggle = styled.div`
-  display: none;
-  color: ${theme.colors.black};
-  font-size: ${theme.fontSize.xxl};
-  margin-left: auto;
-  margin-right: 50px;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media (max-width: ${theme.breakpoints.md}) {
-    display: flex;
-  }
-`
-
-const MobileHomeLink = styled(Link)`
-  display: none;
-  margin-left: 50px;
-  margin-right: auto;
-  text-decoration: none;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media (max-width: ${theme.breakpoints.md}) {
-    display: flex;
-  }
-`
 
 const NavItems: navItem[] = [
   { name: 'About', href: '/' },
@@ -82,7 +16,7 @@ const NavItems: navItem[] = [
   { name: 'Contact', href: '/contact' }
 ]
 
-export default function Navbar() {
+const Navbar = () => {
   const router = useRouter()
   const [activeLink, setActiveLink] = useState<string>('')
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false)
@@ -106,22 +40,22 @@ export default function Navbar() {
   }
 
   return (
-    <NavWrapper>
-      <MobileHomeLink href="/">
+    <S.NavWrapper>
+      <S.MobileHomeLink href="/">
         <Image src="/images/logo.png" alt="logo" width={40} height={40} />
-      </MobileHomeLink>
+      </S.MobileHomeLink>
 
-      <MobileToggle
+      <S.MobileToggle
         onClick={() => {
           setIsMobileOpen(!isMobileOpen)
           toggleBodyScrollLock()
         }}
       >
         {isMobileOpen ? <>&#10005;</> : <>&#8801;</>}
-      </MobileToggle>
+      </S.MobileToggle>
 
       {isMobileOpen && (
-        <MobileNavLinks>
+        <S.MobileNavLinks>
           {NavItems.map((item) => (
             <NavLink
               {...item}
@@ -134,10 +68,10 @@ export default function Navbar() {
               }}
             />
           ))}
-        </MobileNavLinks>
+        </S.MobileNavLinks>
       )}
 
-      <DesktopNavLinks>
+      <S.DesktopNavLinks>
         {NavItems.map((item) => (
           <NavLink
             {...item}
@@ -146,7 +80,9 @@ export default function Navbar() {
             onClick={() => setActiveLink(item.name)}
           />
         ))}
-      </DesktopNavLinks>
-    </NavWrapper>
+      </S.DesktopNavLinks>
+    </S.NavWrapper>
   )
 }
+
+export default Navbar
