@@ -9,9 +9,9 @@ import { Email, GitHub, LinkedIn, Phone } from '@mui/icons-material'
  */
 export const me = {
   name: 'Luke Moenning',
-  title: 'Software Engineer',
+  title: 'Aspiring Software Engineer',
   about:
-    "I'm a software engineer studying computer science and mathematics at the University of Iowa. In my free time I love playing and watching soccer, and recently I've even been involved with coaching. I also enjoy learning new skills through projects - like the fun game I hid somewhere on this website. (Hint: it's hidden where it should never be found.)",
+    "I'm an aspiring software engineer studying computer science and mathematics at the University of Iowa. In my free time I love playing and watching soccer, and recently I've even been involved with coaching. I also enjoy learning new skills through projects - like the fun game I hid somewhere on this website. (Hint: it's hidden where it should never be found.)",
   photo: '/images/profile_picture.png'
 }
 
