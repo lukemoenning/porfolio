@@ -4,7 +4,7 @@ import Layout from '@/app/components/layout/layout'
 
 import '../app/globals.css'
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Layout>
@@ -13,3 +13,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </>
   )
 }
+
+export default MyApp
