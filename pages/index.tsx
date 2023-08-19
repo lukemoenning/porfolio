@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import CustomImage from '@/app/components/CustomImage'
-import SocialLink from '@/app/components/SocialLink'
+import CustomImage from '@/app/components/custom-image/custom-image'
+import SocialLink from '@/app/components/social-link/social-link'
 import {
   BodyContentNarrow,
   BodyContentWrapper,
   BodyHeaderWide,
   BodyHeaderWrapper,
   BodyWrapper
-} from '@/app/libs/common-components'
+} from '@/app/libs/common-styles'
 import { me, socials } from '@/app/libs/database'
 import { theme } from '@/app/libs/theme'
 import type { social } from '@/app/libs/types'

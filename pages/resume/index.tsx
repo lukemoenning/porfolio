@@ -8,7 +8,7 @@ import {
   BodyWrapper,
   HeaderDescription,
   HeaderTitle
-} from '@/app/libs/common-components'
+} from '@/app/libs/common-styles'
 import { theme } from '@/app/libs/theme'
 
 const Pdf = styled.iframe`

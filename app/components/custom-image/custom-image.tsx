@@ -8,7 +8,7 @@ type customImageProps = {
   styles?: any
 }
 
-function CustomImage({ src, alt, width, height, styles }: customImageProps) {
+const CustomImage = ({ src, alt, width, height, styles }: customImageProps) => {
   return (
     <Image
       src={src}

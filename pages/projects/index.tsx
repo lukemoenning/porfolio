@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import ProjectCard from '@/app/components/ProjectCard'
+import ProjectCard from '@/app/components/project-card/project-card'
 import {
   BodyContentWide,
   BodyContentWrapper,
@@ -9,7 +9,7 @@ import {
   BodyWrapper,
   HeaderDescription,
   HeaderTitle
-} from '@/app/libs/common-components'
+} from '@/app/libs/common-styles'
 import { projects } from '@/app/libs/database'
 import type { project } from '@/app/libs/types'
 

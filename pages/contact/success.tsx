@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import styled from 'styled-components'
 
-import { BodyWrapper } from '@/app/libs/common-components'
+import { BodyWrapper } from '@/app/libs/common-styles'
 import { theme } from '@/app/libs/theme'
 
 const ContactSuccessWrapper = styled.div`

@@ -8,7 +8,7 @@ import {
   BodyWrapper,
   HeaderDescription,
   HeaderTitle
-} from '@/app/libs/common-components'
+} from '@/app/libs/common-styles'
 import { education, work } from '@/app/libs/database'
 import { theme } from '@/app/libs/theme'
 

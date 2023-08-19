@@ -10,8 +10,8 @@ import {
 import { SvgIcon } from '@mui/material'
 import styled from 'styled-components'
 
-import FormLabel from '@/app/components/FormLabel'
-import SocialLink from '@/app/components/SocialLink'
+import FormLabel from '@/app/components/form-label/form-label'
+import SocialLink from '@/app/components/social-link/social-link'
 import {
   BodyContentNarrow,
   BodyContentWrapper,
@@ -20,7 +20,7 @@ import {
   BodyWrapper,
   HeaderDescription,
   HeaderTitle
-} from '@/app/libs/common-components'
+} from '@/app/libs/common-styles'
 import { socials } from '@/app/libs/database'
 import { theme } from '@/app/libs/theme'
 

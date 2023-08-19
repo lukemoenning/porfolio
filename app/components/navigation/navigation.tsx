@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 
 import * as S from './navigation.styles'
 
-import NavLink from '@/app/components/layout/navigation-link/navigation-link'
+import NavLink from '@/app/components/navigation-link/navigation-link'
 import type { navItem } from '@/app/libs/types'
 
 const NavItems: navItem[] = [
