@@ -10,9 +10,9 @@ import {
   HeaderDescription,
   HeaderTitle
 } from '@/app/libs/common-styles'
-import { education, work } from '@/app/libs/database'
+import type { allExperience } from '@/database/schema'
 
-const Experience = () => {
+const Experience = ({ work, education }: allExperience) => {
   return (
     <BodyWrapper>
       <BodyHeaderWrapper>

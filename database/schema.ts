@@ -23,6 +23,11 @@ export interface experience {
   skills?: string[]
 }
 
+export interface allExperience {
+  work: experience[]
+  education: experience[]
+}
+
 export interface project {
   name: string
   description: string

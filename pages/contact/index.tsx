@@ -4,7 +4,7 @@ import Contact from '@/app/components/contact/contact'
 import database from '@/database'
 import type { social } from '@/database/schema'
 
-export type ContactPageProps = {
+export interface ContactPageProps {
   data: social[]
   hasError: boolean
 }
