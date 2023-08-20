@@ -1,7 +1,7 @@
 import * as S from './footer.styles'
 
 import SocialLink from '@/app/components/social-link/social-link'
-import { socials } from '@/app/libs/database'
+import database from '@/database'
 import type { social } from '@/database/schema'
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
       </S.FooterContent>
 
       <S.FooterContent>
-        {socials.map((social: social) => (
+        {database.socials.map((social: social) => (
           <SocialLink
             key={'FooterSocials' + social.name}
             social={social}

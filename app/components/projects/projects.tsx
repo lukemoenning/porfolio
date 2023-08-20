@@ -9,10 +9,9 @@ import {
   HeaderDescription,
   HeaderTitle
 } from '@/app/libs/common-styles'
-import { projects } from '@/app/libs/database'
 import type { project } from '@/database/schema'
 
-const Projects = () => {
+const Projects = ({ projects }: { projects: project[] }) => {
   return (
     <BodyWrapper>
       <BodyHeaderWrapper>

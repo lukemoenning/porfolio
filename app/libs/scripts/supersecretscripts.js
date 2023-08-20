@@ -4,7 +4,7 @@
 
 /* eslint-env browser */
 
-import * as websiteDictionary from '@/app/libs/database'
+import database from '@/database'
 
 /** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** */
 
@@ -159,18 +159,18 @@ export class Game {
     const wordBank = []
 
     // create words from the the words in me
-    this.splitSentenceIntoWords(websiteDictionary.me.name).forEach((word) => {
+    this.splitSentenceIntoWords(database.me.name).forEach((word) => {
       wordBank.push(word)
     })
-    this.splitSentenceIntoWords(websiteDictionary.me.title).forEach((word) => {
+    this.splitSentenceIntoWords(database.me.title).forEach((word) => {
       wordBank.push(word)
     })
-    this.splitSentenceIntoWords(websiteDictionary.me.about).forEach((word) => {
+    this.splitSentenceIntoWords(database.me.about).forEach((word) => {
       wordBank.push(word)
     })
 
     // create words from the the words in work
-    websiteDictionary.work.forEach((workExperience) => {
+    database.work.forEach((workExperience) => {
       this.splitSentenceIntoWords(workExperience.title).forEach((word) => {
         wordBank.push(word)
       })
@@ -188,7 +188,7 @@ export class Game {
     })
 
     // create words from the the words in education
-    websiteDictionary.education.forEach((educationExperience) => {
+    database.education.forEach((educationExperience) => {
       this.splitSentenceIntoWords(educationExperience.title).forEach((word) => {
         wordBank.push(word)
       })
@@ -208,7 +208,7 @@ export class Game {
     })
 
     //create words from the words in projects
-    websiteDictionary.projects.forEach((project) => {
+    database.projects.forEach((project) => {
       this.splitSentenceIntoWords(project.name).forEach((word) => {
         wordBank.push(word)
       })

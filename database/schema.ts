@@ -13,6 +13,11 @@ export interface social {
   icon: icon
 }
 
+export interface about {
+  me: me
+  socials: social[]
+}
+
 export interface experience {
   title: string
   location: string

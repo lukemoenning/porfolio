@@ -9,10 +9,9 @@ import {
   BodyHeaderWrapper,
   BodyWrapper
 } from '@/app/libs/common-styles'
-import { me, socials } from '@/app/libs/database'
-import type { social } from '@/database/schema'
+import type { about, social } from '@/database/schema'
 
-const About = () => {
+const About = ({ me, socials }: about) => {
   const ProfileImageStyles = {
     margin: '20px',
     borderRadius: '50%',

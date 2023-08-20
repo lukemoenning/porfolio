@@ -1,7 +1,9 @@
 import * as S from './experience-section.styles'
 
+import type { experience } from '@/database/schema'
+
 type ExperienceSectionProps = {
-  category: any
+  category: experience[]
   sectionHeader: string
 }
 
@@ -12,7 +14,7 @@ const ExperienceSection = ({
   return (
     <div>
       <S.ExperienceSectionHeader>{sectionHeader}</S.ExperienceSectionHeader>
-      {category.map((experience: any) => (
+      {category.map((experience: experience) => (
         <S.ExperienceItemWrapper key={experience.title}>
           {/* INFORMATION ABOUT THE EXPERIENCE */}
           <S.ExperienceInfo>
@@ -23,13 +25,15 @@ const ExperienceSection = ({
 
           {/* DESCRIPTION OF THE EXPERIENCE */}
           <S.ExperienceDescriptionWrapper>
-            {experience.bulletPoints.map(
-              (bulletPoints: string, index: number) => (
-                <S.ExperienceDescription key={experience.title + index}>
-                  &#x2022; {bulletPoints}
-                </S.ExperienceDescription>
-              )
-            )}
+            {experience.display === 'bulletPoints' && experience.bulletPoints
+              ? experience.bulletPoints.map(
+                  (bulletPoints: string, index: number) => (
+                    <S.ExperienceDescription key={experience.title + index}>
+                      &#x2022; {bulletPoints}
+                    </S.ExperienceDescription>
+                  )
+                )
+              : null}
           </S.ExperienceDescriptionWrapper>
         </S.ExperienceItemWrapper>
       ))}
