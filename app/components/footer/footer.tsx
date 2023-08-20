@@ -2,7 +2,7 @@ import * as S from './footer.styles'
 
 import SocialLink from '@/app/components/social-link/social-link'
 import { socials } from '@/app/libs/database'
-import type { social } from '@/app/libs/types'
+import type { social } from '@/database/schema'
 
 const Footer = () => {
   return (

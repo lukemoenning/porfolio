@@ -1,8 +1,8 @@
 import type { GetStaticProps } from 'next'
 
 import Contact from '@/app/components/contact/contact'
-import { social } from '@/app/libs/types'
 import database from '@/database'
+import type { social } from '@/database/schema'
 
 export type ContactPageProps = {
   data: social[]

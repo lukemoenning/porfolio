@@ -23,7 +23,7 @@ import {
   HeaderTitle
 } from '@/app/libs/common-styles'
 import { theme } from '@/app/libs/theme'
-import { social } from '@/database/schema'
+import type { social } from '@/database/schema'
 
 export interface ContactProps {
   socials: social[]

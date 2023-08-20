@@ -3,7 +3,7 @@ import { SvgIcon } from '@mui/material'
 
 import * as S from './social-link.styles'
 
-import type { socialLinkProps } from '@/app/libs/types'
+import type { social } from '@/database/schema'
 
 export const getSocialIcon = (icon: string): any => {
   switch (icon) {
@@ -18,6 +18,12 @@ export const getSocialIcon = (icon: string): any => {
     default:
       return null
   }
+}
+
+export interface socialLinkProps {
+  social: social
+  size: string
+  displayName: boolean
 }
 
 function SocialLink({ social, size, displayName }: socialLinkProps) {

@@ -1,6 +1,6 @@
-import * as S from './navigation-link.styles'
+import type { navItem } from '../navigation/navigation'
 
-import type { navItem } from '@/app/libs/types'
+import * as S from './navigation-link.styles'
 
 interface NavLinkProps extends navItem {
   isActive: boolean

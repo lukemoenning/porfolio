@@ -10,7 +10,7 @@ import {
   HeaderTitle
 } from '@/app/libs/common-styles'
 import { projects } from '@/app/libs/database'
-import type { project } from '@/app/libs/types'
+import type { project } from '@/database/schema'
 
 const Projects = () => {
   return (

@@ -10,7 +10,7 @@ import {
   BodyWrapper
 } from '@/app/libs/common-styles'
 import { me, socials } from '@/app/libs/database'
-import type { social } from '@/app/libs/types'
+import type { social } from '@/database/schema'
 
 const About = () => {
   const ProfileImageStyles = {

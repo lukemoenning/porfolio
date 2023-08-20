@@ -4,7 +4,7 @@ import CustomImage from '../custom-image/custom-image'
 
 import * as S from './project-card.styles'
 
-import { project } from '@/app/libs/types'
+import type { project } from '@/database/schema'
 
 const ProjectCard = ({ project }: { project: project }) => {
   const projectPhotoStyles = {
