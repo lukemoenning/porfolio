@@ -22,10 +22,14 @@ import {
   HeaderDescription,
   HeaderTitle
 } from '@/app/libs/common-styles'
-import { socials } from '@/app/libs/database'
 import { theme } from '@/app/libs/theme'
+import { social } from '@/database/schema'
 
-const Contact = () => {
+export interface ContactProps {
+  socials: social[]
+}
+
+const Contact = ({ socials }: ContactProps) => {
   const [redirectLink, setRedirectLink] = useState<string>('')
 
   useEffect(() => {
@@ -136,7 +140,6 @@ const Contact = () => {
             </S.ContactSubmit>
 
             <S.ContactSocialsWrapper>
-              {/* TODO: Socials */}
               <S.ContactSocialsText>
                 Connect with Me
                 <SvgIcon
@@ -149,7 +152,7 @@ const Contact = () => {
                 />
               </S.ContactSocialsText>
 
-              {socials.map((social) => {
+              {socials.map((social: social) => {
                 return (
                   <SocialLink
                     key={'ContactFormSocials' + social.name}

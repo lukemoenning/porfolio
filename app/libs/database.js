@@ -2,8 +2,6 @@
  * File that contains JSON objects with all of my informatoin to be displayed
  */
 
-import { Email, GitHub, LinkedIn, Phone } from '@mui/icons-material'
-
 /**
  * JSON of basic information about me
  */
@@ -22,22 +20,22 @@ export const socials = [
   {
     name: 'GitHub',
     url: 'https://github.com/lukemoenning',
-    icon: GitHub
+    icon: 'GitHub'
   },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/lukemoenning/',
-    icon: LinkedIn
+    icon: 'LinkedIn'
   },
   {
     name: 'Email',
     url: 'https://www.lukemoenning.com/contact',
-    icon: Email
+    icon: 'Email'
   },
   {
     name: 'Phone',
     url: 'tel:1-319-440-7133',
-    icon: Phone
+    icon: 'Phone'
   }
 ]
 

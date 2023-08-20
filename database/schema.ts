@@ -1,9 +1,11 @@
-export interface navItem {
-  name: string
-  href: string
-}
-
 export type icon = 'Email' | 'GitHub' | 'LinkedIn' | 'Phone' | string // TODO: remove string
+
+export interface me {
+  name: string
+  title: string
+  about: string
+  photo: string
+}
 
 export interface social {
   name: string
@@ -11,20 +13,14 @@ export interface social {
   icon: icon
 }
 
-export interface socialLinkProps {
-  social: social
-  size: string
-  displayName: boolean
-}
-
 export interface experience {
   title: string
   location: string
   date: string
-  paragraph: string
-  bulletPoints: string[]
+  paragraph?: string
+  bulletPoints?: string[]
   display: 'paragraph' | 'bulletPoints' | string // TODO: remove string
-  skills: string[]
+  skills?: string[]
 }
 
 export interface project {

@@ -1,9 +1,15 @@
 import { SvgIcon } from '@mui/material'
+import type { SvgIconProps } from '@mui/material'
 
 import * as S from './form-label.styles'
 
 import { theme } from '@/app/libs/theme'
-import { formLabelProps } from '@/app/libs/types'
+
+export interface formLabelProps {
+  icon: React.ComponentType<SvgIconProps>
+  text: string
+  required: boolean
+}
 
 const FormLabel = ({ icon, text, required }: formLabelProps) => {
   return (
