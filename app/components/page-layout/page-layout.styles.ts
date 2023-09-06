@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const LayoutWrapper = styled.div`
+export const PageLayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `

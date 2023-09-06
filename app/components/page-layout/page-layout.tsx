@@ -4,24 +4,24 @@ import type { ReactNode } from 'react'
 import Footer from '../footer/footer'
 import Navbar from '../navigation/navigation'
 
-import * as S from './layout.styles'
+import * as S from './page-layout.styles'
 
 import Error404 from '@/pages/404'
 
-type LayoutProps = {
+type PageLayoutProps = {
   children?: ReactNode
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const PageLayout = ({ children }: PageLayoutProps) => {
   const is404Page = isValidElement(children) && children.type === Error404
 
   return (
-    <S.LayoutWrapper>
+    <S.PageLayoutWrapper>
       {!is404Page && <Navbar />}
       <S.ContentWrapper>{children}</S.ContentWrapper>
       {!is404Page && <Footer />}
-    </S.LayoutWrapper>
+    </S.PageLayoutWrapper>
   )
 }
 
-export default Layout
+export default PageLayout

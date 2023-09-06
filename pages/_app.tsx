@@ -1,15 +1,15 @@
 import type { AppProps } from 'next/app'
 
-import Layout from '@/app/components/layout/layout'
+import PageLayout from '@/app/components/page-layout/page-layout'
 
 import '../app/globals.css'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <Layout>
+      <PageLayout>
         <Component {...pageProps} />
-      </Layout>
+      </PageLayout>
     </>
   )
 }
