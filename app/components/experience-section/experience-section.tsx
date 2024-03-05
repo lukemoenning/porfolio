@@ -18,8 +18,8 @@ const ExperienceSection = ({
         <S.ExperienceItemWrapper key={experience.title}>
           {/* INFORMATION ABOUT THE EXPERIENCE */}
           <S.ExperienceInfo>
-            <S.ExperienceTitle>{experience.title}</S.ExperienceTitle>
-            <S.ExperienceLocation>{experience.location}</S.ExperienceLocation>
+            <S.ExperienceTitle>{experience.location}</S.ExperienceTitle>
+            <S.ExperienceLocation>{experience.title}</S.ExperienceLocation>
             <S.ExperienceDate>{experience.date}</S.ExperienceDate>
           </S.ExperienceInfo>
 

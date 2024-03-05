@@ -18,7 +18,7 @@ const Resume = () => {
           <HeaderTitle>Resume.</HeaderTitle>
           <HeaderDescription>
             An official copy of my resume.{' '}
-            <S.NewTabPDF href={'/Moenning_Luke_Resume.pdf'} target="blank">
+            <S.NewTabPDF href={'/Luke_Moenning_Resume.pdf'} target="blank">
               Open in a new tab.
             </S.NewTabPDF>
           </HeaderDescription>
@@ -27,7 +27,7 @@ const Resume = () => {
 
       <BodyContentWrapper>
         <BodyContentNarrow>
-          <S.Pdf src={'/Moenning_Luke_Resume.pdf#view=FitH'} />
+          <S.Pdf src={'/Luke_Moenning_Resume.pdf#view=FitH'} />
         </BodyContentNarrow>
       </BodyContentWrapper>
     </BodyWrapper>

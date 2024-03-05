@@ -8,8 +8,8 @@ const education: experience[] = [
     bulletPoints: [
       'Computer Science BS - Mathematics BS - Psychology Minor - Artificial Intelligence, Modeling, and Simulation Certificate - Honors Program',
       'University of Iowa Flagship Scholar - Jason and Leslie Weber Emerging Technologies Scholarship - Edward B. Buchanan, Jr. and Mary Louise Buchanan Scholarship - Undergraduate Electrical Engineering Scholarship',
-      "Awarded Dean's List for Fall 2021, Spring 2022, Fall 2022, Spring 2023",
-      'Member of UIowa Association for Computing Machinery (ACM), Intramural Soccer'
+      "Awarded Dean's List for Fall 2021, Spring 2022, Fall 2022, Spring 2023, Fall 2024",
+      'Secretary and Treasurer of UIowa Association for Computing Machinery (ACM), Intramural Soccer'
     ],
     display: 'bulletPoints'
   },

@@ -2,6 +2,16 @@ import { project } from '../schema'
 
 const projects: project[] = [
   {
+    name: 'SolarViz',
+    description:
+      'For HackUIowa 2024, my team built a data analsis and visualization tool for solar panel data local to the Iowa City area. It was a great experience to chat with employees of the local companies and learn that our application proved to provide value to them.',
+    photo: '/images/projects/solarviz.png',
+    techstack: ['Python', 'Streamlit', 'Docker'],
+    github: 'https://github.com/lukemoenning/solar-viz',
+    date: '',
+    live_demo: null
+  },
+  {
     name: 'EduQuest',
     description:
       "The project my team and I created for YouthCodeX 2023 Hackathon. EduQuest is a web-based education platform that uses OpenAI's API to generate questions for young children, and to provide an interactive AI tutor to help with instruction. Our goal was to create a tool that would allow children to learn online in a fun and engaging way.",

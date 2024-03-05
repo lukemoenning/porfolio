@@ -2,19 +2,32 @@ import { experience } from '../schema'
 
 const work: experience[] = [
   {
-    title: 'HCI Undergraduate Researcher',
-    location: 'Project: Story Carnival',
-    date: 'January 2023 - Present',
+    title: 'Software Engineer Intern',
+    location: 'Sage Bionetworks',
+    date: 'January 2024 - Present',
     paragraph: '',
     bulletPoints: [
-      'Developed a teacher reflection tool that will be demoed for 16 preschools that tracks classroom progress',
-      'Validated the efficacy of the tool by researching established tools and commonly followed learning standards'
+      'Spearheaded a UI redesign by implementing RESTful API services in a Java Spring application to provide data validation for 100k+ monthly users',
+      'Enhanced user experience and optimized MySQL writes by refactoring custom parsing of SQL statements'
     ],
     display: 'bulletPoints',
     skills: []
   },
   {
-    title: 'Software Developer Intern',
+    title: 'Undergraduate Researcher',
+    location: 'HawCHI Lab - Story Carnival',
+    date: 'January 2023 - Present',
+    paragraph: '',
+    bulletPoints: [
+      'Improved executive skills in 16 preschool and special education classrooms by developing a full-stack tool allowing educators to track and reflect on classroom progress',
+      'Ensured project maintainability by converting 2 complex Qualtrics surveys to be natively integrated using JavaScript',
+      'Efficiently handled classroom data by building supporting back-end APIs with Node.js, Python, AWS Lambda, API Gateway, and DynamoDB'
+    ],
+    display: 'bulletPoints',
+    skills: []
+  },
+  {
+    title: 'Software Engineer Intern',
     location: 'W.R. Berkley Corporation',
     date: 'May 2023 - Present',
     paragraph: '',
