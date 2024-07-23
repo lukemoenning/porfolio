@@ -21,6 +21,19 @@ export const ExperienceItemWrapper = styled.div`
   }
 `
 
+export const ExperienceImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  background: ${theme.colors.lightBlue};
+
+  @media (max-width: 750px) {
+    align-self: center;
+    width: 90%;
+  }
+`
+
 export const ExperienceInfo = styled.div`
   width: 40%;
   margin: 10px;

@@ -22,6 +22,7 @@ export interface experience {
   title: string
   location: string
   date: string
+  logo: string
   paragraph?: string
   bulletPoints?: string[]
   display: 'paragraph' | 'bulletPoints' | string // TODO: remove string

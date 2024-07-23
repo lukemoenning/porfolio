@@ -5,6 +5,7 @@ const education: experience[] = [
     title: 'Bachelors of Science',
     location: 'The University of Iowa',
     date: 'August 2021 - May 2025',
+    logo: '/images/logos/uiowa.png',
     bulletPoints: [
       'Computer Science BS - Mathematics BS - Psychology Minor - Artificial Intelligence, Modeling, and Simulation Certificate - Honors Program',
       'University of Iowa Flagship Scholar - Jason and Leslie Weber Emerging Technologies Scholarship - Edward B. Buchanan, Jr. and Mary Louise Buchanan Scholarship - Undergraduate Electrical Engineering Scholarship',
@@ -17,6 +18,7 @@ const education: experience[] = [
     title: 'Coaching Authorization',
     location: 'Kirkwood Continuing Education',
     date: 'December 2022 - January 2023',
+    logo: '/images/logos/kirkwood.png',
     bulletPoints: [
       'Obtained my coaching license through the completion of a comprehensive 55-hour coaching authorization course'
     ],
@@ -26,6 +28,7 @@ const education: experience[] = [
     title: 'High School Diploma',
     location: 'West Senior High School',
     date: 'August 2017 - May 2021',
+    logo: '/images/logos/westhighschool.png',
     bulletPoints: [
       'Graduated with a GPA of 4.32 - University of Iowa Dual Enrollment Student',
       'Member of the National Honors Society in 2020 and 2021',

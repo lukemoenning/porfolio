@@ -1,3 +1,5 @@
+import CustomImage from '../custom-image/custom-image'
+
 import * as S from './experience-section.styles'
 
 import type { experience } from '@/database/schema'
@@ -5,6 +7,13 @@ import type { experience } from '@/database/schema'
 type ExperienceSectionProps = {
   category: experience[]
   sectionHeader: string
+}
+
+const experienceLogoStyles = {
+  alignSelf: 'center',
+  borderRadius: '10px',
+  margin: '10px',
+  objectFit: 'cover'
 }
 
 const ExperienceSection = ({
@@ -15,7 +24,20 @@ const ExperienceSection = ({
     <div>
       <S.ExperienceSectionHeader>{sectionHeader}</S.ExperienceSectionHeader>
       {category.map((experience: experience) => (
-        <S.ExperienceItemWrapper key={experience.title}>
+        <S.ExperienceItemWrapper
+          key={experience.title + '-' + experience.location}
+        >
+          {/* IMAGE OF THE EXPERIENCE */}
+          <S.ExperienceImageWrapper>
+            <CustomImage
+              src={experience.logo}
+              alt={experience.title}
+              width={100}
+              height={100}
+              styles={experienceLogoStyles}
+            />
+          </S.ExperienceImageWrapper>
+
           {/* INFORMATION ABOUT THE EXPERIENCE */}
           <S.ExperienceInfo>
             <S.ExperienceTitle>{experience.location}</S.ExperienceTitle>

@@ -1,4 +1,4 @@
-import { me } from '../schema'
+import type { me } from '../schema'
 
 const me: me = {
   name: 'Luke Moenning',

@@ -3,12 +3,28 @@ import { experience } from '../schema'
 const work: experience[] = [
   {
     title: 'Software Engineer Intern',
-    location: 'Sage Bionetworks',
-    date: 'January 2024 - Present',
+    location: 'GoDaddy',
+    date: 'June 2024 - Present',
+    logo: '/images/logos/godaddy.png',
     paragraph: '',
     bulletPoints: [
-      'Spearheaded a UI redesign by implementing RESTful API services in a Java Spring application to provide data validation for 100k+ monthly users',
-      'Enhanced user experience and optimized MySQL writes by refactoring custom parsing of SQL statements'
+      'Increased the speed of onboarding new metrics onto the experimentation platform by 4x by writing a PySpark job to optimize the metric validation process',
+      'Improved user experience by creating Python APIs, building out a React.js UI, and deploying the AWS infrastructure to connect the metric onboarding workflow'
+    ],
+    display: 'bulletPoints',
+    skills: []
+  },
+  {
+    title: 'Software Engineer Intern',
+    location: 'Sage Bionetworks',
+    date: 'January 2024 - May 2024',
+    logo: '/images/logos/sage.png',
+    paragraph: '',
+    bulletPoints: [
+      'Reduced data latency for a team of 20+ researchers by writing and implementing the design for a real-time notification system through the use of webhooks',
+      'Developed an algorithm utilizing AWS SQS and asynchronous Java workers to process and distribute 1,000,000+ simultaneous event notifications',
+      'Created APIs for webhook registrations and additional data validation services for 100k+ monthly users',
+      'Enhanced MySQL performance by developing an algorithm to parse SQL statements and optimize memory allocation'
     ],
     display: 'bulletPoints',
     skills: []
@@ -17,10 +33,11 @@ const work: experience[] = [
     title: 'Undergraduate Researcher',
     location: 'HawCHI Lab - Story Carnival',
     date: 'January 2023 - Present',
+    logo: '/images/logos/uiowa.png',
     paragraph: '',
     bulletPoints: [
       'Improved executive skills in 16 preschool and special education classrooms by developing a full-stack tool allowing educators to track and reflect on classroom progress',
-      'Ensured project maintainability by converting 2 complex Qualtrics surveys to be natively integrated using JavaScript',
+      'Provided custom progress tracking features by converting 2 complex Qualtrics surveys to be natively integrated using JavaScript',
       'Efficiently handled classroom data by building supporting back-end APIs with Node.js, Python, AWS Lambda, API Gateway, and DynamoDB'
     ],
     display: 'bulletPoints',
@@ -30,11 +47,12 @@ const work: experience[] = [
     title: 'Software Engineer Intern',
     location: 'W.R. Berkley Corporation',
     date: 'May 2023 - Present',
+    logo: '/images/logos/wrberkley.png',
     paragraph: '',
     bulletPoints: [
       'Improved an agile team’s velocity by 20% by efficiently handling tickets and meeting sprint deadlines while developing a micro front-end, internal portal',
-      'Optimized GraphQL services and resolvers to enhance client-side data representation and error handling',
-      'Accelerated development time for 70+ engineers by refactoring 50+ test files, expediting the CI/CD pipeline for multiple applications'
+      'Built supporting GraphQL services and resolvers to enhance client-side data representation and error handling',
+      'Accelerated development time for 70+ engineers by rewriting 50+ test files to remove a slow and deprecated library, expediting the CI/CD pipeline for multiple applications'
     ],
     display: 'bulletPoints',
     skills: []
@@ -43,6 +61,7 @@ const work: experience[] = [
     title: 'Soccer Coach',
     location: 'Northwest Junior High',
     date: 'March 2023 – May 2023',
+    logo: '/images/logos/northwest.png',
     paragraph: '',
     bulletPoints: [
       'Mentored and coached 63 seventh and eighth-grade boys, fostering team development and individual player growth',
@@ -55,6 +74,7 @@ const work: experience[] = [
     title: 'Web Developer Intern',
     location: 'The University of Iowa - College of Engineering',
     date: 'September 2022 – January 2023',
+    logo: '/images/logos/uiowa.png',
     paragraph: '',
     bulletPoints: [
       'Collaborated with a team of 3 interns to efficiently port 100% of the Biomedical Engineering Website to SiteNow v3',
@@ -67,6 +87,7 @@ const work: experience[] = [
     title: 'Lead Instructor',
     location: 'Mathnasium - The Math Learning Center',
     date: 'June 2019 - December 2022',
+    logo: '/images/logos/mathnasium.png',
     paragraph: '',
     bulletPoints: [
       'Led a team of 10+ instructors to successfully help students recover from learning setbacks caused by COVID-19',
