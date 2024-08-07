@@ -8,8 +8,8 @@ const work: experience[] = [
     logo: '/images/logos/godaddy.png',
     paragraph: '',
     bulletPoints: [
-      'Increased the speed of onboarding new metrics onto the experimentation platform by 4x by writing a PySpark job to optimize the metric validation process',
-      'Improved user experience by creating Python APIs, building out a React.js UI, and deploying the AWS infrastructure to connect the metric onboarding workflow'
+      'Increased the speed of new metric onboarding for the experimentation platform by 4x by adding query validation integration',
+      'Reduced AWS costs by 73% by optimizing Step Function executions running Spark queries'
     ],
     display: 'bulletPoints',
     skills: []
@@ -21,10 +21,10 @@ const work: experience[] = [
     logo: '/images/logos/sage.png',
     paragraph: '',
     bulletPoints: [
-      'Reduced data latency for a team of 20+ researchers by writing and implementing the design for a real-time notification system through the use of webhooks',
-      'Developed an algorithm utilizing AWS SQS and asynchronous Java workers to process and distribute 1,000,000+ simultaneous event notifications',
+      'Reduced data latency for the Synapse data platform from an average of 60 minutes to 200 milliseconds for a team of 20+ researchers by designing and implementing a real-time notification system using webhooks',
+      'Developed an algorithm utilizing AWS SQS to process and distribute batches of 1,000,000+ simultaneous notifications',
       'Created APIs for webhook registrations and additional data validation services for 100k+ monthly users',
-      'Enhanced MySQL performance by developing an algorithm to parse SQL statements and optimize memory allocation'
+      'Enhanced MySQL performance by developing an algorithm to parse SQL statements and optimize memory allocation by 28%'
     ],
     display: 'bulletPoints',
     skills: []
@@ -36,9 +36,9 @@ const work: experience[] = [
     logo: '/images/logos/uiowa.png',
     paragraph: '',
     bulletPoints: [
-      'Improved executive skills in 16 preschool and special education classrooms by developing a full-stack tool allowing educators to track and reflect on classroom progress',
+      'Improved executive skills in 16 preschools and special education classrooms by developing a full-stack learning management system allowing educators to track, reflect on, and analyze cumulative student progress',
       'Provided custom progress tracking features by converting 2 complex Qualtrics surveys to be natively integrated using JavaScript',
-      'Efficiently handled classroom data by building supporting back-end APIs with Node.js, Python, AWS Lambda, API Gateway, and DynamoDB'
+      'Efficiently handled classroom data by building back-end APIs and databases with Node.js, Python, AWS, and DynamoDB'
     ],
     display: 'bulletPoints',
     skills: []
@@ -50,9 +50,9 @@ const work: experience[] = [
     logo: '/images/logos/wrberkley.png',
     paragraph: '',
     bulletPoints: [
-      'Improved an agile team’s velocity by 20% by efficiently handling tickets and meeting sprint deadlines while developing a micro front-end, internal portal',
-      'Built supporting GraphQL services and resolvers to enhance client-side data representation and error handling',
-      'Accelerated development time for 70+ engineers by rewriting 50+ test files to remove a slow and deprecated library, expediting the CI/CD pipeline for multiple applications'
+      'Developed support for quoting Monoline General Liability policies for the launch of a micro React.js insurance portal',
+      'Built GraphQL services and resolvers to enhance client-side data representation and error handling',
+      'Accelerated development time for 70+ engineers by rewriting 50+ test files to remove a slow and deprecated library'
     ],
     display: 'bulletPoints',
     skills: []
