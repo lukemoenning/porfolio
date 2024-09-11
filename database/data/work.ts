@@ -8,8 +8,9 @@ const work: experience[] = [
     logo: '/images/logos/godaddy.png',
     paragraph: '',
     bulletPoints: [
-      'Increased the speed of new metric onboarding for the experimentation platform by 4x by adding query validation integration',
-      'Reduced AWS costs by 73% by optimizing Step Function executions running Spark queries'
+      'Increased the speed of new metric onboarding for the experimentation platform by 4x by adding a query validation feature',
+      'Reduced AWS costs by 73% by optimizing Step Function executions running Spark queries',
+      "Improved integration by designing and implementing enhancements to streamline the project's integration with 2 adjacent projects"
     ],
     display: 'bulletPoints',
     skills: []
