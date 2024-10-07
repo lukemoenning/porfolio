@@ -4,12 +4,11 @@ const education: experience[] = [
   {
     title: 'Bachelors of Science',
     location: 'The University of Iowa',
-    date: 'August 2021 - May 2025',
+    date: '',
     logo: '/images/logos/uiowa.png',
     bulletPoints: [
       'Computer Science BS - Mathematics BS - Psychology Minor - Artificial Intelligence, Modeling, and Simulation Certificate - Honors Program',
       'University of Iowa Flagship Scholar - Jason and Leslie Weber Emerging Technologies Scholarship - Edward B. Buchanan, Jr. and Mary Louise Buchanan Scholarship - Undergraduate Electrical Engineering Scholarship',
-      "Awarded Dean's List for Fall 2021, Spring 2022, Fall 2022, Spring 2023, Fall 2024",
       'Secretary and Treasurer of UIowa Association for Computing Machinery (ACM), Intramural Soccer'
     ],
     display: 'bulletPoints'
@@ -17,7 +16,7 @@ const education: experience[] = [
   {
     title: 'Coaching Authorization',
     location: 'Kirkwood Continuing Education',
-    date: 'December 2022 - January 2023',
+    date: '',
     logo: '/images/logos/kirkwood.png',
     bulletPoints: [
       'Obtained my coaching license through the completion of a comprehensive 55-hour coaching authorization course'
@@ -27,7 +26,7 @@ const education: experience[] = [
   {
     title: 'High School Diploma',
     location: 'West Senior High School',
-    date: 'August 2017 - May 2021',
+    date: '',
     logo: '/images/logos/westhighschool.png',
     bulletPoints: [
       'Graduated with a GPA of 4.32 - University of Iowa Dual Enrollment Student',
