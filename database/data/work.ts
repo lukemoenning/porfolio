@@ -9,8 +9,9 @@ const work: experience[] = [
     paragraph: '',
     bulletPoints: [
       'Increased the speed of new metric onboarding for the experimentation platform by 4x by releasing a query validation feature',
+      'Built out supporting Python endpoints, integrated AWS IAM authentication through custom policies, and delivered a new Next.js page on the platform to enhance user interaction and feature accessibility, committing code across 4 repositories',
       'Designed and implemented enhancements to the feature’s query runner backbone to streamline integration with 2 adjacent projects',
-      'Reduced AWS costs by 73% by optimizing Step Function executions running Spark queries'
+      'Achieved a 73% reduction in AWS costs by optimizing Spark queries integrated with EMR and Step Function workflows'
     ],
     display: 'bulletPoints',
     skills: []
@@ -37,9 +38,10 @@ const work: experience[] = [
     logo: '/images/logos/uiowa.png',
     paragraph: '',
     bulletPoints: [
-      'Improved executive skills in 16 preschools and special education classrooms by developing a full-stack learning management system allowing educators to track, reflect on, and analyze cumulative student progress',
-      'Provided custom progress tracking features by converting 2 complex Qualtrics surveys to be natively integrated using JavaScript',
-      'Efficiently handled classroom data by building back-end APIs and databases with Node.js, Python, AWS, and DynamoDB'
+      'Improved executive skills in 16 preschools and special education classrooms by developing Story Carnival, a full-stack learning management system (LMS) that allows educators to track, reflect on, and analyze cumulative student progress',
+      'Researched 12 LMSs and 5 learning standards, including Head Start and NAEYC, to align the tool’s design with best practices',
+      'Gathered feedback from educators by demoing a prototype of the tool, incorporating suggestions to improve user experience',
+      'Converted 2 convoluted Qualtrics surveys into a simple, custom solution using SurveyJS, improving project maintainability and UX'
     ],
     display: 'bulletPoints',
     skills: []
