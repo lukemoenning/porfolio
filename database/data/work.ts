@@ -8,7 +8,7 @@ const work: experience[] = [
     logo: '/images/logos/godaddy.png',
     paragraph: '',
     bulletPoints: [
-      'Increased the speed of new metric onboarding for the experimentation platform by 4x by releasing a query validation feature',
+      'Increased the speed of new metric onboarding for the experimentation platform by 100% by releasing a query validation feature',
       'Built out supporting Python endpoints, integrated AWS IAM authentication through custom policies, and delivered a new Next.js page on the platform to enhance user interaction and feature accessibility, committing code across 4 repositories',
       'Designed and implemented enhancements to the feature’s query runner backbone to streamline integration with 2 adjacent projects',
       'Achieved a 73% reduction in AWS costs by optimizing Spark queries integrated with EMR and Step Function workflows'
